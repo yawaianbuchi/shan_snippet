@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const AutoMessagePage:NextPage = () => {
-  return (
-    <div>AutoMessagePage</div>
-  )
-}
+const AutoMessagePage: NextPage = () => {
+  return <div>AutoMessagePage</div>;
+};
 
-export default AutoMessagePage
+export default AutoMessagePage;

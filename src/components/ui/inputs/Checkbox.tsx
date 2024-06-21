@@ -1,9 +1,5 @@
-import * as React from "react";
-import {
-  CheckboxProps as MCheckboxProps,
-  Checkbox as MCheckbox,
-  styled
-} from "@mui/material";
+import * as React from 'react';
+import { CheckboxProps as MCheckboxProps, Checkbox as MCheckbox, styled } from '@mui/material';
 
 interface CheckboxProps extends MCheckboxProps {}
 

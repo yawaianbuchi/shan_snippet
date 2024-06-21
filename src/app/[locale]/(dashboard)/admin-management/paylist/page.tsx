@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const PayListPage:NextPage = () => {
-  return (
-    <div>PayListPage</div>
-  )
-}
+const PayListPage: NextPage = () => {
+  return <div>PayListPage</div>;
+};
 
-export default PayListPage
+export default PayListPage;

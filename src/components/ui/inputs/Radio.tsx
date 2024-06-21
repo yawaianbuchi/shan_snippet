@@ -1,9 +1,5 @@
-import * as React from "react";
-import {
-  RadioProps as MRadioProps,
-  Radio as MRadio,
-  styled
-} from "@mui/material";
+import * as React from 'react';
+import { RadioProps as MRadioProps, Radio as MRadio, styled } from '@mui/material';
 
 interface RadioProps extends MRadioProps {}
 

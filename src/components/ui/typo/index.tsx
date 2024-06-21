@@ -1,7 +1,7 @@
-"use client";
-import { cn } from "@/utils/cn";
-import { Typography, TypographyProps, styled, Skeleton } from "@mui/material";
-import React, { PropsWithChildren } from "react";
+'use client';
+import { cn } from '@/utils/cn';
+import { Typography, TypographyProps, styled, Skeleton } from '@mui/material';
+import React, { PropsWithChildren } from 'react';
 
 type Props = TypographyProps & PropsWithChildren;
 interface TextProps extends Props {

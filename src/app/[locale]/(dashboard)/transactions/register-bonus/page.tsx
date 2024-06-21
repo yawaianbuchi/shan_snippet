@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const RegisterBonusPage:NextPage = () => {
-  return (
-    <div>RegisterBonusPage</div>
-  )
-}
+const RegisterBonusPage: NextPage = () => {
+  return <div>RegisterBonusPage</div>;
+};
 
-export default RegisterBonusPage
+export default RegisterBonusPage;

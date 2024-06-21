@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const WithdrawPage:NextPage = () => {
-  return (
-    <div>WithdrawPage:</div>
-  )
-}
+const WithdrawPage: NextPage = () => {
+  return <div>WithdrawPage:</div>;
+};
 
-export default WithdrawPage
+export default WithdrawPage;

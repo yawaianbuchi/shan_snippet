@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const LoginPage:NextPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
-}
+const LoginPage: NextPage = () => {
+  return <div>LoginPage</div>;
+};
 
-export default LoginPage
+export default LoginPage;

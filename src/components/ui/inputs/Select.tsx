@@ -1,5 +1,5 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
+import * as React from 'react';
+import Box from '@mui/material/Box';
 import {
   Select as MSelect,
   FormControl,
@@ -7,8 +7,8 @@ import {
   styled,
   InputLabel,
   OutlinedSelectProps,
-  MenuItem
-} from "@mui/material";
+  MenuItem,
+} from '@mui/material';
 
 interface SelectProps extends OutlinedSelectProps {
   label?: string;

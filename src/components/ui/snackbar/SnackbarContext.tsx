@@ -1,11 +1,12 @@
-import React, { createContext, useState, useContext, ReactNode } from "react";
-import Snackbar from "./Snackbar";
+'use client';
+import React, { createContext, useState, useContext, ReactNode } from 'react';
+import Snackbar from './Snackbar';
 
 export enum SEVERITY {
-  SUCCESS = "success",
-  ERROR = "error",
-  WARNING = "warning",
-  INFO = "info"
+  SUCCESS = 'success',
+  ERROR = 'error',
+  WARNING = 'warning',
+  INFO = 'info',
 }
 type ShowMessage = {
   message: string;
@@ -17,17 +18,15 @@ interface SnackbarContextType {
 
 const SnackbarContext = createContext<SnackbarContextType | null>(null);
 
-export const SnackbarProvider: React.FC<{ children: ReactNode }> = ({
-  children
-}) => {
+export const SnackbarProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [snackbar, setSnackbar] = useState<{
     message: string;
     severity: SEVERITY;
     open: boolean;
   }>({
-    message: "",
+    message: '',
     severity: SEVERITY.SUCCESS,
-    open: false
+    open: false,
   });
 
   const showMessage = ({ message, severity }: ShowMessage) => {
@@ -54,7 +53,7 @@ export const SnackbarProvider: React.FC<{ children: ReactNode }> = ({
 export const useSnackbar = () => {
   const context = useContext(SnackbarContext);
   if (!context) {
-    throw new Error("useSnackbar must be used within a SnackbarProvider");
+    throw new Error('useSnackbar must be used within a SnackbarProvider');
   }
   return context;
 };

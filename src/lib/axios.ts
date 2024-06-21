@@ -1,35 +1,27 @@
-import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
-const appAxios = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_API_URL}`,
+export const appAxios = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   headers: {
-    Accept: 'application/json',
     'Content-Type': 'application/json',
   },
 });
 
-appAxios.interceptors.request.use(
-  (config: InternalAxiosRequestConfig) => {
-    if (config.headers) {
-      //TODO: add headers
-    }
+axios.interceptors.request.use(
+  function (config) {
     return config;
   },
-  (error: AxiosError) => {
+  function (error) {
     return Promise.reject(error);
   }
 );
 
-appAxios.interceptors.response.use(
-  async (response: AxiosResponse) => {
-    if (!response.data) {
-      return Promise.reject(response);
-    }
+// Add a response interceptor
+axios.interceptors.response.use(
+  function (response) {
     return response;
   },
-  async (error: AxiosError) => {
+  function (error) {
     return Promise.reject(error);
   }
 );
-
-export default appAxios;

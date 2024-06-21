@@ -1,10 +1,8 @@
-import Card from '@/components/shared/card'
-import React from 'react'
+import Card from '@/components/shared/card';
+import React from 'react';
 
 const TopWinnerTable = () => {
-  return (
-    <Card>TopWinnerTable</Card>
-  )
-}
+  return <Card>TopWinnerTable</Card>;
+};
 
-export default TopWinnerTable
+export default TopWinnerTable;

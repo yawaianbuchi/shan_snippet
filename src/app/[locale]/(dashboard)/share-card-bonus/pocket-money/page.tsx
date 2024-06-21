@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const PocketMoneyPage:NextPage = () => {
-  return (
-    <div>PocketMoneyPage</div>
-  )
-}
+const PocketMoneyPage: NextPage = () => {
+  return <div>PocketMoneyPage</div>;
+};
 
-export default PocketMoneyPage
+export default PocketMoneyPage;

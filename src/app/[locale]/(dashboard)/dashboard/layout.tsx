@@ -1,5 +1,5 @@
-import React from "react";
-import { Stack } from "@mui/material";
+import React from 'react';
+import { Stack } from '@mui/material';
 
 export default function Layout({
   children,
@@ -7,7 +7,7 @@ export default function Layout({
   transactions,
   hotgames,
   popular,
-  topwinner
+  topwinner,
 }: {
   children: React.ReactNode;
   player: React.ReactNode;

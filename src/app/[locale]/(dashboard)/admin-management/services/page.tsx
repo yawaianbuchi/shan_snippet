@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const ServicesPage:NextPage = () => {
-  return (
-    <div>ServicesPage</div>
-  )
-}
+const ServicesPage: NextPage = () => {
+  return <div>ServicesPage</div>;
+};
 
-export default ServicesPage
+export default ServicesPage;

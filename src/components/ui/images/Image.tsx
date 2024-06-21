@@ -1,6 +1,6 @@
-import React from "react";
-import NextImage, { ImageProps as NImageProps } from "next/image";
-import { cn } from "@/util";
+import React from 'react';
+import NextImage, { ImageProps as NImageProps } from 'next/image';
+import { cn } from '@/util';
 
 interface ImageProps extends NImageProps {
   width?: number;

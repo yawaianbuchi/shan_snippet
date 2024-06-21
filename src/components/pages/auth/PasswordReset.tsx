@@ -1,20 +1,15 @@
-"use client";
-import Button from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import Checkbox from "@/components/ui/inputs/Checkbox";
-import TextField from "@/components/ui/inputs/TextField";
-import {
-  PasswordRestForm,
-  SignUpForm,
-  passwordRestSchema,
-  signupSchema,
-} from "@/types/login";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "@mui/material";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import React from "react";
-import { Controller, useForm } from "react-hook-form";
+'use client';
+import Button from '@/components/ui/button';
+import { Form } from '@/components/ui/form';
+import Checkbox from '@/components/ui/inputs/Checkbox';
+import TextField from '@/components/ui/inputs/TextField';
+import { PasswordRestForm, SignUpForm, passwordRestSchema, signupSchema } from '@/types/login';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Link } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
 const PasswordReset = () => {
   const form = useForm<PasswordRestForm>({
@@ -50,12 +45,7 @@ const PasswordReset = () => {
               />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
+          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
             Change Password
           </Button>
         </Box>

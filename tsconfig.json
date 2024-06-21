@@ -5,8 +5,6 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
-    "target": "ES6",
-
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -23,13 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/components/TranslationsProvider.js",
-    "i18nConfig.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/provider/TranslationProvider.ts", "i18nConfig.js", "src/app/i18n.js"],
   "exclude": ["node_modules"]
 }

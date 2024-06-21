@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const TopupBonusPage:NextPage = () => {
-  return (
-    <div>TopupPage</div>
-  )
-}
+const TopupBonusPage: NextPage = () => {
+  return <div>TopupPage</div>;
+};
 
-export default TopupBonusPage
+export default TopupBonusPage;

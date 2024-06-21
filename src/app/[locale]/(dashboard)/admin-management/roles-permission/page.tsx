@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const RolesPermissionPage:NextPage = () => {
-  return (
-    <div>RolesPermissionPage</div>
-  )
-}
+const RolesPermissionPage: NextPage = () => {
+  return <div>RolesPermissionPage</div>;
+};
 
-export default RolesPermissionPage
+export default RolesPermissionPage;

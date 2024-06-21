@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const ReferralBonusPage:NextPage = () => {
-  return (
-    <div>ReferralBonusPage</div>
-  )
-}
+const ReferralBonusPage: NextPage = () => {
+  return <div>ReferralBonusPage</div>;
+};
 
-export default ReferralBonusPage
+export default ReferralBonusPage;

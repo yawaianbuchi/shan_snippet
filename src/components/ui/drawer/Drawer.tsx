@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { MENU_LISTS } from "@/constants/Menu";
-import { Icons } from "../images/Icons";
-import Text from "../typo";
-import NavWithSubLink from "./SubLink";
-import Button from "../button";
-import { Avatar, Stack } from "@mui/material";
-import { usePathname, useRouter } from "next/navigation";
-import NavLink from "./NavLink";
-import Card from "@/components/shared/card";
-import Chip from "../chip";
-import Link from "next/link";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { MENU_LISTS } from '@/constants/Menu';
+import { Icons } from '../images/Icons';
+import Text from '../typo';
+import NavWithSubLink from './SubLink';
+import Button from '../button';
+import { Avatar, Stack } from '@mui/material';
+import { usePathname, useRouter } from 'next/navigation';
+import NavLink from './NavLink';
+import Card from '@/components/shared/card';
+import Chip from '../chip';
+import Link from 'next/link';
 
 const drawerWidth = 280;
 
@@ -53,7 +53,7 @@ export default function ResponsiveDrawer(props: Props) {
 
   const handleLogout = () => {
     startTransition(() => {
-      router.push("/login");
+      router.push('/login');
     });
   };
 
@@ -97,12 +97,7 @@ export default function ResponsiveDrawer(props: Props) {
         p={2}
         className="bg-green h-14 absolute w-full bottom-0"
       >
-        <Stack
-          direction="row"
-          justifyItems="center"
-          alignItems="center"
-          gap={2}
-        >
+        <Stack direction="row" justifyItems="center" alignItems="center" gap={2}>
           <Avatar alt="roger" />
           <Text color="white" fontWeight="bold">
             Roger
@@ -115,19 +110,18 @@ export default function ResponsiveDrawer(props: Props) {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }} className="bg-gray min-h-screen">
+    <Box sx={{ display: 'flex' }} className="bg-gray min-h-screen">
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: "transparent",
-          boxShadow: "none",
+          backgroundColor: 'transparent',
+          boxShadow: 'none',
         }}
       >
         <Toolbar>
@@ -136,7 +130,7 @@ export default function ResponsiveDrawer(props: Props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { sm: 'none' } }}
           >
             1
           </IconButton>
@@ -146,12 +140,7 @@ export default function ResponsiveDrawer(props: Props) {
             alignItems="center"
             className="w-full"
           >
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              className="text-black"
-            >
+            <Typography variant="h6" noWrap component="div" className="text-black">
               search bar
             </Typography>
             <Stack direction="row" columnGap={2}>
@@ -186,9 +175,9 @@ export default function ResponsiveDrawer(props: Props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
               width: drawerWidth,
             },
           }}
@@ -198,9 +187,9 @@ export default function ResponsiveDrawer(props: Props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: "none", sm: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
               width: drawerWidth,
             },
           }}

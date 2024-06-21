@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const MainGamePage:NextPage = () => {
-  return (
-    <div>MainGamePage</div>
-  )
-}
+const MainGamePage: NextPage = () => {
+  return <div>MainGamePage</div>;
+};
 
-export default MainGamePage
+export default MainGamePage;

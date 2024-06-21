@@ -1,10 +1,8 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from 'next';
+import React from 'react';
 
-const AllPage:NextPage = () => {
-  return (
-    <div>AllPage</div>
-  )
-}
+const AllPage: NextPage = () => {
+  return <div>AllPage</div>;
+};
 
-export default AllPage
+export default AllPage;

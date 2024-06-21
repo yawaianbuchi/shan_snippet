@@ -1,10 +1,10 @@
-import React from "react";
-import { Paper as MCard, PaperProps } from "@mui/material";
-import { cn } from "@/util";
+import React from 'react';
+import { Paper as MCard, PaperProps } from '@mui/material';
+import { cn } from '@/util';
 
 interface ICardProps extends PaperProps {
   children: React.ReactNode;
-  elevation?: PaperProps["elevation"];
+  elevation?: PaperProps['elevation'];
   className?: string;
 }
 
@@ -14,7 +14,11 @@ const Card = React.forwardRef<HTMLDivElement, ICardProps>(
       <MCard
         {...rest}
         ref={ref}
-        className={cn("bg-white border border-gray rounded-lg p-2", !elevation && "shadow", className)}
+        className={cn(
+          'bg-white border border-gray rounded-lg p-2',
+          !elevation && 'shadow',
+          className
+        )}
         elevation={elevation}
       >
         {children}
@@ -23,6 +27,6 @@ const Card = React.forwardRef<HTMLDivElement, ICardProps>(
   }
 );
 
-Card.displayName = 'Card'
+Card.displayName = 'Card';
 
 export default Card;
