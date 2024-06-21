@@ -17,6 +17,9 @@ import Button from "../button";
 import { Avatar, Stack } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import NavLink from "./NavLink";
+import Card from "@/components/shared/card";
+import Chip from "../chip";
+import Link from "next/link";
 
 const drawerWidth = 280;
 
@@ -123,7 +126,7 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: "skyblue",
+          backgroundColor: "transparent",
           boxShadow: "none",
         }}
       >
@@ -137,14 +140,34 @@ export default function ResponsiveDrawer(props: Props) {
           >
             1
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            className="text-black"
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            className="w-full"
           >
-            search bar
-          </Typography>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              className="text-black"
+            >
+              search bar
+            </Typography>
+            <Stack direction="row" columnGap={2}>
+              <Card>
+                <h1>localization pop over</h1>
+              </Card>
+
+              <Link href="/inbox">
+                <Card className="flex items-center gap-2">
+                  <Icons.inboxTwo />
+                  Inbox
+                  <Chip label="+99" type="error" />
+                </Card>
+              </Link>
+            </Stack>
+          </Stack>
         </Toolbar>
       </AppBar>
       <Box
