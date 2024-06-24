@@ -1,8 +1,9 @@
 import { NextPage } from 'next';
 import React from 'react';
+import HistoryPage from '@/components/pages/spin-wheel/history';
 
-const HistoryPage: NextPage = () => {
-  return <div>HistoryPage</div>;
+const History: NextPage = () => {
+  return <HistoryPage />;
 };
 
-export default HistoryPage;
+export default History;

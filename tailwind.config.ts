@@ -1,54 +1,55 @@
-import type { Config } from "tailwindcss";
-import color from "tailwindcss/colors";
+import type { Config } from 'tailwindcss';
+import color from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       backgroundColor: {
         red: {
-          DEFAULT: "#D70000",
-          50: "#FBE6E6",
+          DEFAULT: '#D70000',
+          50: '#FBE6E6',
         },
         yellow: {
-          DEFAULT: "#FFEB36",
+          DEFAULT: '#FFEB36',
         },
         green: {
-          DEFAULT: "#127C12",
-          "50": "##E7F2E7",
+          DEFAULT: '#127C12',
+          '50': '##E7F2E7',
         },
         gray: {
-          DEFAULT: "#f7f7f7",
-          400: "#adadad",
+          DEFAULT: '#f7f7f7',
+          400: '#adadad',
         },
       },
       colors: {
         red: {
-          DEFAULT: "#D70000",
-          50: "#FBE6E6",
+          DEFAULT: '#D70000',
+          50: '#FBE6E6',
         },
         yellow: {
-          DEFAULT: "#FFEB36",
+          DEFAULT: '#FFEB36',
         },
         green: {
-          DEFAULT: "#127C12",
-          "50": "##E7F2E7",
+          DEFAULT: '#127C12',
+          '50': '##E7F2E7',
         },
         gray: {
-          DEFAULT: "#f7f7f7",
-          400: "#adadad",
+          DEFAULT: '#f7f7f7',
+          100: '#4E4E4E',
+          400: '#adadad',
         },
       },
       boxShadow: {
-        DEFAULT: "0px 8px 10px 0px #127C120D",
+        DEFAULT: '0px 8px 10px 0px #127C120D',
       },
       borderColor: {
         gray: {
-          DEFAULT: "#EEEEEE",
+          DEFAULT: '#EEEEEE',
         },
       },
     },
