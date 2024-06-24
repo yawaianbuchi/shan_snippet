@@ -12,10 +12,10 @@ import {
   
   import usePaginate from "@/hooks/usePaginate";
   import { IpaginateType } from "@/hooks/usePaginate";
-  import SmallLoader from "../ui/small-loader";
+  import SmallLoader from "../small-loader";
   import { useSizer } from "@/hooks/useSizer";
-  import PaginationUi from "../ui/pagination-ui";
-  import Pagination from "../ui/pagination";
+  import PaginationUi from "../pagination-ui";
+  import Pagination from "../pagination";
 import ArrowDown from "@/iconejs/arrow-down";
   
   export const cn = (...inputs: ClassValue[]) => {
@@ -306,7 +306,7 @@ import ArrowDown from "@/iconejs/arrow-down";
     api?: boolean;
   };
   
-  export const useGeniTable = <T extends Partial<Options>>({
+  export const useGenieTable = <T extends Partial<Options>>({
     total,
     data: factory = [],
     api = false,
