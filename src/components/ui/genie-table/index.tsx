@@ -1,3 +1,4 @@
+'use client'
 import {
     Dispatch,
     ReactNode,
@@ -216,6 +217,7 @@ import ArrowDown from "@/iconejs/arrow-down";
         )}
       >
         <div
+         style={size}
           className={cn(
             "w-full h-full overflow-x-scroll no-scrollbar",
             className?.wrapperTableClass
@@ -239,7 +241,7 @@ import ArrowDown from "@/iconejs/arrow-down";
             </div>
           )}
   
-          <table className={cn("w-full h-full", className?.tableSelfClass)}>
+          <table className={cn("w-full ", className?.tableSelfClass)}>
             <Header
               className={className}
               columns={header}
