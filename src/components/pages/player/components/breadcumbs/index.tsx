@@ -2,17 +2,23 @@ import { cn } from '@/util';
 import React from 'react';
 
 interface BradeCurmbProps extends React.HTMLAttributes<HTMLDivElement> {
-  list?: React.ReactNode[] | string[];
+  list: {
+    cump: string | JSX.Element | React.ReactNode;
+  }[];
   active?: number;
-  className?:string;
+  className?: string;
+  classNameContainer?: string;
 }
 
-const BradeCurmb: React.FC<BradeCurmbProps> = ({ list, active }) => {
+const BradeCurmb: React.FC<BradeCurmbProps> = ({ list, active, classNameContainer }) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className={cn('flex items-center gap-2', classNameContainer)}>
       {list?.map((item, index: number) => (
-        <span key={index} className={cn(`font-semibold text-gray-400 ${active === index && "text-black"}`)}>
-          {item}
+        <span
+          key={index}
+          className={cn(`font-semibold text-gray-500 ${active === index && 'text-black'}`)}
+        >
+          {item.cump}
         </span>
       ))}
     </div>

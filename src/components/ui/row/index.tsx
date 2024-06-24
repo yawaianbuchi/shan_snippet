@@ -1,16 +1,22 @@
-import { cn } from "@/util"
+import { cn } from '@/util';
 
-
-interface  RowProps extends React.HTMLAttributes<HTMLTableRowElement>{
-    className?: string
+interface RowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+  className?: string;
+  key: React.Key;
 }
 
-const Row = ({children , className}:{
-    children?:React.ReactNode | React.ReactNode[] | JSX.Element
+const Row = ({
+  children,
+  className,
+  key,
+}: {
+  children?: React.ReactNode | React.ReactNode[] | JSX.Element;
 } & RowProps) => {
   return (
-        <tr className={cn('px-4',className)}>{children}</tr>
-  )
-}
+    <tr key={key} className={cn('px-4 h-[63px] ', className)}>
+      {children}
+    </tr>
+  );
+};
 
-export default Row
+export default Row;
