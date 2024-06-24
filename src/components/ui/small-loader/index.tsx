@@ -1,11 +1,5 @@
-
-
 const SmallLoader = () => {
-  return (
-    <div className="">
-        loader
-    </div>
-  )
-}
+  return <div className="">loader</div>;
+};
 
-export default SmallLoader
+export default SmallLoader;
