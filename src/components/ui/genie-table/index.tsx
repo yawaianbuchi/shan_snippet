@@ -306,7 +306,7 @@ import ArrowDown from "@/iconejs/arrow-down";
     api?: boolean;
   };
   
-  export const useGeniTable = <T extends Partial<Options>>({
+  export const useGenieTable = <T extends Partial<Options>>({
     total,
     data: factory = [],
     api = false,
