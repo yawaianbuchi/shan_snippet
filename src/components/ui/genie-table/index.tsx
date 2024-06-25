@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -8,6 +8,8 @@ import SmallLoader from '../small-loader';
 import PaginationUi from '../pagination-ui';
 import Pagination from '../pagination';
 import ArrowDown from '@/iconejs/arrow-down';
+import React from 'react';
+
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
@@ -38,7 +40,7 @@ type TypeOrderEachClass = Partial<Record<KeyClassOrder, string>>;
 
 type HeaderType = {
   columns: string[] | undefined;
-  sorting: OrderType;
+  sorting: OrderType | undefined;
   className: TypeOrderEachClass | undefined;
   sortColumn: boolean;
   sortTable: Dispatch<SetStateAction<OrderType>>;
@@ -71,7 +73,7 @@ type GenieTableType<H extends string, C extends React.ReactNode[] | ReactNode | 
 type GenieTableProps = GenieTableType<string, React.ReactNode[] | ReactNode | JSX.Element>;
 
 type HeaderCellProps = {
-  sorting: OrderType;
+  sorting: OrderType | undefined;
   column: string;
   sortTable: Dispatch<SetStateAction<OrderType>>;
   className: TypeOrderEachClass | undefined;
@@ -102,9 +104,9 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
       key={column}
       onClick={() => {
         if (isDescSorting) {
-          sortTable({ column, order: 'asc' });
+          sortTable({ column, order: 'asc' } as OrderType);
         } else {
-          sortTable({ column, order: 'desc' });
+          sortTable({ column, order: 'desc' } as OrderType);
         }
       }}
     >
@@ -162,7 +164,7 @@ const Header: React.FC<HeaderProps> = ({
   );
 };
 
-const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
+const GenieTable: React.FC<NonUndefined<GenieTableProps>> = ({
   children,
   sorting,
   setSorting,
@@ -214,9 +216,7 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
           <Header
             className={className}
             columns={header}
-            //@ts-expect-error
             sortTable={setSorting}
-             //@ts-expect-error
             sorting={sorting}
             sortColumn={sortColumn}
           />
