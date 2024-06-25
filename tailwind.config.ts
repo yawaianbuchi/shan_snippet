@@ -36,12 +36,12 @@ const config: Config = {
         },
         green: {
           DEFAULT: '#127C12',
-          '50': '##E7F2E7',
+          '50': '#E7F2E7',
         },
         gray: {
           DEFAULT: '#f7f7f7',
-          100: '#4E4E4E',
           400: '#adadad',
+          600: '#4E4E4E',
         },
       },
       boxShadow: {

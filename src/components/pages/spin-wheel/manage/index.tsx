@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import CusContainer from '@/components/ui/cuscontainer';
 import InfoCard, { InfoCardI } from '../InfoCard';
+import HeadingLine from '../HeadingLine';
 
 const datas: InfoCardI[] = [
   {
@@ -40,6 +42,7 @@ const datas: InfoCardI[] = [
 function ManagePage() {
   return (
     <CusContainer>
+      <HeadingLine />
       <div className="grid grid-cols-2 gap-4">
         {datas.map((item) => (
           <InfoCard key={item.label} {...item} />

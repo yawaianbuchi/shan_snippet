@@ -4,13 +4,14 @@ import { Card, Stack, Button } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import Text from '@/components/ui/typo';
-
+import { useRouter } from 'next/navigation';
 export interface InfoCardI {
   imgurl: string;
   label: string;
 }
 
 function InfoCard({ imgurl, label }: InfoCardI) {
+  const router = useRouter();
   return (
     <Card elevation={1} className="p-4 rounded-lg">
       <Stack direction={'row'} gap={2}>
@@ -22,18 +23,23 @@ function InfoCard({ imgurl, label }: InfoCardI) {
       </Stack>
       <div className="h-[1px] w-full bg-gray-200 my-3" />
       <Stack direction={'row'} justifyContent={'space-between'}>
-        <Text className="text-gray-100">Played by</Text>
+        <Text className="text-gray-600">Played by</Text>
         <Text fontWeight={500}>{formatAmount(39020)} Players</Text>
       </Stack>
       <Stack direction={'row'} justifyContent={'space-between'}>
-        <Text className="text-gray-100">Total win by players</Text>
+        <Text className="text-gray-600">Total win by players</Text>
         <Text fontWeight={500} className="text-green">
           {formatAmount(60388499)}
         </Text>
       </Stack>
-      <Button sx={{ background: 'green', marginTop: '1rem' }}>
-        <Icons.penline width={20} height={20} style={{ marginRight: '0.5rem' }} />
-        <Text className="text-white text-xs">Edit</Text>
+      <Button
+        startIcon={<Icons.penline width={20} height={20} style={{ marginRight: '0.5rem' }} />}
+        variant="contained"
+        disableRipple
+        className="bg-green capitalize hover:bg-green/90 mt-4"
+        onClick={() => router.push(`/spin-wheel/manage/${label}`)}
+      >
+        Edit
       </Button>
     </Card>
   );
