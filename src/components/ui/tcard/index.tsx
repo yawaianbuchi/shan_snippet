@@ -1,4 +1,4 @@
-import { cn } from '@/util';
+import { cn } from '@/utils/cn';
 import React from 'react';
 
 interface TCardProps extends React.HTMLAttributes<HTMLDivElement> {

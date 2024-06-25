@@ -61,7 +61,9 @@ const FormItemContext = React.createContext<FormItemContextValue>({} as FormItem
 interface FormItemProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
-const FormItem = forwardRef<FormItemProps, HTMLDivElement>(({ className }, ref) => {
+const FormItem = forwardRef<FormItemProps, HTMLDivElement>(({ className }: {
+  className?: string;
+}, ref) => {
   const id = React.useId();
   const { error } = useFormField();
 

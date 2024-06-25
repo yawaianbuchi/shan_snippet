@@ -7,7 +7,7 @@ import { Icons } from '@/components/ui/images/Icons';
 import Select from '@/components/ui/inputs/Select';
 import { Stack } from '@mui/material';
 import Link from 'next/link';
-import { SubmitHandler, useForm, useWatch } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { CREATEGAMETRACK_SCHEMA } from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@/components/ui/inputs/TextField';
@@ -62,7 +62,7 @@ export const CreateGameTrackForm = () => {
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => (
+              render={() => (
                 <Select
                   className="w-full"
                   onChange={() => console.log('first')}
@@ -84,7 +84,7 @@ export const CreateGameTrackForm = () => {
             <FormField
               name="vpn"
               control={form.control}
-              render={({ field }) => (
+              render={() => (
                 <Select
                   className="w-full"
                   onChange={() => console.log('first')}

@@ -12,6 +12,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@/components/ui/inputs/TextField';
 import { CREATEGAMETRACK_SCHEMA } from './schema';
 
+type FiledValues = {
+  operatorname: string;
+  url: string;
+  username: string;
+  password: string;
+  merchantcode: string;
+};
+
 export const EditGameTrackForm = () => {
   const form = useForm({
     resolver: zodResolver(CREATEGAMETRACK_SCHEMA),

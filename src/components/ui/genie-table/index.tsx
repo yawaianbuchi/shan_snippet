@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -87,7 +88,7 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
   sortColumn,
   indexNumber,
   columns,
-}) => {
+}: HeaderCellProps) => {
   const isDescSorting = sorting?.column === column && sorting?.order === 'desc';
 
   return (
@@ -129,7 +130,13 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
   );
 };
 
-const Header: React.FC<HeaderProps> = ({ columns, sorting, sortTable, className, sortColumn }) => {
+const Header: React.FC<HeaderProps> = ({
+  columns,
+  sorting,
+  sortTable,
+  className,
+  sortColumn,
+}: HeaderProps) => {
   return (
     <thead className="capitalize">
       <tr
@@ -207,9 +214,9 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
           <Header
             className={className}
             columns={header}
-            //@ts-ignore
+            //@ts-expect-error
             sortTable={setSorting}
-            //@ts-ignore
+             //@ts-expect-error
             sorting={sorting}
             sortColumn={sortColumn}
           />
