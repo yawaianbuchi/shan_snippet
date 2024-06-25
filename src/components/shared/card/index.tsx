@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paper as MCard, PaperProps } from '@mui/material';
-import { cn } from '@/util';
+import { cn } from '@/utils/cn';
 
 interface ICardProps extends PaperProps {
   children: React.ReactNode;

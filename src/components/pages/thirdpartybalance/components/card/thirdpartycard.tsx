@@ -3,11 +3,11 @@ import Button from '@/components/ui/button';
 import { Icons } from '@/components/ui/images/Icons';
 import Image from '@/components/ui/images/Image';
 import Text from '@/components/ui/typo';
-import { formatDate } from '@/util';
+import { formatDate } from '@/utils';
 import { Box, Stack } from '@mui/material';
 import React from 'react';
 import ContactDialogBox from '../ContactDialogBox';
-import { formatNumber } from '@/util/numberAbbrevation';
+import { formatNumber } from '@/utils/numberAbbrevation';
 
 const ThirdPartyCard = () => {
   return (

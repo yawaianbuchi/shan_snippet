@@ -4,8 +4,8 @@ import Text from '@/components/ui/typo';
 import { Icons } from '@/components/ui/images/Icons';
 import { Box, Stack } from '@mui/material';
 import Image from '@/components/ui/images/Image';
-import { cn } from '@/util';
-import { formatNumber } from '@/util/numberAbbrevation';
+import { cn } from '@/utils/cn';
+import { formatNumber } from '@/utils/numberAbbrevation';
 
 type OverviewCardProps = {
   title: string;
