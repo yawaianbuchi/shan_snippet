@@ -1,7 +1,6 @@
 'use client';
 import * as React from 'react';
 import { DialogProps, Dialog as MDialog } from '@mui/material';
-import { Icons } from '../images/Icons';
 
 type MDialogProps = DialogProps & React.PropsWithChildren;
 interface CustomDialogProps extends MDialogProps {

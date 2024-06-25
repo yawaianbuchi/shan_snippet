@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { Chip as MChip, ChipProps as MChipProps, styled, Theme } from '@mui/material';
-import { cn } from '@/util';
+import { Chip as MChip, ChipProps as MChipProps, styled } from '@mui/material';
+import { cn } from '@/utils/cn';
 
 type Props = MChipProps;
 
@@ -30,7 +30,7 @@ const getVariantStyles = (type: ChipProps['type']) => {
   }
 };
 
-const ChipStyled = styled(MChip)<ChipProps>(({ theme, type }) => ({
+const ChipStyled = styled(MChip)<ChipProps>(({ type }) => ({
   ...getVariantStyles(type),
 }));
 

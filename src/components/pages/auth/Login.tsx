@@ -1,18 +1,14 @@
 'use client';
-import Avatar from '@mui/material/Avatar';
+
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import TextField from '@/components/ui/inputs/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@/components/ui/button';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import { Form, FormField, FormItem } from '@/components/ui/form';
+import { Form } from '@/components/ui/form';
 import { Controller, useForm } from 'react-hook-form';
 import { LoginForm, loginSchema } from '@/types/login';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -66,7 +62,7 @@ const Login = () => {
           <Controller
             name="password"
             control={form.control}
-            render={({ field }) => (
+            render={() => (
               <TextField
                 margin="normal"
                 required

@@ -1,22 +1,20 @@
 'use client';
 import Button from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
-import Checkbox from '@/components/ui/inputs/Checkbox';
 import TextField from '@/components/ui/inputs/TextField';
-import { PasswordRestForm, SignUpForm, passwordRestSchema, signupSchema } from '@/types/login';
+import { PasswordRestForm, passwordRestSchema } from '@/types/login';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 const PasswordReset = () => {
   const form = useForm<PasswordRestForm>({
     resolver: zodResolver(passwordRestSchema),
   });
 
-  const submit = async (data: PasswordRestForm) => {};
+  const submit = async (_data: PasswordRestForm) => {};
 
   return (
     <Form {...form}>

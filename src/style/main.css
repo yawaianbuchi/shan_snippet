@@ -1,20 +1,9 @@
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar{
-    width: 4px;
-    @apply bg-gray-50
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar {
+  width: 4px;
+  @apply bg-gray-50;
 }
 
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar-thumb{
-    @apply bg-green
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar-thumb {
+  @apply bg-green;
 }
 
-.css-hwkq3c-MuiInputBase-root-MuiFilledInput-root {
-    background-color: transparent !important;
-    border: 1px solid #d4d4d4;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.css-hwkq3c-MuiInputBase-root-MuiFilledInput-root::before,
-.css-hwkq3c-MuiInputBase-root-MuiFilledInput-root::after{
-   border: none !important;
-}

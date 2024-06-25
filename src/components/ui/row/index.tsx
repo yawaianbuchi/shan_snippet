@@ -1,4 +1,5 @@
-import { cn } from '@/util';
+import React from 'react';
+import { cn } from '@/utils/cn';
 
 interface RowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   className?: string;

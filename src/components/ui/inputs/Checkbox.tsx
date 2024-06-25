@@ -3,7 +3,7 @@ import { CheckboxProps as MCheckboxProps, Checkbox as MCheckbox, styled } from '
 
 interface CheckboxProps extends MCheckboxProps {}
 
-const CheckboxStyled = styled(MCheckbox)<{}>(({ theme }) => ({}));
+const CheckboxStyled = styled(MCheckbox)<{}>(() => ({}));
 
 const Checkbox: React.FC<CheckboxProps> = ({ ...rest }) => {
   return <CheckboxStyled {...rest} />;

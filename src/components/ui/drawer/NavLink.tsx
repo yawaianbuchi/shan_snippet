@@ -1,4 +1,4 @@
-import { cn } from '@/util';
+import { cn } from '@/utils/cn';
 import { ListItem, ListItemButton } from '@mui/material';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';

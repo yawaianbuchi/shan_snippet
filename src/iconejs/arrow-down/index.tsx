@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ArrowDown: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...rest }) => {
   return (
     <svg

@@ -3,7 +3,7 @@ import { Collapse, ListItem, ListItemButton, ListItemIcon, ListItemText } from '
 import React from 'react';
 import { Icons } from '../images/Icons';
 import { MenuProps } from '@/constants/Menu';
-import { cn } from '@/util';
+import { cn } from '@/utils/cn';
 import { usePathname } from 'next/navigation';
 import NavLink from './NavLink';
 import { ToggleState, useToggle } from '@/hooks/useToggle';

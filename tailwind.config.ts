@@ -19,7 +19,7 @@ const config: Config = {
         },
         green: {
           DEFAULT: "#127C12",
-          "50": "##E7F2E7",
+          "50": "#E7F2E7",
         },
         gray: {
           DEFAULT: "#f7f7f7",
@@ -36,12 +36,16 @@ const config: Config = {
         },
         green: {
           DEFAULT: "#127C12",
-          "50": "##E7F2E7",
+          "50": "#E7F2E7",
         },
         gray: {
           DEFAULT: "#f7f7f7",
+          secondary:"#4e4e4e",
           400: "#adadad",
         },
+        black: {
+          DEFAULT: '#1E1E1E'
+        }
       },
       boxShadow: {
         DEFAULT: "0px 8px 10px 0px #127C120D",

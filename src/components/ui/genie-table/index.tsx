@@ -4,10 +4,10 @@ import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { IpaginateType } from '@/hooks/usePaginate';
 import SmallLoader from '../small-loader';
-import { useSizer } from '@/hooks/useSizer';
 import PaginationUi from '../pagination-ui';
 import Pagination from '../pagination';
 import ArrowDown from '@/iconejs/arrow-down';
+import React from 'react';
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
@@ -38,24 +38,24 @@ type TypeOrderEachClass = Partial<Record<KeyClassOrder, string>>;
 
 type HeaderType = {
   columns: string[] | undefined;
-  sorting: OrderType;
+  sorting: OrderType | undefined;
   className: TypeOrderEachClass | undefined;
   sortColumn: boolean;
-  sortTable: Dispatch<SetStateAction<OrderType>>;
+  sortTable?: Dispatch<SetStateAction<OrderType>>;
 };
 
 type HeaderProps = HeaderType;
 
 type GenieTableType<H extends string, C extends React.ReactNode[] | ReactNode | JSX.Element> = {
   header: H[];
-  children: C;
-  paginate: boolean;
-  sortColumn: boolean;
-  total: number;
-  className: TypeOrderEachClass | undefined;
-  loading: boolean;
-  sorting: OrderType;
-  setSorting: Dispatch<SetStateAction<OrderType>>;
+  children?: C;
+  paginate?: boolean;
+  sortColumn?: boolean;
+  total?: number;
+  className?: TypeOrderEachClass | undefined;
+  loading?: boolean;
+  sorting?: OrderType;
+  setSorting?: Dispatch<SetStateAction<OrderType>>;
   currentPage: PaginateProps['currentPage'];
   goToNextPage: PaginateProps['goToNextPage'];
   goToPreviousPage: PaginateProps['goToPreviousPage'];
@@ -63,17 +63,17 @@ type GenieTableType<H extends string, C extends React.ReactNode[] | ReactNode | 
   paginationRange: PaginateProps['paginationRange'];
   pageNumbersCount: PaginateProps['pageNumbersCount'];
   setRecordPerPage: PaginateProps['setRecordPerPage'];
-  data: Array<any>;
-  bodyText: string;
-  show: string;
+  data?: Array<unknown>;
+  bodyText?: string;
+  show?: string;
 };
 
 type GenieTableProps = GenieTableType<string, React.ReactNode[] | ReactNode | JSX.Element>;
 
 type HeaderCellProps = {
-  sorting: OrderType;
+  sorting: OrderType | undefined;
   column: string;
-  sortTable: Dispatch<SetStateAction<OrderType>>;
+  sortTable: Dispatch<SetStateAction<OrderType>> | undefined;
   className: TypeOrderEachClass | undefined;
   sortColumn: boolean;
   indexNumber: number;
@@ -88,7 +88,7 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
   sortColumn,
   indexNumber,
   columns,
-}) => {
+}: HeaderCellProps) => {
   const isDescSorting = sorting?.column === column && sorting?.order === 'desc';
 
   return (
@@ -96,15 +96,15 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
       className={cn(
         `font-semibold whitespace-nowrap min-w-[90px] px-4 text-[13px]  text-[#127C12]`,
         `${className?.tdheadClass} ${indexNumber === 0 && 'rounded-tl-lg rounded-bl-lg'} ${
-          indexNumber === columns.length - 1 && 'rounded-tr-lg rounded-br-lg'
+          indexNumber === columns!.length - 1 && 'rounded-tr-lg rounded-br-lg'
         }`
       )}
       key={column}
       onClick={() => {
         if (isDescSorting) {
-          sortTable({ column, order: 'asc' });
+          sortTable!({ column, order: 'asc' } as OrderType);
         } else {
-          sortTable({ column, order: 'desc' });
+          sortTable!({ column, order: 'desc' } as OrderType);
         }
       }}
     >
@@ -130,7 +130,13 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
   );
 };
 
-const Header: React.FC<HeaderProps> = ({ columns, sorting, sortTable, className, sortColumn }) => {
+const Header: React.FC<HeaderProps> = ({
+  columns,
+  sorting,
+  sortTable,
+  className,
+  sortColumn,
+}: HeaderProps) => {
   return (
     <thead className="capitalize">
       <tr
@@ -192,8 +198,8 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
       >
         {loading && (
           <div className="absolute bg-[#ffffff50]  top-0 left-0 w-full h-full z-[60] flex justify-center items-center">
-            <div  className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[70]'>
-            <SmallLoader />
+            <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[70]">
+              <SmallLoader />
             </div>
             <div className="absolute top-0 left-0 w-full bg-[#ffffff50] z-50  blur-[20px] h-full  flex justify-center items-center" />
           </div>
@@ -208,9 +214,7 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
           <Header
             className={className}
             columns={header}
-            //@ts-ignore
             sortTable={setSorting}
-            //@ts-ignore
             sorting={sorting}
             sortColumn={sortColumn}
           />
