@@ -7,12 +7,11 @@ import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import { data } from '../../config';
-import Chip from '@/components/ui/chip';
-import ChipUi from '../../custom-chip';
 import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
 import Block from '@/iconejs/block';
 import dynamic from 'next/dynamic';
+import ChipUi from '@/components/ui/custom-chip';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
 
