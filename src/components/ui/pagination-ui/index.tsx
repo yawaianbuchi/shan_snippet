@@ -51,7 +51,7 @@ const PaginationUi = ({
   const list = [5, 7, 10, 20];
   return (
     <div className="">
-      <div className="flex flex-row justify-between items-center h-[35px]   bg-white">
+      <div className="flex flex-row justify-between items-center h-[35px]    bg-white">
         <div className="px-4 border h-full overflow-hidden rounded-md">
           <div className="flex  h-full justify-center items-center  space-x-[10px]">
             <div className="" onClick={handlePrevious}>

@@ -180,7 +180,7 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
   return (
     <div
       className={cn(
-        `w-full min-h-[300px] relative rounded-md  cursor-pointer ${paginate && 'pb-[60px]'}`,
+        `w-full min-h-[300px] relative rounded-md  cursor-pointer ${paginate && 'pb-[70px]'}`,
         className?.tableContainerClass
       )}
     >
@@ -192,7 +192,9 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
       >
         {loading && (
           <div className="absolute bg-[#ffffff50]  top-0 left-0 w-full h-full z-[60] flex justify-center items-center">
+            <div  className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[70]'>
             <SmallLoader />
+            </div>
             <div className="absolute top-0 left-0 w-full bg-[#ffffff50] z-50  blur-[20px] h-full  flex justify-center items-center" />
           </div>
         )}
@@ -218,7 +220,7 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
       {paginate && (
         <>
           {show == 'default' && (
-            <div className="absolute bottom-0 left-0 w-full">
+            <div className="absolute py-3 bottom-0 left-0 w-full">
               <PaginationUi
                 currentPage={currentPage}
                 total={total}
