@@ -1,10 +1,8 @@
 'use client';
-import GenieTable from '@/components/ui/genie-table';
 import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
 import React, { useMemo } from 'react';
 import BradeCurmb from '../../breadcumbs';
-
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
@@ -14,8 +12,13 @@ import ChipUi from '../../custom-chip';
 import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
 import Block from '@/iconejs/block';
+import dynamic from 'next/dynamic';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
+
+const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
+  ssr: false,
+});
 
 const AllPlayerList = () => {
   const header = [
