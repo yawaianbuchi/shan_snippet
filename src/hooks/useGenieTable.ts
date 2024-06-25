@@ -9,6 +9,8 @@ type Options = {
   api?: boolean;
 };
 
+
+
 export const useGenieTable = <T extends Partial<Options>>({
   total,
   data: factory = [],
