@@ -1,3 +1,4 @@
+import React from 'react';
 import { Slide, SlideProps } from '@mui/material';
 
 export const SlideTransitions = (props: SlideProps) => {

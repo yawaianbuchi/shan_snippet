@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Chip as MChip, ChipProps as MChipProps, styled, Theme } from '@mui/material';
-import { cn } from '@/util';
+import { cn } from '@/utils/cn';
 
 type Props = MChipProps;
 

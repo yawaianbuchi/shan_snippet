@@ -1,8 +1,7 @@
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+
 import dayjs from 'dayjs';
 
-const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
+
 
 const formatDate = (date: Date | string, format?: string) =>
   dayjs(new Date(date)).format(format ?? 'DD MMM YYYY');
@@ -34,4 +33,4 @@ const formatNumberAbbreviation = (number: number) => {
   // If number is less than 1000, return it without formatting
   return number;
 };
-export { cn, formatDate, formatNumberAbbreviation };
+export { formatDate, formatNumberAbbreviation };

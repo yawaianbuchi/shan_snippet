@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { cn } from '@/util';
 import { Stack, StackProps } from '@mui/material';
 import React from 'react';

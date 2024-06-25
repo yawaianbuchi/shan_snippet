@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Grid from '@/components/layout/Grid';
 import Button from '@/components/ui/button';
 import { Form, FormField } from '@/components/ui/form';
@@ -59,7 +60,7 @@ export const EditGameTrackForm = () => {
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => (
+              render={() => (
                 <Select
                   className="w-full"
                   onChange={() => console.log('first')}
@@ -79,7 +80,7 @@ export const EditGameTrackForm = () => {
             <FormField
               name="vpn"
               control={form.control}
-              render={({ field }) => (
+              render={() => (
                 <Select
                   className="w-full"
                   onChange={() => console.log('first')}

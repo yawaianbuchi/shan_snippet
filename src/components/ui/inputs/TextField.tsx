@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@/util';
+import { cn } from '@/utils/cn';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
   OutlinedTextFieldProps,
@@ -8,9 +8,6 @@ import {
   TextFieldVariants,
   InputAdornment,
   IconButton,
-  FormControl,
-  OutlinedInput,
-  InputLabel,
 } from '@mui/material';
 import React, { forwardRef } from 'react';
 
@@ -20,7 +17,7 @@ interface TextFieldProps extends Omit<OutlinedTextFieldProps, 'variant'> {
   password?: boolean;
 }
 
-const TextFieldStyled = styled(MTextField)<TextFieldProps>(({ theme }) => ({
+const TextFieldStyled = styled(MTextField)<TextFieldProps>(() => ({
   backgroundColor: 'transparent',
 }));
 
@@ -31,9 +28,9 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
   const { label, value, password, variant = 'outlined' } = rest;
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-  };
+  // const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   event.preventDefault();
+  // };
   return password ? (
     <TextFieldStyled
       ref={ref}

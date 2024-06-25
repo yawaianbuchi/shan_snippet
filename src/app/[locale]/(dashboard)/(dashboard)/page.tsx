@@ -9,7 +9,7 @@ import initTranslations from '@/app/i18n';
 import { LANG_NAMESPACE } from '@/constants/namespace';
 import { Props } from '@/types/Params';
 
-const DashboardPage: NextPage<Props> = async ({ params: { locale } }) => {
+const DashboardPage: NextPage<Props> = async ({ params: { locale } }: Props) => {
   const { t } = await initTranslations(locale, LANG_NAMESPACE);
   return (
     <Card className="bg-green p-6">

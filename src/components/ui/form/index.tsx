@@ -8,11 +8,9 @@ import {
   FormProvider,
   useFormContext,
 } from 'react-hook-form';
-import { TextFieldProps as CustomTextFieldProps } from '../inputs/TextField';
-import { cn } from '@/util';
-import TextField from '../inputs/TextField'; // Import your custom TextField
+import { cn } from '@/utils/cn'; // Import your custom TextField
 import { forwardRef } from 'react';
-import { FormControl as MUIFormControl, FormHelperText, InputLabel } from '@mui/material';
+import { InputLabel } from '@mui/material';
 import { Icons } from '../images/Icons';
 
 const Form = FormProvider;
@@ -60,28 +58,29 @@ type FormItemContextValue = {
 
 const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
 
-const FormItem = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => {
-    const id = React.useId();
-    const { error } = useFormField();
+interface FormItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
+const FormItem = forwardRef<FormItemProps, HTMLDivElement>(({ className }, ref) => {
+  const id = React.useId();
+  const { error } = useFormField();
 
-    return (
-      <FormItemContext.Provider value={{ id }}>
-        <div className="mb-8">
-          <div ref={ref} className={cn('space-y-1', className)} {...props} />
-          {error && (
-            <div className="text-xs text-red-600 flex items-center mt-1">
-              <div className="me-1">
-                <Icons.warning />
-              </div>
-              {error?.message}
+  return (
+    <FormItemContext.Provider value={{ id }}>
+      <div ref={ref as React.LegacyRef<HTMLDivElement>} className={cn('mb-8', className)}>
+        {/* <div className={cn('space-y-1', className)} {...props} /> */}
+        {error && (
+          <div className="text-xs text-red-600 flex items-center mt-1">
+            <div className="me-1">
+              <Icons.warning />
             </div>
-          )}
-        </div>
-      </FormItemContext.Provider>
-    );
-  }
-);
+            {error?.message}
+          </div>
+        )}
+      </div>
+    </FormItemContext.Provider>
+  );
+});
 FormItem.displayName = 'FormItem';
 
 const FormLabel = forwardRef<HTMLLabelElement, React.ComponentPropsWithoutRef<typeof InputLabel>>(

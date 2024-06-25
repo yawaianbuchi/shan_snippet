@@ -14,7 +14,7 @@ type GameTrackDetailsProps = {
   };
 };
 
-const GameTrackDetails: NextPage<GameTrackDetailsProps> = ({ params: { id } }) => {
+const GameTrackDetails: NextPage<GameTrackDetailsProps> = ({ params: { id } }:GameTrackDetailsProps) => {
   return (
     <>
       <BackButton href="/game-track-panel" />

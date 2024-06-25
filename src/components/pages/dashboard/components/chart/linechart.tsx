@@ -1,6 +1,6 @@
 'use client';
 
-import { formatDate, formatNumberAbbreviation } from '@/util';
+import { formatDate, formatNumberAbbreviation } from '@/utils';
 import dayjs from 'dayjs';
 import React from 'react';
 import Chart from 'react-apexcharts';
@@ -12,45 +12,6 @@ import Link from 'next/link';
 
 dayjs.extend(weekday);
 
-// const apexChartData = {
-//   series: [
-//     {
-//       name: 'Attendance(%)',
-//       data: [45, 76, 72, 68, 57, 24, 23],
-//     },
-//   ],
-//   options: {
-//     chart: {
-//       title: {
-//         text: 'Transactions',
-//       },
-//       yaxis: {
-//         max: 100,
-//         categories: [0, 25, 50, 75, 100, 120],
-//       },
-//       xaxis: {
-//         title: { text: 'Days' },
-//         categories: ['20 Mar', '21 Mar', '22 Mar', '23 Mar', '24 Mar', '25 Mar', '26 Mar'],
-//       },
-//       dropShadow: {
-//         enabled: true,
-//         color: '#000',
-//         top: 18,
-//         left: 7,
-//         blur: 10,
-//         opacity: 0.2,
-//       },
-//       zoom: {
-//         enabled: false,
-//       },
-//     },
-//     type: 'line',
-//     colors: ['#F31559'],
-//     dataLabels: {
-//       enabled: false,
-//     },
-//   },
-// };
 const options = {
   dataLabels: {
     enabled: false,
@@ -90,7 +51,7 @@ const options = {
   },
   stroke: {
     width: [3, 3, 3],
-    curve: 'smooth', // Fixed the type error here
+    // curve: 'smooth', // Fixed the type error here
   },
   xaxis: {
     label: {
@@ -98,13 +59,13 @@ const options = {
     },
   },
   yaxis: {
-    logbase: 1000,
     min: 0,
     max: (max: number) => (max > 1e7 ? Math.ceil(max) : 1e7),
     stepSize: 1e6,
     labels: {
       formatter: function (value: number) {
-        return formatNumberAbbreviation(value);
+        return formatNumberAbbreviation(value).toString();
+        // return value
       },
       style: {
         colors: '#555F6D',
@@ -160,7 +121,6 @@ const LineChart = () => {
 };
 
 const ChartHeader = () => {
- 
   return (
     <Stack direction="row" justifyContent="space-between" alignItems="center">
       <Text className="font-semibold text-lg">Transactions</Text>

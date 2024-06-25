@@ -58,6 +58,10 @@ export default function ResponsiveDrawer(props: Props) {
     });
   };
 
+  if (isPending) {
+    return <div className="bg-black/45 w-full h-full" />;
+  }
+
   const drawer = (
     <Box className="relative">
       <Toolbar>

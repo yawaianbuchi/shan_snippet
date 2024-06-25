@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { usePathname, useRouter } from 'next/navigation';
 import { startTransition } from 'react';
 import { useTranslation } from 'react-i18next';

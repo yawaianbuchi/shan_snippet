@@ -21,12 +21,12 @@ const LocalizationPopUp = () => {
   const [value, { toggle }] = useToggle(false) as [boolean, ToggleState];
   const { handleSelect, currentLocale } = useChangeLng();
 
-  const checkCurrentLocale = LOCALIZATION.find((item) => item.value === currentLocale)
+  const checkCurrentLocale = LOCALIZATION.find((item) => item.value === currentLocale);
   const renderRows = () => {
     return LOCALIZATION.map((item) => {
       return (
         <Button
-        key={item.value}
+          key={item.value}
           onClick={() => handleSelect(item)}
           className="w-full border-none text-black normal-case hover:border-none"
           variant="outlined"
@@ -51,17 +51,12 @@ const LocalizationPopUp = () => {
           className="w-full border-none flex items-center justify-center gap-2 text-black normal-case hover:border-none p-0"
         >
           <Image
-            src={
-              checkCurrentLocale?.img ??
-              '/images/flag/br.svg'
-            }
+            src={checkCurrentLocale?.img ?? '/images/flag/br.svg'}
             alt="british_flag"
             width={20}
             height={20}
           />
-          <Text>
-            {checkCurrentLocale?.label ?? 'English'}{' '}
-          </Text>
+          <Text>{checkCurrentLocale?.label ?? 'English'} </Text>
         </button>
       </Card>
 

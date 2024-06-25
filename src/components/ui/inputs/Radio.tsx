@@ -3,7 +3,7 @@ import { RadioProps as MRadioProps, Radio as MRadio, styled } from '@mui/materia
 
 interface RadioProps extends MRadioProps {}
 
-const RadioStyled = styled(MRadio)<{}>(({ theme }) => ({}));
+const RadioStyled = styled(MRadio)<{}>(() => ({}));
 
 const Radio: React.FC<RadioProps> = ({ ...rest }) => {
   return <RadioStyled {...rest} />;

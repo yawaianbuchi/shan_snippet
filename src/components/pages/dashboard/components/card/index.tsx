@@ -50,7 +50,7 @@ const OverviewCard = ({ title, amount, imgName, increase = true }: OverviewCardP
             </Text>
           </Stack>
 
-          <Text className="font-bold text-lg md:text-3xl">+{formatNumber(amount,0)}</Text>
+          <Text className="font-bold text-lg md:text-3xl">+{formatNumber(amount, 0)}</Text>
         </Box>
       </Stack>
     </Card>
