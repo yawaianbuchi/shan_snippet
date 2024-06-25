@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import {  useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 const PasswordReset = () => {
   const form = useForm<PasswordRestForm>({

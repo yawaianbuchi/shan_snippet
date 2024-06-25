@@ -12,7 +12,7 @@ import { FaRegTrashAlt, FaRegTimesCircle, FaRegCopy, FaCalendarAlt } from 'react
 import { HiMiniArrowLongLeft } from 'react-icons/hi2';
 import { BiMessageRoundedError } from 'react-icons/bi';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import { MdBlockFlipped } from "react-icons/md";
+import { MdBlockFlipped } from 'react-icons/md';
 
 export const Icons = {
   logo: ({ ...props }) => (
@@ -388,7 +388,7 @@ export const Icons = {
   calendar: FaCalendarAlt,
   eyeOpen: FiEye,
   eyeClose: FiEyeOff,
-  block:MdBlockFlipped,
+  block: MdBlockFlipped,
   inboxTwo: () => (
     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

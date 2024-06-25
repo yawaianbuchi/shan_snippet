@@ -49,12 +49,12 @@ export const CreateGameTrackForm = () => {
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => <TextField variant="filled" label="username" {...field} />}
+              render={({ field }) => <TextField variant="filled" label="Username" {...field} />}
             />
             <FormField
               name="password"
               control={form.control}
-              render={({ field }) => <TextField variant="filled" label="password" {...field} />}
+              render={({ field }) => <TextField variant="filled" label="Password" {...field} />}
             />
           </Stack>
 

@@ -61,28 +61,35 @@ const FormItemContext = React.createContext<FormItemContextValue>({} as FormItem
 interface FormItemProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
-const FormItem = forwardRef<FormItemProps, HTMLDivElement>(({ className }: {
-  className?: string;
-}, ref) => {
-  const id = React.useId();
-  const { error } = useFormField();
+const FormItem = forwardRef<FormItemProps, HTMLDivElement>(
+  (
+    {
+      className,
+    }: {
+      className?: string;
+    },
+    ref
+  ) => {
+    const id = React.useId();
+    const { error } = useFormField();
 
-  return (
-    <FormItemContext.Provider value={{ id }}>
-      <div ref={ref as React.LegacyRef<HTMLDivElement>} className={cn('mb-8', className)}>
-        {/* <div className={cn('space-y-1', className)} {...props} /> */}
-        {error && (
-          <div className="text-xs text-red-600 flex items-center mt-1">
-            <div className="me-1">
-              <Icons.warning />
+    return (
+      <FormItemContext.Provider value={{ id }}>
+        <div ref={ref as React.LegacyRef<HTMLDivElement>} className={cn('mb-8', className)}>
+          {/* <div className={cn('space-y-1', className)} {...props} /> */}
+          {error && (
+            <div className="text-xs text-red-600 flex items-center mt-1">
+              <div className="me-1">
+                <Icons.warning />
+              </div>
+              {error?.message}
             </div>
-            {error?.message}
-          </div>
-        )}
-      </div>
-    </FormItemContext.Provider>
-  );
-});
+          )}
+        </div>
+      </FormItemContext.Provider>
+    );
+  }
+);
 FormItem.displayName = 'FormItem';
 
 const FormLabel = forwardRef<HTMLLabelElement, React.ComponentPropsWithoutRef<typeof InputLabel>>(

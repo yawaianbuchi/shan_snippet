@@ -17,8 +17,40 @@ interface TextFieldProps extends Omit<OutlinedTextFieldProps, 'variant'> {
   password?: boolean;
 }
 
-const TextFieldStyled = styled(MTextField)<TextFieldProps>(() => ({
-  backgroundColor: 'transparent',
+const TextFieldStyled = styled(MTextField)(({ theme }) => ({
+  '& .MuiFilledInput-root': {
+    backgroundColor: 'transparent',
+    border: '1px solid #e7e7e7',
+    borderRadius: '10px',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&.Mui-focused': {
+      backgroundColor: 'transparent',
+    },
+    '&:before': {
+      borderBottom: 'none',
+    },
+    '&:after': {
+      borderBottom: 'none',
+    },
+  },
+  '& .MuiFilledInput-underline:before': {
+    borderBottom: 'none',
+  },
+  '& .MuiFilledInput-underline:after': {
+    borderBottom: 'none',
+  },
+  '& .MuiInputLabel-filled': {
+    color: theme.palette.text.primary,
+    '&.Mui-focused': {
+      color: theme.palette.primary.main,
+    },
+  },
+  '& .css-yfozom-MuiInputBase-root-MuiFilledInput-root:hover:not(.Mui-disabled, .Mui-error):before':
+    {
+      borderBottom: 'none',
+    },
 }));
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
