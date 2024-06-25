@@ -43,7 +43,7 @@ const AllPlayerList = () => {
     const item = value.map((item: renderType) => (
       <Row key={item.id}>
         <Item>{item.id}.</Item>
-        <Item>
+        <Item className='min-w-[195px]'>
           <div className="flex space-x-2">
             <img src={item.img} className="w-[37px] h-[37px] rounded-full object-cover" />
             <div className="">
