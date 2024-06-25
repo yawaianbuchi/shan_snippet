@@ -43,6 +43,15 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
       value={value}
       fullWidth
       type={showPassword ? 'text' : 'password'}
+      InputProps={{
+        endAdornment: (
+          <InputAdornment position="end">
+            <IconButton onClick={handleClickShowPassword} edge="end">
+              {showPassword ? <Visibility /> : <VisibilityOff />}
+            </IconButton>
+          </InputAdornment>
+        ),
+      }}
       {...rest}
     />
   ) : (

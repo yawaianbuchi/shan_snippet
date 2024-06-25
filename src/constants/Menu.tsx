@@ -12,7 +12,7 @@ type MENU_LISTS_PROPS = MenuProps & {
 };
 
 export const MENU_LISTS: MENU_LISTS_PROPS[] = [
-  { label: 'dashboard', icon: <Icons.dashboard />, href: '/dashboard' },
+  { label: 'dashboard', icon: <Icons.dashboard />, href: '/' },
   {
     label: 'third party balance',
     icon: <Icons.card />,

@@ -35,7 +35,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
         {...rest}
       >
         {options.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
+          <MenuItem key={option.value} value={option.value} className='w-full'>
             {option.label}
           </MenuItem>
         ))}

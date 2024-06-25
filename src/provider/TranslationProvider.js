@@ -7,8 +7,8 @@ import { createInstance } from 'i18next';
 export default function TranslationsProvider({
   children,
   locale,
-  namespaces, 
-  resources 
+  namespaces,
+  resources
 }) {
   const i18n = createInstance();
 
