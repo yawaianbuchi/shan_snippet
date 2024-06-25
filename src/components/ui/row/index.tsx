@@ -13,7 +13,7 @@ const Row = ({
   children?: React.ReactNode | React.ReactNode[] | JSX.Element;
 } & RowProps) => {
   return (
-    <tr key={key} className={cn('px-4 h-[63px] ', className)}>
+    <tr key={key} className={cn('px-4 h-[66px] ', className)}>
       {children}
     </tr>
   );

@@ -76,7 +76,7 @@ const AllPlayerList = () => {
     <TCard>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
       <GenieTable
-        show="custom"
+        show="default"
         {...controls}
         header={header}
         paginate
