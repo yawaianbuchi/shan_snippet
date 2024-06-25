@@ -1,5 +1,4 @@
 'use client';
-
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -9,7 +8,6 @@ import PaginationUi from '../pagination-ui';
 import Pagination from '../pagination';
 import ArrowDown from '@/iconejs/arrow-down';
 import React from 'react';
-
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
@@ -75,14 +73,14 @@ type GenieTableProps = GenieTableType<string, React.ReactNode[] | ReactNode | JS
 type HeaderCellProps = {
   sorting: OrderType | undefined;
   column: string;
-  sortTable: Dispatch<SetStateAction<OrderType>>;
+  sortTable: Dispatch<SetStateAction<OrderType>> | undefined;
   className: TypeOrderEachClass | undefined;
   sortColumn: boolean;
   indexNumber: number;
   columns: string[];
 };
 
-const HeaderCell: React.FC<Partial<HeaderCellProps>> = ({
+const HeaderCell: React.FC<HeaderCellProps> = ({
   sorting,
   column,
   sortTable,
@@ -164,7 +162,7 @@ const Header: React.FC<HeaderProps> = ({
   );
 };
 
-const GenieTable: React.FC<NonUndefined<GenieTableProps>> = ({
+const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
   children,
   sorting,
   setSorting,
