@@ -94,9 +94,9 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
   return (
     <td
       className={cn(
-        `font-semibold whitespace-nowrap min-w-[90px] px-4 text-[13px]  text-[#127C12]`,
-        `${className?.tdheadClass} ${indexNumber === 0 && 'rounded-tl-lg rounded-bl-lg'} ${
-          indexNumber === columns!.length - 1 && 'rounded-tr-lg rounded-br-lg'
+        `min-w-[90px] whitespace-nowrap px-4 text-[13px] font-semibold text-[#127C12]`,
+        `${className?.tdheadClass} ${indexNumber === 0 && 'rounded-bl-lg rounded-tl-lg'} ${
+          indexNumber === columns!.length - 1 && 'rounded-br-lg rounded-tr-lg'
         }`
       )}
       key={column}
@@ -111,13 +111,13 @@ const HeaderCell: React.FC<HeaderCellProps> = ({
       <div className={cn('flex items-center justify-between', className?.headInnerDivClass)}>
         <p> {column}</p>
         {sortColumn && (
-          <div className="w-full text-right opacity-0 hover:opacity-100 transition-all duration-300 ease-in-out">
-            <span className="inline-block ">
+          <div className="w-full text-right opacity-0 transition-all duration-300 ease-in-out hover:opacity-100">
+            <span className="inline-block">
               <ArrowDown color="#127C12" />
             </span>
 
             <span
-              className={`mr-2 inline-block transition-all ease-in-out duration-300 ${
+              className={`mr-2 inline-block transition-all duration-300 ease-in-out ${
                 isDescSorting ? 'rotate-[180deg] opacity-100' : 'opacity-0'
               }`}
             >
@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({
     <thead className="capitalize">
       <tr
         className={cn(
-          'text-center  h-[40px] text-[15px] font-[500] bg-[#E7F2E7] ',
+          'h-[40px] bg-[#E7F2E7] text-center text-[15px] font-[500]',
           className?.rowHeadClass
         )}
       >
@@ -186,31 +186,31 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
   return (
     <div
       className={cn(
-        `w-full min-h-[300px] relative rounded-md  cursor-pointer ${paginate && 'pb-[70px]'}`,
+        `relative min-h-[300px] w-full cursor-pointer rounded-md ${paginate && 'pb-[70px]'}`,
         className?.tableContainerClass
       )}
     >
       <div
         className={cn(
-          'w-full h-full overflow-x-scroll scrollbar-hide',
+          'h-full w-full overflow-x-scroll scrollbar-hide',
           className?.wrapperTableClass
         )}
       >
         {loading && (
-          <div className="absolute bg-[#ffffff50]  top-0 left-0 w-full h-full z-[60] flex justify-center items-center">
-            <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[70]">
+          <div className="absolute left-0 top-0 z-[60] flex h-full w-full items-center justify-center bg-[#ffffff50]">
+            <div className="absolute left-[50%] top-[50%] z-[70] translate-x-[-50%] translate-y-[-50%]">
               <SmallLoader />
             </div>
-            <div className="absolute top-0 left-0 w-full bg-[#ffffff50] z-50  blur-[20px] h-full  flex justify-center items-center" />
+            <div className="absolute left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-[#ffffff50] blur-[20px]" />
           </div>
         )}
         {data.length == 0 && !loading && (
-          <div className="absolute top-0 left-0 w-full  h-full  flex justify-center items-center">
+          <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
             <p>{bodyText}</p>
           </div>
         )}
 
-        <table className={cn('w-full h-full ', className?.tableSelfClass)}>
+        <table className={cn('h-full w-full', className?.tableSelfClass)}>
           <Header
             className={className}
             columns={header}
@@ -224,7 +224,7 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
       {paginate && (
         <>
           {show == 'default' && (
-            <div className="absolute py-3 bottom-0 left-0 w-full">
+            <div className="absolute bottom-0 left-0 w-full py-3">
               <PaginationUi
                 currentPage={currentPage}
                 total={total}

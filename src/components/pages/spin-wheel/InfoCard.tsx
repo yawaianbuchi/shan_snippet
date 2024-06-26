@@ -1,5 +1,5 @@
 import { Icons } from '@/components/ui/images/Icons';
-import { formatAmount } from '@/util';
+import { formatNumberAbbreviation } from '@/utils';
 import { Card, Stack, Button } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
@@ -24,12 +24,12 @@ function InfoCard({ imgurl, label }: InfoCardI) {
       <div className="h-[1px] w-full bg-gray-200 my-3" />
       <Stack direction={'row'} justifyContent={'space-between'}>
         <Text className="text-gray-600">Played by</Text>
-        <Text fontWeight={500}>{formatAmount(39020)} Players</Text>
+        <Text fontWeight={500}>{formatNumberAbbreviation(39020)} Players</Text>
       </Stack>
       <Stack direction={'row'} justifyContent={'space-between'}>
         <Text className="text-gray-600">Total win by players</Text>
         <Text fontWeight={500} className="text-green">
-          {formatAmount(60388499)}
+          {formatNumberAbbreviation(60388499)}
         </Text>
       </Stack>
       <Button
