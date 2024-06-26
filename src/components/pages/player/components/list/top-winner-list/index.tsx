@@ -6,37 +6,28 @@ import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
-import { data } from '../../config';
-import PhillButton from '@/components/ui/phill-button';
-import Eye from '@/iconejs/eyes';
-import Block from '@/iconejs/block';
+import { data, formatNumber } from '../../config';
 import dynamic from 'next/dynamic';
-import ChipUi from '@/components/ui/custom-chip';
-import { useRouter, usePathname } from 'next/navigation';
-import Box from '@/components/ui/box';
+import { useRouter , usePathname } from 'next/navigation';
 import TextField from '@/components/ui/inputs/TextField';
-import Input from '@/components/ui/inputs/Input';
+import Box from '@/components/ui/box';
 import { Icons } from '@/components/ui/images/Icons';
-import Select from '@/components/ui/inputs/Select';
-import { useSafeState } from '@/hooks/useSafeState';
+import Input from '@/components/ui/inputs/Input';
 
-const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
+const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'Top Winners' }];
 
 const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
   ssr: false,
 });
 
 
-const AllPlayerList = () => {
-
+const TopWinnerList = () => {
   const header = [
     'NO',
     'PLAYER',
-    'CREATED ON',
-    'STATUS',
-    'CREATED ON',
-    'LAST UPDATED ON',
-    'ACTION',
+    'Game',
+    'Win Amount',
+    'Date',
   ];
   const router = useRouter();
   const pathName = usePathname();
@@ -46,12 +37,9 @@ const AllPlayerList = () => {
     data,
   });
 
-  type renderType = ReturnType<typeof hello>;
-  const hello = () => data[0];
+  type renderType = ReturnType<typeof winner>;
+  const winner = () => data[0];
 
-  const handleDetailPage = (id: number) => {
-    router.push(`${pathName}/${id}`)
-  }
 
   const render = useMemo(() => {
     const item = value.map((item: renderType) => (
@@ -67,22 +55,12 @@ const AllPlayerList = () => {
           </div>
         </Item>
         <Item>{item.level}</Item>
-        <Item>
-          <ChipUi className="uppercase" type={item.status === 'active' ? 'success' : 'error'}>
-            {item.status}
-          </ChipUi>
+        <Item className='text-[#127C12] font-semibold'>
+            {formatNumber('000000')}
         </Item>
-        <Item className="w-[70px]">{item.startDate}</Item>
-        <Item className="w-[70px]">{item.endDate}</Item>
+
         <Item>
-          <div className="flex items-center">
-            <PhillButton onClick={() => handleDetailPage(item.id)} className="mr-2 flex items-center space-x-1">
-              <Eye className="mr-1" /> Details
-            </PhillButton>
-            <PhillButton className="flex items-center space-x-1" type="error">
-              <Block className="mr-1" /> Block
-            </PhillButton>
-          </div>
+            {item.startDate}
         </Item>
       </Row>
     ));
@@ -92,20 +70,9 @@ const AllPlayerList = () => {
   return (
     <TCard>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
-      <Box className='w-[40%] mb-5'>
-        <Box className='flex gap-2'>
-        <Select
-                  label='status'
-                  className="w-full rounded-md"
-                  value={value}
-                  onChange={() => console.log('')}
-                  options={[
-                    { label: 'One', value: 1 },
-                    { label: 'Two', value: 2 },
-                    { label: 'Three', value: 3 },
-                  ]}
-                />
-          <Input
+      {/* <TextField/> */}
+       <Box className="grid grid-cols-4 mb-5">
+       <Input
             name="game_track"
             placeholder="Search by name or ph no."
             icon={<Icons.search className="text-xl font-bold text-green" />}
@@ -113,8 +80,7 @@ const AllPlayerList = () => {
             flexRowReverse
             className="py-3"
           />
-        </Box>
-      </Box>
+       </Box>
       <GenieTable
         {...controls}
         header={header}
@@ -128,4 +94,4 @@ const AllPlayerList = () => {
   );
 };
 
-export default AllPlayerList;
+export default TopWinnerList;

@@ -17,12 +17,13 @@ interface SelectProps extends OutlinedSelectProps {
 
 const TextFieldStyled = styled(MSelect)<{}>(() => ({}));
 
+
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
-  { label, value, onChange, options, ...rest },
+  {  label, value, onChange, options, ...rest   },
   ref
 ) {
   return (
-    <FormControl ref={ref} fullWidth>
+    <FormControl  ref={ref} fullWidth>
       <InputLabel id="inputSelectLabel">{label}</InputLabel>
       <TextFieldStyled
         labelId="inputSelectLabel"

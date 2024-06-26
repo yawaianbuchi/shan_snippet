@@ -4,6 +4,7 @@ import LeftIcon from '@/iconejs/left-icon';
 import RightIcon from '@/iconejs/right-icon';
 import React, { useRef, useState } from 'react';
 import { MagicTabSelect } from 'react-magic-motion';
+import { PaginateProps } from '../genie-table';
 
 const Pagination = ({
   currentPage,
@@ -14,7 +15,9 @@ const Pagination = ({
   paginationRange,
   pageNumbersCount,
   setRecordPerPage,
-}: any) => {
+}:PaginateProps & {
+   total : number | string
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(7);
   const ref = useRef(null!);

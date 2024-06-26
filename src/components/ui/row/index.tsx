@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn';
 
 interface RowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   className?: string;
-  key: React.Key;
+  key?: React.Key;
 }
 
 const Row = ({
