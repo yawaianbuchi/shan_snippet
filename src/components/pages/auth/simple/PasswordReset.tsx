@@ -2,9 +2,6 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -12,8 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import TextField from '@/components/ui/inputs/TextField';
 import Button from '@/components/ui/button';
-import { IconButton, InputAdornment, Paper } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Paper } from '@mui/material';
 
 export default function PasswordResetSimple() {
   const [showPassword, setShowPassword] = React.useState(false);

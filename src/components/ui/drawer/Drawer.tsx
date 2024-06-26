@@ -20,6 +20,7 @@ import NavLink from './NavLink';
 import Card from '@/components/shared/card';
 import Chip from '../chip';
 import Link from 'next/link';
+import LocalizationPopUp from '../popup/LocalizationPopUp';
 
 const drawerWidth = 280;
 
@@ -57,6 +58,10 @@ export default function ResponsiveDrawer(props: Props) {
     });
   };
 
+  if (isPending) {
+    return <div className="bg-black/45 w-full h-full" />;
+  }
+
   const drawer = (
     <Box className="relative">
       <Toolbar>
@@ -81,7 +86,12 @@ export default function ResponsiveDrawer(props: Props) {
             <NavLink
               key={idx}
               href={href}
-              isActive={pathname.includes(href)}
+              isActive={
+                label === 'dashboard' &&
+                /^\/(en|my|sh|zh)$/.test('/' + pathname.split('/').slice(-1)[0])
+                  ? pathname.includes(href)
+                  : `/${pathname.split('/').slice(-1)[0]}` === href
+              }
               icon={icon}
               label={label}
             />
@@ -130,9 +140,10 @@ export default function ResponsiveDrawer(props: Props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, borderRadius: '8px', display: { sm: 'none' } }}
+            className="bg-green hover:bg-green/75"
           >
-            1
+            <Icons.hamburger />
           </IconButton>
           <Stack
             direction="row"
@@ -140,13 +151,11 @@ export default function ResponsiveDrawer(props: Props) {
             alignItems="center"
             className="w-full"
           >
-            <Typography variant="h6" noWrap component="div" className="text-black">
+            <Typography variant="h6" noWrap component="div" className="text-black hidden lg:block">
               search bar
             </Typography>
             <Stack direction="row" columnGap={2}>
-              <Card>
-                <h1>localization pop over</h1>
-              </Card>
+              <LocalizationPopUp />
 
               <Link href="/inbox">
                 <Card className="flex items-center gap-2">

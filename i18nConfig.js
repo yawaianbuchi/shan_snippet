@@ -1,7 +1,7 @@
 const i18nConfig = {
-  locales: ['en', 'ja', 'my'],
+  locales: ['en', 'zh', 'my','sh'],
   defaultLocale: 'en',
-  prefixDefault: true
+  // prefixDefault: true
 };
 
 export default i18nConfig;

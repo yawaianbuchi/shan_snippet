@@ -8,7 +8,7 @@ interface TextProps extends Props {
   loading?: boolean;
 }
 
-const TypographyStyled = styled(Typography)<TextProps>(({ theme }) => ({}));
+const TypographyStyled = styled(Typography)<TextProps>(() => ({}));
 
 const Text: React.FC<TextProps> = ({ children, ...rest }) => {
   return (

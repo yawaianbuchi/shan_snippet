@@ -1,7 +1,6 @@
 'use client';
 import Button from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
-import Checkbox from '@/components/ui/inputs/Checkbox';
 import TextField from '@/components/ui/inputs/TextField';
 import { SignUpForm, signupSchema } from '@/types/login';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,14 +8,14 @@ import { Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
   const form = useForm<SignUpForm>({
     resolver: zodResolver(signupSchema),
   });
 
-  const submit = async (data: SignUpForm) => {};
+  const submit = async (_data: SignUpForm) => {};
 
   return (
     <Form {...form}>

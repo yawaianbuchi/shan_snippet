@@ -15,9 +15,8 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, ...rest }: PageLayout
   const locale = i18n.language;
 
   return (
-    <>
-      {pathname === `/` ||
-      pathname === `/${locale}/login` ||
+    <div>
+      {pathname === `/${locale}/login` ||
       pathname === `/${locale}/signup` ||
       pathname === `/${locale}/forget-pass` ||
       pathname === `/${locale}/pass-reset` ||
@@ -29,7 +28,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, ...rest }: PageLayout
       ) : (
         <DynamicDrawer {...rest}>{children}</DynamicDrawer>
       )}
-    </>
+    </div>
   );
 };
 

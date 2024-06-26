@@ -1,9 +1,7 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import {
   Select as MSelect,
   FormControl,
-  SelectChangeEvent,
   styled,
   InputLabel,
   OutlinedSelectProps,
@@ -17,7 +15,7 @@ interface SelectProps extends OutlinedSelectProps {
   options: { label: string; value: string | number }[];
 }
 
-const TextFieldStyled = styled(MSelect)<{}>(({ theme }) => ({}));
+const TextFieldStyled = styled(MSelect)<{}>(() => ({}));
 
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
   { label, value, onChange, options, ...rest },
@@ -35,7 +33,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
         {...rest}
       >
         {options.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
+          <MenuItem key={option.value} value={option.value} className="w-full">
             {option.label}
           </MenuItem>
         ))}

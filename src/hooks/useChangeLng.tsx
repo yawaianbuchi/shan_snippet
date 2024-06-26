@@ -1,3 +1,4 @@
+'use client';
 import { usePathname, useRouter } from 'next/navigation';
 import { startTransition } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -9,7 +10,7 @@ const useChangeLng = () => {
   const router = useRouter();
   const currentPathname = usePathname();
 
-  const handleSelect = (v: { label: string; img: string; value: string }) => {
+  const handleSelect = (v: { label: string; img?: string; value: string }) => {
     startTransition(() => {
       const newLocale = v.value;
       // set cookie for next-i18n-router
