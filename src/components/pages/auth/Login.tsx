@@ -12,102 +12,36 @@ import { Form } from '@/components/ui/form';
 import { Controller, useForm } from 'react-hook-form';
 import { LoginForm, loginSchema } from '@/types/login';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
 
 const Login = () => {
-  const form = useForm<LoginForm>({
-    resolver: zodResolver(loginSchema),
-  });
-
-  const submit = async (data: LoginForm) => {
-    console.log(data);
-  };
-
-  console.log(form.formState.errors);
+ 
 
   return (
-    <Form {...form}>
-      <form className="flex-1" onSubmit={form.handleSubmit(submit)}>
-        <Box>
-          {/* <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <TextField
-                        label="Email"
-                        {...field}
-                        placeholder="Enter your email address"
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              /> */}
-          <Controller
-            name="email"
-            control={form.control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                margin="normal"
-                required
-                fullWidth
-                name="email"
-                label="Email"
-                type="text"
-                id="email"
-              />
-            )}
-          />
-          <Controller
-            name="password"
-            control={form.control}
-            render={() => (
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-              />
-            )}
-          />
-          <Box sx={{ mt: 1 }}>
-            {/* <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                /> */}
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
+<div className="w-screen h-screen bg-[url('/images/auth-bg.svg')]  bg-cover bg-center bg-no-repeat">
+  <Image             objectFit="cover"
+ src="/images/auth-dashboard-bg.svg" alt="auth-dashboard-bg" width={990} height={900} className='absolute top-1/2 -translate-y-1/2  md:right-[20%] lg:right-[20%] 2xl:right-[28%]'/>
+
+  <div className='w-[35%] shadow-lg bg-white h-screen z-10 absolute top-0 right-0 flex justify-center items-center'>
+
+
+    <div>
+
+
+      <Image src="/images/logo.svg" alt="logo" width={100} height={100} className='mx-auto' />
+      <p className='text-green font-bold text-center mb-2 mt-4'>Shan Gaming</p>
+      <p className='text-center text-black text-sm font-bold'>Admin Back-office System</p>
+
+      <form>
+
+        
       </form>
-    </Form>
+    </div>
+
+
+
+  </div>
+</div>
   );
 };
 
