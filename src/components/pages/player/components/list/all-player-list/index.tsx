@@ -7,12 +7,11 @@ import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import { data } from '../../config';
-import Chip from '@/components/ui/chip';
-import ChipUi from '../../custom-chip';
 import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
 import Block from '@/iconejs/block';
 import dynamic from 'next/dynamic';
+import ChipUi from '@/components/ui/custom-chip';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
 
@@ -43,7 +42,7 @@ const AllPlayerList = () => {
     const item = value.map((item: renderType) => (
       <Row key={item.id}>
         <Item>{item.id}.</Item>
-        <Item>
+        <Item className='min-w-[195px]'>
           <div className="flex space-x-2">
             <img src={item.img} className="w-[37px] h-[37px] rounded-full object-cover" />
             <div className="">
