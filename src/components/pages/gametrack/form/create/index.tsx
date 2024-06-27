@@ -4,7 +4,6 @@ import Grid from '@/components/layout/Grid';
 import Button from '@/components/ui/button';
 import { Form, FormField } from '@/components/ui/form';
 import { Icons } from '@/components/ui/images/Icons';
-import Select from '@/components/ui/inputs/Select';
 import { Stack } from '@mui/material';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -21,9 +20,7 @@ export const CreateGameTrackForm = () => {
     formState: { errors, isValid },
   } = form;
 
-  console.log(isValid, errors);
   const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
-    console.log(e);
   };
   return (
     <Form {...form}>
@@ -64,7 +61,9 @@ export const CreateGameTrackForm = () => {
                 <Select
                   label="Main Game"
                   className="w-full"
-                  onChange={() => console.log('first')}
+                  onChange={() => {
+
+                  }}
                   options={[
                     { label: 'One', value: 1 },
                     { label: 'Two', value: 2 },
@@ -85,7 +84,7 @@ export const CreateGameTrackForm = () => {
                 <Select
                   label="VPN Required"
                   className="w-full"
-                  onChange={() => console.log('first')}
+                  onChange={() => {}}
                   options={[
                     { label: 'Yes', value: 'yes' },
                     { label: 'No', value: 'no' },
@@ -109,7 +108,7 @@ export const CreateGameTrackForm = () => {
             <Button
               type="submit"
               variant="contained"
-              className="bg-green text-md h-12 border disabled:bg-green/65 disabled:text-white normal-case"
+              className="bg-green disabled:bg-green/65 disabled:text-white normal-case"
               disabled={!isValid}
             >
               <Icons.check_mark className="mr-2 text-lg" /> Create

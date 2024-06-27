@@ -21,6 +21,8 @@ import Card from '@/components/shared/card';
 import Chip from '../chip';
 import Link from 'next/link';
 import LocalizationPopUp from '../popup/LocalizationPopUp';
+import { useSessionLogout } from '@/lib/session';
+import { useTranslation } from 'react-i18next';
 
 const drawerWidth = 280;
 
@@ -30,12 +32,16 @@ interface Props {
 }
 
 export default function ResponsiveDrawer(props: Props) {
+    const { trigger: logoutTrigger } = useSessionLogout();
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const router = useRouter();
   const [isPending, startTransition] = React.useTransition();
   const pathname = usePathname();
+    const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -53,9 +59,14 @@ export default function ResponsiveDrawer(props: Props) {
   };
 
   const handleLogout = () => {
-    startTransition(() => {
-      router.push('/login');
-    });
+
+          React.startTransition(() => {
+                  logoutTrigger().then(() => {
+                    router.push(`/${currentLocale}/login`);
+                    router.refresh();
+                  });
+                });
+
   };
 
   if (isPending) {

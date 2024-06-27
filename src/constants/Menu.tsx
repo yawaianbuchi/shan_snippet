@@ -42,9 +42,8 @@ export const MENU_LISTS: MENU_LISTS_PROPS[] = [
     sublinks: [
       { label: 'all players', href: '/all' },
       { label: 'top winners', href: '/top-winner' },
-      { label: 'promocode', href: '/topwinner-game' },
-      { label: 'hot game', href: '/hot-game' },
-      { label: 'popular game', href: '/popular-game' },
+      { label: 'Peomo Code Owners', href: '/promo-code' },
+      { label: 'Blocked List', href: '/block-list' },
     ],
   },
   { label: 'member levels', icon: <Icons.member_levels />, href: '/member-levels' },

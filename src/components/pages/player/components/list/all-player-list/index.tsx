@@ -1,18 +1,24 @@
 'use client';
 import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
-import React, { useMemo } from 'react';
-import BradeCurmb from '../../breadcumbs';
+import React, { useCallback, useMemo } from 'react';
+import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import { data } from '../../config';
-import Chip from '@/components/ui/chip';
-import ChipUi from '../../custom-chip';
 import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
 import Block from '@/iconejs/block';
 import dynamic from 'next/dynamic';
+import ChipUi from '@/components/ui/custom-chip';
+import { useRouter, usePathname } from 'next/navigation';
+import Box from '@/components/ui/box';
+import TextField from '@/components/ui/inputs/TextField';
+import Input from '@/components/ui/inputs/Input';
+import { Icons } from '@/components/ui/images/Icons';
+import Select from '@/components/ui/inputs/Select';
+import { useSafeState } from '@/hooks/useSafeState';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
 
@@ -20,7 +26,9 @@ const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
   ssr: false,
 });
 
+
 const AllPlayerList = () => {
+
   const header = [
     'NO',
     'PLAYER',
@@ -30,6 +38,8 @@ const AllPlayerList = () => {
     'LAST UPDATED ON',
     'ACTION',
   ];
+  const router = useRouter();
+  const pathName = usePathname();
   const { value = [], controls } = useGenieTable({
     total: data.length,
     api: false,
@@ -39,11 +49,15 @@ const AllPlayerList = () => {
   type renderType = ReturnType<typeof hello>;
   const hello = () => data[0];
 
+  const handleDetailPage = (id: number) => {
+    router.push(`${pathName}/${id}`)
+  }
+
   const render = useMemo(() => {
     const item = value.map((item: renderType) => (
       <Row key={item.id}>
         <Item>{item.id}.</Item>
-        <Item>
+        <Item className="min-w-[195px]">
           <div className="flex space-x-2">
             <img src={item.img} className="w-[37px] h-[37px] rounded-full object-cover" />
             <div className="">
@@ -62,7 +76,7 @@ const AllPlayerList = () => {
         <Item className="w-[70px]">{item.endDate}</Item>
         <Item>
           <div className="flex items-center">
-            <PhillButton className="mr-2 flex items-center space-x-1">
+            <PhillButton onClick={() => handleDetailPage(item.id)} className="mr-2 flex items-center space-x-1">
               <Eye className="mr-1" /> Details
             </PhillButton>
             <PhillButton className="flex items-center space-x-1" type="error">
@@ -78,8 +92,30 @@ const AllPlayerList = () => {
   return (
     <TCard>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
+      <Box className='w-[40%] mb-5'>
+        <Box className='flex gap-2'>
+        <Select
+                  label='status'
+                  className="w-full rounded-md"
+                  value={value}
+                  onChange={() => {}}
+                  options={[
+                    { label: 'One', value: 1 },
+                    { label: 'Two', value: 2 },
+                    { label: 'Three', value: 3 },
+                  ]}
+                />
+          <Input
+            name="game_track"
+            placeholder="Search by name or ph no."
+            icon={<Icons.search className="text-xl font-bold text-green" />}
+            containerClass="rounded-lg :ring-1 hover:ring-[#127C12]"
+            flexRowReverse
+            className="py-3"
+          />
+        </Box>
+      </Box>
       <GenieTable
-        show="default"
         {...controls}
         header={header}
         paginate

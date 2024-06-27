@@ -29,9 +29,7 @@ export const EditGameTrackForm = () => {
     formState: { errors, isValid },
   } = form;
 
-  console.log(isValid, errors);
   const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
-    console.log(e);
   };
   return (
     <Form {...form}>
@@ -71,7 +69,7 @@ export const EditGameTrackForm = () => {
               render={() => (
                 <Select
                   className="w-full"
-                  onChange={() => console.log('first')}
+                  onChange={() => {}}
                   options={[
                     { label: 'One', value: 1 },
                     { label: 'Two', value: 2 },
@@ -91,7 +89,7 @@ export const EditGameTrackForm = () => {
               render={() => (
                 <Select
                   className="w-full"
-                  onChange={() => console.log('first')}
+                  onChange={() => {}}
                   options={[
                     { label: 'Yes', value: 'yes' },
                     { label: 'No', value: 'no' },

@@ -4,6 +4,8 @@ import LeftIcon from '@/iconejs/left-icon';
 import RightIcon from '@/iconejs/right-icon';
 import React, { useEffect, useRef, useState } from 'react';
 import { MagicTabSelect } from 'react-magic-motion';
+import { PaginateProps } from '../genie-table';
+
 const PaginationUi = ({
   currentPage,
   goToNextPage,
@@ -12,7 +14,9 @@ const PaginationUi = ({
   paginationRange,
   total,
   setRecordPerPage,
-}: any) => {
+}: PaginateProps & {
+  total: number | string
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(7);
   const ref = useRef(null!);
@@ -71,13 +75,12 @@ const PaginationUi = ({
                   <div
                     key={index}
                     className={`cursor-pointer w-[20px]    text-[12px] relative  rounded-md px-4 flex items-center justify-center`}
-                    onClick={changePage}
                   >
                     {item == currentPage && (
                       <MagicTabSelect id="pillTabs" transition={{ type: 'spring', bounce: 0.35 }}>
                         <span
                           style={{
-                            borderRadius: '6px',
+                            borderRadius: '8px',
                             position: 'absolute',
                             top: 0,
                             left: 0,
@@ -90,9 +93,10 @@ const PaginationUi = ({
                       </MagicTabSelect>
                     )}
                     <span
+                      onClick={changePage}
                       className={`${
                         item === currentPage ? 'text-white delay-150' : 'text-black'
-                      }  inline-flex h-[35px] items-center relative z-[2] transition-all duration-200 ease-in-out`}
+                      }  inline-flex h-[40px] px-4 justify-center items-center relative z-[2] transition-all duration-200 ease-in-out`}
                     >
                       {item}
                     </span>
