@@ -12,7 +12,7 @@ const TypographyStyled = styled(Typography)<TextProps>(() => ({}));
 
 const Text: React.FC<TextProps> = ({ children, ...rest }) => {
   return (
-    <TypographyStyled className={cn(rest.className)} {...rest}>
+    <TypographyStyled {...rest} className={cn(rest.className)}>
       {rest.loading ? <Skeleton variant="text" /> : children}
     </TypographyStyled>
   );

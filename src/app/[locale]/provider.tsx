@@ -10,6 +10,7 @@ import { SWRConfig } from 'swr';
 import fetcher from '@/lib/fetcher';
 import { SEVERITY, SnackbarProvider, useSnackbar } from '@/components/ui/snackbar/SnackbarContext';
 import { AxiosError } from 'axios';
+import { StyledEngineProvider } from '@mui/material';
 
 const InnerProviders = ({ children }: PropsWithChildren) => {
   const { showMessage } = useSnackbar();
@@ -26,21 +27,23 @@ const InnerProviders = ({ children }: PropsWithChildren) => {
 
   return (
     <SWRConfig value={swrConfig}>
-      <ThemeProvider theme={theme}>
-        <JotaiProvider>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            {children}
-            <AppProgressBar
-              height="4px"
-              color="#127C12"
-              options={{
-                showSpinner: false,
-              }}
-              shallowRouting
-            />
-          </LocalizationProvider>
-        </JotaiProvider>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <JotaiProvider>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              {children}
+              <AppProgressBar
+                height="4px"
+                color="#127C12"
+                options={{
+                  showSpinner: false,
+                }}
+                shallowRouting
+              />
+            </LocalizationProvider>
+          </JotaiProvider>
+        </ThemeProvider>
+      </StyledEngineProvider>
     </SWRConfig>
   );
 };
