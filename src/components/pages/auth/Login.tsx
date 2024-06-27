@@ -18,9 +18,10 @@ import { flags } from '@/data';
 import { cn } from '@/utils/cn';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { useSessionLogin } from '@/lib/session';
 
 const Login = () => {
-
+  const { trigger: triggerSessionLogin } = useSessionLogin();
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const [isLoading,setIsLoading] =useState<boolean>(false)
@@ -43,9 +44,11 @@ const Login = () => {
   const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
     setIsLoading(true)
 
-   startTransition(()=>{
+   startTransition(async()=>{
 
-
+    await triggerSessionLogin({ ...{
+      
+    }, tokenExpired: 1 });
     setIsLoading(false)
 
 
@@ -89,6 +92,8 @@ const Login = () => {
             />
 
                  <Button
+
+                 loading={isLoading}
               type="submit"
               variant="contained"
               className="bg-green mt-3 disabled:bg-green/65 disabled:text-white text-md hover:bg-green"
