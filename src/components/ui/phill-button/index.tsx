@@ -22,7 +22,7 @@ const PhillButton = ({
   };
 
   return (
-    <button onClick={onClick} className={cn(`${generateClass()} px-3 py-1 rounded-lg`, className)}>
+    <button onClick={onClick} className={cn(`${generateClass()} flex items-center text-sm px-3 py-1 rounded-lg`, className)}>
       {children}
     </button>
   );

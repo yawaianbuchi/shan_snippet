@@ -6,7 +6,7 @@ import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
-import { data } from '../../config';
+import { data, formatNumber } from '../../config';
 import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
 import Block from '@/iconejs/block';
@@ -17,25 +17,25 @@ import Box from '@/components/ui/box';
 import TextField from '@/components/ui/inputs/TextField';
 import Input from '@/components/ui/inputs/Input';
 import { Icons } from '@/components/ui/images/Icons';
-import Select from '@/components/ui/inputs/Select';
-import { useSafeState } from '@/hooks/useSafeState';
+import Edit from '@/iconejs/edit';
+import { Button } from '@mui/material';
 
-const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
+const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'Promo Code Owners' }];
 
 const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
   ssr: false,
 });
 
 
-const AllPlayerList = () => {
-
+const PromoList = () => {
   const header = [
     'NO',
     'PLAYER',
+    'PROMO CODE',
     'CREATED ON',
-    'STATUS',
-    'CREATED ON',
-    'LAST UPDATED ON',
+    'TYPE',
+    'TOP-UP/REG. COUNT',
+    'REWARDED AMOUNT',
     'ACTION',
   ];
   const router = useRouter();
@@ -66,21 +66,24 @@ const AllPlayerList = () => {
             </div>
           </div>
         </Item>
-        <Item>{item.level}</Item>
+        <Item className='text-[#127C12]'>{'KMC8349'}</Item>
         <Item>
-          <ChipUi className="uppercase" type={item.status === 'active' ? 'success' : 'error'}>
-            {item.status}
-          </ChipUi>
+
+            {item.startDate}
+         
         </Item>
-        <Item className="w-[70px]">{item.startDate}</Item>
-        <Item className="w-[70px]">{item.endDate}</Item>
+        <Item className="w-[70px]">{'All'}</Item>
+        <Item className="w-[70px]">{'00/ 00'}</Item>
+        <Item>
+            {formatNumber('000,000')}
+        </Item>
         <Item>
           <div className="flex items-center">
             <PhillButton onClick={() => handleDetailPage(item.id)} className="mr-2 flex items-center space-x-1">
               <Eye className="mr-1" /> Details
             </PhillButton>
-            <PhillButton className="flex items-center space-x-1" type="error">
-              <Block className="mr-1" /> Block
+            <PhillButton className="flex items-center space-x-1" type="success">
+              <Edit/> Block
             </PhillButton>
           </div>
         </Item>
@@ -92,19 +95,17 @@ const AllPlayerList = () => {
   return (
     <TCard>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
-      <Box className='w-[40%] mb-5'>
-        <Box className='flex gap-2'>
-        <Select
-                  label='status'
-                  className="w-full rounded-md"
-                  value={value}
-                  onChange={() => console.log('')}
-                  options={[
-                    { label: 'One', value: 1 },
-                    { label: 'Two', value: 2 },
-                    { label: 'Three', value: 3 },
-                  ]}
-                />
+
+      <Box className='grid grid-cols-2 mb-5'>
+        <Box className='flex gap-2' >
+        <Button
+            variant="outlined"
+            className="normal-case w-fit bg-green border-none text-white
+           text-[14px] h-12 rounded-lg gap-1 hover:border-none hover:bg-green/85 hover:text-white"
+          >
+            <Icons.plus_circle className="font-semibold text-lg" />
+            Create New
+          </Button>
           <Input
             name="game_track"
             placeholder="Search by name or ph no."
@@ -128,4 +129,4 @@ const AllPlayerList = () => {
   );
 };
 
-export default AllPlayerList;
+export default PromoList;

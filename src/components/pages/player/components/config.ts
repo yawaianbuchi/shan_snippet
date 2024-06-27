@@ -451,3 +451,7 @@ export const data = [
     img: 'https://unsplash.com/photos/silhouette-of-man-illustration-2LowviVHZ-E',
   },
 ];
+
+export function formatNumber<T extends string>(n: T) {
+  return n.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
