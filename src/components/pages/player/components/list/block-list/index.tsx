@@ -6,10 +6,9 @@ import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
-import { data, formatNumber } from '../../config';
+import { data } from '../../config';
 import dynamic from 'next/dynamic';
-import { useRouter , usePathname } from 'next/navigation';
-import TextField from '@/components/ui/inputs/TextField';
+
 import Box from '@/components/ui/box';
 import { Icons } from '@/components/ui/images/Icons';
 import Input from '@/components/ui/inputs/Input';

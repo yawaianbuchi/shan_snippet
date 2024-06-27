@@ -1,7 +1,7 @@
 'use client';
 import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
-import React, { useCallback, useMemo } from 'react';
+import React, {  useMemo } from 'react';
 import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
@@ -9,12 +9,9 @@ import { useGenieTable } from '@/hooks/useGenieTable';
 import { data, formatNumber } from '../../config';
 import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
-import Block from '@/iconejs/block';
 import dynamic from 'next/dynamic';
-import ChipUi from '@/components/ui/custom-chip';
 import { useRouter, usePathname } from 'next/navigation';
 import Box from '@/components/ui/box';
-import TextField from '@/components/ui/inputs/TextField';
 import Input from '@/components/ui/inputs/Input';
 import { Icons } from '@/components/ui/images/Icons';
 import Edit from '@/iconejs/edit';
@@ -73,9 +70,9 @@ const PromoList = () => {
          
         </Item>
         <Item className="w-[70px]">{'All'}</Item>
-        <Item className="w-[70px]">{'00/ 00'}</Item>
-        <Item>
-            {formatNumber('000,000')}
+        <Item className="w-[70px] font-semibold">{'00/ 00'}</Item>
+        <Item className='text-[#127C12] font-semibold'>
+            {formatNumber('000000')}
         </Item>
         <Item>
           <div className="flex items-center">

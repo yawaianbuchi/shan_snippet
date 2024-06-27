@@ -7,9 +7,7 @@ import Item from '@/components/ui/item';
 import { datalevel } from '../config';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import PhillButton from '@/components/ui/phill-button';
-import Eye from '@/iconejs/eyes';
 import dynamic from 'next/dynamic';
-import { useRouter, usePathname } from 'next/navigation';
 import Box from '@/components/ui/box';
 import Input from '@/components/ui/inputs/Input';
 import { Icons } from '@/components/ui/images/Icons';
@@ -34,8 +32,6 @@ const MemberList = () => {
     'LAST UPADATE ON',
     'ACTION',
   ];
-  const router = useRouter();
-  const pathName = usePathname();
   const { value = [], controls } = useGenieTable({
     total: datalevel.length,
     api: false,
@@ -45,9 +41,9 @@ const MemberList = () => {
   type renderType = ReturnType<typeof hello>;
   const hello = () => datalevel[0];
 
-  const handleDetailPage = (id: number) => {
-    router.push(`${pathName}/${id}`)
-  }
+  // const handleDetailPage = (id: number) => {
+  //   router.push(`${pathName}/${id}`)
+  // }
 
   const render = useMemo(() => {
     const item = value.map((item: renderType) => (
@@ -56,8 +52,8 @@ const MemberList = () => {
         <Item className="min-w-[195px]">
          <Star/> {item.level}
         </Item>
-        <Item className='text-[#127C12]'>{item.name}</Item>
-        <Item>
+        <Item >{item.name}</Item>
+        <Item className='text-[#127C12]'>
 
             {item.amount}
          

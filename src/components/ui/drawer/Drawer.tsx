@@ -134,14 +134,14 @@ export default function ResponsiveDrawer(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }} className="bg-gray min-h-screen">
+    <Box sx={{ display: 'flex' }} className="bg-gray h-screen ">
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: 'transparent',
+          backgroundColor: '#F7F7F7',
           boxShadow: 'none',
         }}
       >
@@ -223,6 +223,8 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           flexGrow: 1,
           p: 3,
+          height:'100vh',
+          overflowY:"scroll",
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
