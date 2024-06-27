@@ -209,7 +209,7 @@ function EditTable({ newreward, setNewReward }: IEditTable) {
             <Icons.times />
           </IconButton>
           <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit((val) => console.log(val))}>
+            <form onSubmit={methods.handleSubmit((val) => {})}>
               {open.type === 'edit'
                 ? editForm
                 : open.type === 'del'

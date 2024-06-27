@@ -35,7 +35,6 @@ const usePaginate = <T extends number | []>(item: T) => {
     const startIndex = currentPage * recordPerPage - recordPerPage;
 
     const endIndex = startIndex + recordPerPage;
-    console.log(startIndex, endIndex);
     return data.slice(startIndex, endIndex);
   };
 
