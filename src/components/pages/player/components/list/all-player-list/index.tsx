@@ -98,7 +98,7 @@ const AllPlayerList = () => {
                   label='status'
                   className="w-full rounded-md"
                   value={value}
-                  onChange={() => console.log('')}
+                  onChange={() => {}}
                   options={[
                     { label: 'One', value: 1 },
                     { label: 'Two', value: 2 },
