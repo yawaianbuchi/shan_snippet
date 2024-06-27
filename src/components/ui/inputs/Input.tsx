@@ -4,6 +4,8 @@ import { HTMLInputTypeAttribute, ReactNode, useState } from 'react';
 import React from 'react';
 import Button from '../button';
 import { Icons } from '../images/Icons';
+import TextField from './TextField';
+import { TextFieldProps } from './TextField';
 
 interface InputProps {
   type?: HTMLInputTypeAttribute;
@@ -17,6 +19,7 @@ interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   defaultValue?: string;
   readOnly?: boolean;
+  sx?: TextFieldProps['sx'];
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -32,6 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       flexRowReverse = false,
       icon,
       readOnly = false,
+      sx,
       ...props
     },
     ref
@@ -47,21 +51,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           containerClass
         )}
       >
-        <input
+        <TextField
           ref={ref}
           type={type === 'password' ? (!showPassword ? 'text' : 'password') : type ?? 'text'}
           name={name}
           id={id}
-          placeholder={placeholder}
-          defaultValue={defaultValue}
-          readOnly={readOnly}
-          className={cn(
-            'flex-1 py-1.5 outline-none ps-2 placeholder:capitalize placeholder:text-gray_500 text-md',
-            className
-          )}
+          label={placeholder}
+          value={defaultValue}
+          sx={{
+            '& .MuiFilledInput-root': {
+              border: 'none',
+            },
+            ...sx,
+          }}
           {...props}
         />
-
         {icon}
         {type === 'password' && (
           <Button

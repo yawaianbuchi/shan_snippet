@@ -123,7 +123,7 @@ export default function ResponsiveDrawer(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }} className="bg-gray min-h-screen">
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -134,7 +134,7 @@ export default function ResponsiveDrawer(props: Props) {
           boxShadow: 'none',
         }}
       >
-        <Toolbar>
+        <Toolbar className="bg-gray">
           <IconButton
             color="inherit"
             aria-label="open drawer"

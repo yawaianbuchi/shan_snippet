@@ -34,27 +34,25 @@ export const CreateGameTrackForm = () => {
             name="operatorname"
             defaultValue=""
             render={({ field }) => {
-              return <TextField variant="filled" label="Operator Name" {...field} />;
+              return <TextField label="Operator Name" {...field} />;
             }}
           />
           <FormField
             name="url"
             control={form.control}
-            render={({ field }) => (
-              <TextField variant="filled" label="URL" className="text-green" {...field} />
-            )}
+            render={({ field }) => <TextField label="URL" className="text-green" {...field} />}
           />
 
           <Stack direction="row" gap={2} justifyContent="space-between">
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => <TextField variant="filled" label="Username" {...field} />}
+              render={({ field }) => <TextField label="Username" {...field} />}
             />
             <FormField
               name="password"
               control={form.control}
-              render={({ field }) => <TextField variant="filled" label="Password" {...field} />}
+              render={({ field }) => <TextField label="Password" password {...field} />}
             />
           </Stack>
 
@@ -64,6 +62,7 @@ export const CreateGameTrackForm = () => {
               control={form.control}
               render={() => (
                 <Select
+                  label="Main Game"
                   className="w-full"
                   onChange={() => console.log('first')}
                   options={[
@@ -77,15 +76,14 @@ export const CreateGameTrackForm = () => {
             <FormField
               name="merchantcode"
               control={form.control}
-              render={({ field }) => (
-                <TextField variant="filled" label="Merchant Code" {...field} />
-              )}
+              render={({ field }) => <TextField label="Merchant Code" {...field} />}
             />
             <FormField
               name="vpn"
               control={form.control}
               render={() => (
                 <Select
+                  label="VPN Required"
                   className="w-full"
                   onChange={() => console.log('first')}
                   options={[
@@ -100,8 +98,8 @@ export const CreateGameTrackForm = () => {
           <Stack direction="row" alignItems="center" justifyContent="flex-end" gap={2}>
             <Link href="/game-track-panel">
               <Button
-                variant="contained"
-                className="normal-case bg-gray text-black hover:bg-gray"
+                variant="outlined"
+                className="normal-case text-md border-gray-300 hover:border-gray-300 h-12 bg-gray text-black hover:bg-gray"
                 disableElevation
               >
                 Cancel
@@ -111,7 +109,7 @@ export const CreateGameTrackForm = () => {
             <Button
               type="submit"
               variant="contained"
-              className="bg-green disabled:bg-green/65 disabled:text-white normal-case"
+              className="bg-green text-md h-12 border disabled:bg-green/65 disabled:text-white normal-case"
               disabled={!isValid}
             >
               <Icons.check_mark className="mr-2 text-lg" /> Create

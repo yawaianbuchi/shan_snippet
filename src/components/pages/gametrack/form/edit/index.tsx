@@ -55,12 +55,12 @@ export const EditGameTrackForm = () => {
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => <TextField label="username" {...field} />}
+              render={({ field }) => <TextField label="Username" {...field} />}
             />
             <FormField
               name="password"
               control={form.control}
-              render={({ field }) => <TextField label="password" {...field} />}
+              render={({ field }) => <TextField label="Password" password {...field} />}
             />
           </Stack>
 

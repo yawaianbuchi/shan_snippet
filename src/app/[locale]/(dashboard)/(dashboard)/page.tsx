@@ -8,6 +8,7 @@ import OverviewCard from '@/components/pages/dashboard/components/card';
 import initTranslations from '@/app/i18n';
 import { LANG_NAMESPACE } from '@/constants/namespace';
 import { Props } from '@/types/Params';
+import TextField from '@/components/ui/inputs/TextField';
 
 const DashboardPage: NextPage<Props> = async ({ params: { locale } }: Props) => {
   const { t } = await initTranslations(locale, LANG_NAMESPACE);

@@ -14,8 +14,7 @@ const Image = ({ src, alt, width, height, className }: ImageProps) => {
       alt={alt}
       width={width ?? 60}
       height={height ?? 60}
-      className={cn(className)}
-      objectFit="cover"
+      className={cn('object-cover', className)}
     />
   );
 };

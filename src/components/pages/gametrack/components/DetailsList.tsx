@@ -34,26 +34,24 @@ const DetailsList = ({ label, value, copy = false, passwords = false }: DetailsL
           justifyContent="space-between"
           className="h-full"
         >
-          <Input
+          <input
             ref={ref}
             name={label}
             defaultValue={value}
             className="bg-transparent outline-none p-0"
-            containerClass="border-none w-full h-full p-0"
             readOnly
-            icon={
-              <Button
-                onClick={handleCopy}
-                variant="text"
-                className="max-w-fit h-fit font-bold
-                 text-green text-xl"
-              >
-                <Icons.fileCopy />
-              </Button>
-            }
           />
+          <Button
+            onClick={handleCopy}
+            variant="text"
+            className="max-w-fit h-fit font-bold
+                 text-green text-xl"
+          >
+            <Icons.fileCopy />
+          </Button>
         </Stack>
       )}
+
       {passwords && (
         <Stack
           direction="row"
@@ -68,6 +66,11 @@ const DetailsList = ({ label, value, copy = false, passwords = false }: DetailsL
             className="bg-transparent outline-none p-0"
             containerClass="border-none w-full h-full p-0"
             readOnly
+            sx={{
+              '& .css-10botns-MuiInputBase-input-MuiFilledInput-input ': {
+                padding: '0',
+              },
+            }}
           />
         </Stack>
       )}

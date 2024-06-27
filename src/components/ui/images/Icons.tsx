@@ -7,7 +7,7 @@ import {
   IoCheckmark,
 } from 'react-icons/io5';
 import { LuSearch, LuPlusCircle, LuArrowUpRight, LuRefreshCw } from 'react-icons/lu';
-import { IoMdLogOut, IoMdNotificationsOutline } from 'react-icons/io';
+import { IoMdLogOut, IoMdNotificationsOutline, IoMdSwap } from 'react-icons/io';
 import { FaRegTrashAlt, FaRegTimesCircle, FaRegCopy, FaCalendarAlt } from 'react-icons/fa';
 import { HiMiniArrowLongLeft } from 'react-icons/hi2';
 import { BiMessageRoundedError } from 'react-icons/bi';
@@ -389,6 +389,7 @@ export const Icons = {
   eyeOpen: FiEye,
   eyeClose: FiEyeOff,
   block: MdBlockFlipped,
+  swap: IoMdSwap,
   inboxTwo: () => (
     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

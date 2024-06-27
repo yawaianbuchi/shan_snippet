@@ -42,7 +42,7 @@ const GameTrackTable = () => {
           <Stack direction="row" columnGap={1}>
             <Link href={`/game-track-panel/details/${item.id}`}>
               <Button
-                className="bg-green-50 text-green capitalize h-8 hover:bg-green-50/55"
+                className="bg-green-50 text-lg text-green capitalize hover:bg-green-50/55"
                 disableElevation
               >
                 <Icons.eyeOpen className="mr-1 text-lg" /> Details
@@ -51,7 +51,7 @@ const GameTrackTable = () => {
 
             <Link href={`/game-track-panel/details/${item.id}/edit`}>
               <Button
-                className="bg-green-50 text-green capitalize h-8 hover:bg-green-50/55"
+                className="bg-green-50 text-lg text-green capitalize hover:bg-green-50/55"
                 disableElevation
               >
                 <Icons.edit className="mr-1 w-4 h-4" /> Edit

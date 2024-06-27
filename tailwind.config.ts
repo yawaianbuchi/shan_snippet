@@ -25,6 +25,9 @@ const config: Config = {
           DEFAULT: "#f7f7f7",
           400: "#adadad",
         },
+        orange: {
+          DEFAULT:"#F76D31"
+        }
       },
       colors: {
         red: {
@@ -55,6 +58,9 @@ const config: Config = {
           DEFAULT: "#EEEEEE",
         },
       },
+      fontSize:{
+        md:"16px"
+      }
     },
   },
   plugins: [ require('tailwind-scrollbar-hide')],

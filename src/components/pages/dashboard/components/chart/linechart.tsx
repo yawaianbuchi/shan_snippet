@@ -5,10 +5,7 @@ import dayjs from 'dayjs';
 import React from 'react';
 import Chart from 'react-apexcharts';
 import weekday from 'dayjs/plugin/weekday';
-import Text from '@/components/ui/typo';
-import { Button, Stack } from '@mui/material';
-import { Icons } from '@/components/ui/images/Icons';
-import Link from 'next/link';
+import { calculateTotalValue, formatNumber } from '@/utils/numberAbbrevation';
 
 dayjs.extend(weekday);
 
@@ -16,32 +13,30 @@ const options = {
   dataLabels: {
     enabled: false,
   },
+  colors: ['#FF7BBE', '#D5538F', '#62B3FF'],
   fill: {
     type: 'gradient',
     gradient: {
       shade: 'dark',
+      gradientToColors: ['#FDBA93', '#E484FF', '#19F987'],
+      shadeIntensity: 1,
       type: 'horizontal',
-      shadeIntensity: 0.5,
-      gradientToColors: undefined, // optional, if not defined - uses the shades of same color in series
-      inverseColors: true,
       opacityFrom: 1,
       opacityTo: 1,
-      stops: [0, 50, 100],
-      colorStops: [],
+      stops: [0, 100, 100, 100],
     },
   },
-  colors: ['#E484FF', '#D5538F', '#FF7BBE', '#FDBA93', '#19F987', '#62B3FF'],
   series: [
     {
-      name: 'Series A',
+      name: 'Top Up',
       data: [8e6, 6e5, 2e6, 7e6, 4e6, 1e6, 8e6],
     },
     {
-      name: 'Series B',
+      name: 'Withdraw',
       data: [3e5, 4e6, 6e6, 2.5e6, 5e6, 7e6, 4e6],
     },
     {
-      name: 'Series C',
+      name: 'Game',
       data: [4e6, 9e6, 8e6, 3e6, 9e6, 1e7, 4e6],
     },
   ],
@@ -51,7 +46,13 @@ const options = {
   },
   stroke: {
     width: [3, 3, 3],
-    // curve: 'smooth', // Fixed the type error here
+    curve: ['smooth', 'smooth', 'smooth'] as (
+      | 'smooth'
+      | 'straight'
+      | 'stepline'
+      | 'linestep'
+      | 'monotoneCubic'
+    )[],
   },
   xaxis: {
     label: {
@@ -90,6 +91,22 @@ const options = {
       show: false,
     },
   },
+  legend: {
+    show: true,
+    width: 600,
+    fontSize: '18px',
+    fontWeight: 'bold',
+    position: 'bottom' as 'top' | 'bottom' | 'left' | 'right',
+    horizontalAlign: 'left' as 'left' | 'center' | 'right',
+    formatter: function (seriesName: any, opts: any) {
+      return `
+      <div class="w-32 inline-block">
+      ${seriesName}
+      <p class="font-light">${formatNumber(calculateTotalValue(opts.w.globals.series[opts.seriesIndex]), 0)}</p>
+      </div>
+      `;
+    },
+  },
 };
 
 const LineChart = () => {
@@ -102,9 +119,6 @@ const LineChart = () => {
   }
 
   return (
-    <section className="w-full h-full bg-white rounded-lg p-4">
-      <ChartHeader />
-
       <Chart
         type="line"
         options={{
@@ -116,22 +130,7 @@ const LineChart = () => {
         series={options.series}
         height={420}
       />
-    </section>
   );
 };
 
-const ChartHeader = () => {
-  return (
-    <Stack direction="row" justifyContent="space-between" alignItems="center">
-      <Text className="font-semibold text-lg">Transactions</Text>
-
-      <Link href="/transactions/top-up">
-        <Button className="flex text-lg justify-center items-center gap-2 normal-case text-gray-secondary">
-          More
-          <Icons.arrow_long className="rotate-180" />
-        </Button>
-      </Link>
-    </Stack>
-  );
-};
 export default LineChart;

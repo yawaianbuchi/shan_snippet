@@ -7,3 +7,18 @@
   @apply bg-green;
 }
 
+.MuiTableCell-root {
+  border-bottom: none !important;
+}
+
+.css-4rpjgr-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root.Mui-focused {
+  background-color: transparent !important;
+}
+.css-1lbyzdu-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root:hover,
+.css-1lbyzdu-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root:focus {
+  background-color: transparent !important;
+}
+.css-1lbyzdu-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root::before,
+.css-1lbyzdu-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root::after {
+  border-bottom: none !important;
+}

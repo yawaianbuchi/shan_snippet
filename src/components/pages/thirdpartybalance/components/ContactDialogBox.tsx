@@ -15,16 +15,10 @@ const ContactDialogBox = () => {
       <button onClick={toggle} className="h-fit w-fit">
         <Icons.messageInfo className="text-2xl" />
       </button>
-      <Dialog open={show} setOpen={toggle}>
-        <Card className="p-5">
-          <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Dialog open={show} setOpen={toggle} closeIcon>
             <Text variant="h6" fontWeight="500">
               Contact Information
             </Text>
-            <button onClick={toggle} className="hover:bg-green-50 w-6 h-6 rounded-full">
-              X
-            </button>
-          </Stack>
 
           <Stack mt={3} gap={2}>
             <SocialLink type="facebook" value="www.facebook.com" />
@@ -32,7 +26,6 @@ const ContactDialogBox = () => {
             <SocialLink type="wechat" value="www.wechat.com" />
             <SocialLink type="phone" value="+959 345 345 345" />
           </Stack>
-        </Card>
       </Dialog>
     </>
   );
