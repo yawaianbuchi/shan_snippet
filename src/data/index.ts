@@ -124,3 +124,26 @@ export const top100Films = [
   { label: '3 Idiots', year: 2009 },
   { label: 'Monty Python and the Holy Grail', year: 1975 },
 ];
+
+export const flags = [
+  {
+    label: 'EN',
+    image: 'br.svg',
+    value: 'en',
+  },
+  {
+    label: 'CH',
+    image: 'chn.svg',
+    value: 'zh',
+  },
+  {
+    label: 'MM',
+    image: 'mm.svg',
+    value: 'mm',
+  },
+  {
+    label: 'Shan',
+    image: 'shan.svg',
+    value: 'shan',
+  },
+];

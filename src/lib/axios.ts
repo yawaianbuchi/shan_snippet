@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios, { InternalAxiosRequestConfig } from 'axios';
+import { getToken } from './getToken';
 
 export const appAxios = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL,
@@ -8,7 +9,13 @@ export const appAxios = axios.create({
 });
 
 axios.interceptors.request.use(
-  function (config) {
+  async (config: InternalAxiosRequestConfig) => {
+    if (config.headers) {
+      const token = await getToken();
+      if (token) {
+        config.headers['Authorization'] = `Bearer ${token}`;
+      }
+    }
     return config;
   },
   function (error) {

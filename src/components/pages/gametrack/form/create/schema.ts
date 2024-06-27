@@ -8,3 +8,7 @@ export const CREATEGAMETRACK_SCHEMA = z.object({
   merchantcode: z.string(),
   // vpn: z.boolean(),
 });
+export const CreateLoginSchema = z.object({
+  username: z.string(),
+  password: z.string().min(8).max(15),
+});
