@@ -22,7 +22,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, ...rest }: PageLayout
       pathname === `/${locale}/pass-reset` ||
       pathname === `/${locale}` ||
       pathname === '/login' ||
-      pathname === '/' ||
       pathname === '/signup' ||
       pathname === '/forget-pass' ||
       pathname === '/pass-reset' ? (
