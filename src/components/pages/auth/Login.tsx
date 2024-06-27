@@ -40,7 +40,6 @@ const Login = () => {
     reset
   } = form;
 
-  console.log(isValid, errors);
   const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
     setIsLoading(true)
 
