@@ -1,6 +1,5 @@
 import Box from '@/components/ui/box';
 import PhillButton from '@/components/ui/phill-button';
-import Text from '@/components/ui/text';
 import User from '@/components/ui/user';
 import { useSafeState } from '@/hooks/useSafeState';
 import Block from '@/iconejs/block';
@@ -8,6 +7,7 @@ import Level from '@/iconejs/level';
 import React from 'react';
 import { MagicTabSelect } from 'react-magic-motion';
 import PersonalDetails from '../personal-details';
+import Text from '@/components/ui/typo';
 
 const list = ['Personal Detail', 'Wallet', 'Receiving Accounts (7)'];
 
