@@ -1,19 +1,14 @@
 'use client';
 import CusContainer from '@/components/ui/cuscontainer';
 import Button from '@mui/material/Button';
-import React from 'react';
+import React, { useState } from 'react';
 import { Icons } from '@/components/ui/images/Icons';
 import Text from '@/components/ui/typo';
-import Stack from '@mui/material/Stack';
-import CustomSwitch from '@/components/ui/customswitch';
-import { FormControlLabel, Checkbox, Grid, Box } from '@mui/material';
-import TextField from '@/components/ui/inputs/TextField';
+import EditTable from './EditTable';
+import SpinSettings from './SpinSettings';
 
-import Link from 'next/link';
-import SignUp from '../../auth/SignUp';
-import SpinInput from './SpinInput';
 function EditSpinWheel() {
-  const [checked, setChecked] = React.useState(true);
+  const [newreward, setNewReward] = useState(false);
   return (
     <>
       <CusContainer className="mb-4">
@@ -29,23 +24,14 @@ function EditSpinWheel() {
           className="mb-4 bg-green text-white hover:bg-green/90"
           size="large"
           startIcon={<Icons.plus_circle style={{ fontSize: '15px' }} />}
+          onClick={() => setNewReward(true)}
         >
           New Reward
         </Button>
-        {/* <EditTable /> */}
-        <div>Table goes here</div>
+        <EditTable newreward={newreward} setNewReward={setNewReward} />
       </CusContainer>
       <CusContainer>
-        <Stack direction="row" alignItems={'center'} justifyContent={'space-between'}>
-          <Text className="my-4 text-xl font-bold">Spin Settings</Text>
-          <Stack direction={'row'} gap={1} alignItems={'center'}>
-            <CustomSwitch isOpen={checked} handleToggle={() => setChecked((pre) => !pre)} />
-            <Text className={`font-semibold ${checked ? 'text-green' : 'text-red'}`}>
-              {checked ? 'On' : 'Off'}
-            </Text>
-          </Stack>
-        </Stack>
-        <SpinInput />
+        <SpinSettings />
       </CusContainer>
     </>
   );
