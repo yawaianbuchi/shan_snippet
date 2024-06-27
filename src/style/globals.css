@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
+ feature/details
     .text-balance {
       text-wrap: balance;
     }
@@ -19,3 +20,27 @@
 ::placeholder{
   font-size: 14px;
 }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spin buttons in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+

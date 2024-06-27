@@ -21,7 +21,7 @@ const Dialog: React.FC<CustomDialogProps> = ({ open, setOpen, ...rest }) => {
         {...rest}
       >
         {rest.closeIcon && (
-          <div className={`absolute cursor-pointer top-5 right-5`} onClick={() => setOpen(false)}>
+          <div className={`absolute right-5 top-5 cursor-pointer`} onClick={() => setOpen(false)}>
             {/* <Icons.close /> */}
             close
           </div>

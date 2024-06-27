@@ -21,6 +21,15 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/provider/TranslationProvider.ts", "i18nConfig.js", "src/app/i18n.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/provider/TranslationProvider.ts",
+    "i18nConfig.js",
+    "src/app/i18n.js",
+    "src/components/pages/spin-wheel/edit/SpinComponents.tsx"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,8 @@
 'use client';
 
 import React, { PropsWithChildren } from 'react';
-import Drawer from './Drawer';
+// import Drawer from './Drawer';
+import DynamicDrawer from './DynamicDrawer';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
@@ -19,13 +20,14 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, ...rest }: PageLayout
       pathname === `/${locale}/signup` ||
       pathname === `/${locale}/forget-pass` ||
       pathname === `/${locale}/pass-reset` ||
+      pathname === `/${locale}` ||
       pathname === '/login' ||
       pathname === '/signup' ||
       pathname === '/forget-pass' ||
       pathname === '/pass-reset' ? (
         children
       ) : (
-        <Drawer {...rest}>{children}</Drawer>
+        <DynamicDrawer {...rest}>{children}</DynamicDrawer>
       )}
     </div>
   );
