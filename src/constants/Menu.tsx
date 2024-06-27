@@ -44,7 +44,6 @@ export const MENU_LISTS: MENU_LISTS_PROPS[] = [
       { label: 'top winners', href: '/top-winner' },
       { label: 'Peomo Code Owners', href: '/promo-code' },
       { label: 'Blocked List', href: '/block-list' },
-
     ],
   },
   { label: 'member levels', icon: <Icons.member_levels />, href: '/member-levels' },
