@@ -5,6 +5,9 @@ import { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // if (pathname === '/') {
+  //   return Response.redirect(new URL(`/login`, request.url));
+  // }
   // if (pathname.match(/^\/[a-z]{2}\/dashboard$/)) {
   //   return Response.redirect(new URL(`/`, request.url));
   // }
