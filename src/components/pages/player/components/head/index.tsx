@@ -1,7 +1,6 @@
-
+import Text from "@/components/ui/typo"
 import Box from "@/components/ui/box"
 import TCard from "@/components/ui/tcard"
-import Text from "@/components/ui/text"
 import { MagicTabSelect } from "react-magic-motion"
 
 const Heading = ({

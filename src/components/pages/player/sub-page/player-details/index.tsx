@@ -1,7 +1,7 @@
 'use client';
 import Box from '@/components/ui/box';
 import TCard from '@/components/ui/tcard';
-import Text from '@/components/ui/text';
+import Text from '@/components/ui/typo';
 import Back from '@/iconejs/back';
 import React from 'react'
 import Content from '../../components/content';
