@@ -51,14 +51,14 @@ const TextFieldStyled = styled(MTextField)(({ theme }) => ({
     {
       borderBottom: 'none',
     },
-  '& .css-g4hivx-MuiInputBase-root-MuiFilledInput-root:hover:not(.Mui-disabled, .Mui-error):before': {
-    borderBottom: 'none',
-  }, 
-
+  '& .css-g4hivx-MuiInputBase-root-MuiFilledInput-root:hover:not(.Mui-disabled, .Mui-error):before':
+    {
+      borderBottom: 'none',
+    },
 }));
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
-  { password = false,...rest },
+  { password = false, ...rest },
   ref
 ) {
   const { label, value, variant = 'filled' } = rest;
@@ -69,7 +69,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
   // };
   return password ? (
     <TextFieldStyled
-    autoComplete='off'
+      autoComplete="off"
       ref={ref}
       className={cn(rest.className)}
       label={label}
@@ -91,7 +91,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
   ) : (
     <TextFieldStyled
       ref={ref}
-      className={cn('bg-transparent border', rest.className)}
+      className={cn('border bg-transparent', rest.className)}
       label={label}
       variant={variant}
       value={value}

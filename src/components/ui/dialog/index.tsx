@@ -22,13 +22,14 @@ const Dialog: React.FC<CustomDialogProps> = ({ open, setOpen, ...rest }) => {
         {...rest}
       >
         {rest.closeIcon && (
-          <div className={`absolute cursor-pointer top-5 right-5 text-2xl`} onClick={() => setOpen(false)}>
+          <div
+            className={`absolute right-5 top-5 cursor-pointer text-2xl`}
+            onClick={() => setOpen(false)}
+          >
             <Icons.times />
           </div>
         )}
-        <DialogContent>
-        {rest.children}
-        </DialogContent>
+        <DialogContent>{rest.children}</DialogContent>
       </MDialog>
     </React.Fragment>
   );

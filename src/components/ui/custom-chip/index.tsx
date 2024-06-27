@@ -13,8 +13,7 @@ const ChipUi = ({
   return (
     <span
       className={cn(
-        `${type == 'success' ? 'bg-[#127C12]' : 'bg-[#D70000]'}
-         text-white inline-flex px-3 pt-[2px] pb-[1px] text-[13px] rounded-full items-center justify-center `,
+        `${type == 'success' ? 'bg-[#127C12]' : 'bg-[#D70000]'} inline-flex items-center justify-center rounded-full px-3 pb-[1px] pt-[2px] text-[13px] text-white`,
         className
       )}
     >

@@ -16,7 +16,7 @@ const PopularTablePage = () => {
         <Link href="/game-list/topwinner-game">
           <Button
             variant="text"
-            className="flex text-lg justify-center items-center gap-2 normal-case text-gray-secondary"
+            className="text-gray-secondary flex items-center justify-center gap-2 text-lg normal-case"
           >
             More
             <Icons.arrow_long className="rotate-180" />

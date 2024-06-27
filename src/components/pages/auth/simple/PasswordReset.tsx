@@ -23,13 +23,12 @@ export default function PasswordResetSimple() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-  
   };
 
   return (
     <Container component="main" maxWidth="sm" className="h-screen">
       <Grid container className="p-4">
-        <Paper className="p-6 items-center justify-center w-full">
+        <Paper className="w-full items-center justify-center p-6">
           <CssBaseline />
           <Box
             sx={{

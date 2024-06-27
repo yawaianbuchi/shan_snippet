@@ -11,7 +11,7 @@ const Players = () => {
   return (
     <Card className="p-4">
       <ChartHeader label="Players" href="/transactions/top-up" />
-     <PieChart />
+      <PieChart />
     </Card>
   );
 };

@@ -1,10 +1,7 @@
-import PlayerDetailsPage from "@/components/pages/player/sub-page/player-details"
+import PlayerDetailsPage from '@/components/pages/player/sub-page/player-details';
 
+const Page = ({ params }: { params: { slug: string } }) => {
+  return <PlayerDetailsPage />;
+};
 
-const Page = ({params}:{params:{slug:string}}) => {
-  return (
-    <PlayerDetailsPage/>
-  )
-}
-
-export default Page
+export default Page;

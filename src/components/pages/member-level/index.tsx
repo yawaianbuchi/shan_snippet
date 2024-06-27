@@ -1,12 +1,12 @@
-import React from 'react'
-import MemberList from './components/list'
+import React from 'react';
+import MemberList from './components/list';
 
 const MemberLevel = () => {
   return (
     <div>
-        <MemberList/>
+      <MemberList />
     </div>
-  )
-}
+  );
+};
 
-export default MemberLevel
+export default MemberLevel;

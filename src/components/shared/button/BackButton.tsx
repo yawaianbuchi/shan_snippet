@@ -8,8 +8,7 @@ const BackButton = ({ href }: { href?: string }) => {
     <Link href={href ?? '/'}>
       <Button
         variant="outlined"
-        className="normal-case w-fit border-none 
-   text-[16px] gap-1 hover:border-none text-black font-normal"
+        className="w-fit gap-1 border-none text-[16px] font-normal normal-case text-black hover:border-none"
       >
         <Icons.arrow_long className="text-2xl" />
         Back

@@ -71,7 +71,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <Button
             variant="text"
             onClick={handlePassword}
-            className="border-none rounded-full text-lg p-1 w-8 h-8 flex justify-center items-center text-green"
+            className="flex h-8 w-8 items-center justify-center rounded-full border-none p-1 text-lg text-green"
           >
             {showPassword ? <Icons.eyeClose /> : <Icons.eyeOpen />}
           </Button>

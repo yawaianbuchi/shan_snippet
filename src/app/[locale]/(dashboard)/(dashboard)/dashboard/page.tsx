@@ -14,7 +14,7 @@ const DashboardPage: NextPage<Props> = async ({ params: { locale } }: Props) => 
   return (
     <Card className="bg-green p-6">
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Text className="text-white text-2xl font-semibold">{t('overview_reports')}</Text>
+        <Text className="text-2xl font-semibold text-white">{t('overview_reports')}</Text>
         <Box>
           <h1>Hello world</h1>
         </Box>

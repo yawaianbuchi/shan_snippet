@@ -26,7 +26,6 @@ const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
   ssr: false,
 });
 
-
 const PromoList = () => {
   const header = [
     'NO',
@@ -50,8 +49,8 @@ const PromoList = () => {
   const hello = () => data[0];
 
   const handleDetailPage = (id: number) => {
-    router.push(`${pathName}/${id}`)
-  }
+    router.push(`${pathName}/${id}`);
+  };
 
   const render = useMemo(() => {
     const item = value.map((item: renderType) => (
@@ -59,31 +58,28 @@ const PromoList = () => {
         <Item>{item.id}.</Item>
         <Item className="min-w-[195px]">
           <div className="flex space-x-2">
-            <img src={item.img} className="w-[37px] h-[37px] rounded-full object-cover" />
+            <img src={item.img} className="h-[37px] w-[37px] rounded-full object-cover" />
             <div className="">
               <p className="font-semibold">{item.player}</p>
               <p className="text-gray-500">{item.phone}</p>
             </div>
           </div>
         </Item>
-        <Item className='text-[#127C12]'>{'KMC8349'}</Item>
-        <Item>
-
-            {item.startDate}
-         
-        </Item>
+        <Item className="text-[#127C12]">{'KMC8349'}</Item>
+        <Item>{item.startDate}</Item>
         <Item className="w-[70px]">{'All'}</Item>
         <Item className="w-[70px]">{'00/ 00'}</Item>
-        <Item>
-            {formatNumber('000,000')}
-        </Item>
+        <Item>{formatNumber('000,000')}</Item>
         <Item>
           <div className="flex items-center">
-            <PhillButton onClick={() => handleDetailPage(item.id)} className="mr-2 flex items-center space-x-1">
+            <PhillButton
+              onClick={() => handleDetailPage(item.id)}
+              className="mr-2 flex items-center space-x-1"
+            >
               <Eye className="mr-1" /> Details
             </PhillButton>
             <PhillButton className="flex items-center space-x-1" type="success">
-              <Edit/> Block
+              <Edit /> Block
             </PhillButton>
           </div>
         </Item>
@@ -96,14 +92,13 @@ const PromoList = () => {
     <TCard>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
 
-      <Box className='grid grid-cols-2 mb-5'>
-        <Box className='flex gap-2' >
-        <Button
+      <Box className="mb-5 grid grid-cols-2">
+        <Box className="flex gap-2">
+          <Button
             variant="outlined"
-            className="normal-case w-fit bg-green border-none text-white
-           text-[14px] h-12 rounded-lg gap-1 hover:border-none hover:bg-green/85 hover:text-white"
+            className="h-12 w-fit gap-1 rounded-lg border-none bg-green text-[14px] normal-case text-white hover:border-none hover:bg-green/85 hover:text-white"
           >
-            <Icons.plus_circle className="font-semibold text-lg" />
+            <Icons.plus_circle className="text-lg font-semibold" />
             Create New
           </Button>
           <Input
@@ -116,13 +111,7 @@ const PromoList = () => {
           />
         </Box>
       </Box>
-      <GenieTable
-        {...controls}
-        header={header}
-        paginate
-        data={value}
-        total={data.length}
-      >
+      <GenieTable {...controls} header={header} paginate data={value} total={data.length}>
         {render}
       </GenieTable>
     </TCard>

@@ -24,7 +24,7 @@ const DetailsList = ({ label, value, copy = false, passwords = false }: DetailsL
     }
   };
   return (
-    <Grid className="xl:grid-cols-2  w-full h-14 rounded px-5 justify-center items-center odd:bg-gray">
+    <Grid className="h-14 w-full items-center justify-center rounded px-5 odd:bg-gray xl:grid-cols-2">
       <Text className="capitalize text-green">{label}</Text>
 
       {copy && (
@@ -38,14 +38,13 @@ const DetailsList = ({ label, value, copy = false, passwords = false }: DetailsL
             ref={ref}
             name={label}
             defaultValue={value}
-            className="bg-transparent outline-none p-0"
+            className="bg-transparent p-0 outline-none"
             readOnly
           />
           <Button
             onClick={handleCopy}
             variant="text"
-            className="max-w-fit h-fit font-bold
-                 text-green text-xl"
+            className="h-fit max-w-fit text-xl font-bold text-green"
           >
             <Icons.fileCopy />
           </Button>
@@ -63,7 +62,7 @@ const DetailsList = ({ label, value, copy = false, passwords = false }: DetailsL
             name="password"
             type="password"
             defaultValue={value}
-            className="bg-transparent outline-none p-0"
+            className="bg-transparent p-0 outline-none"
             containerClass="border-none w-full h-full p-0"
             readOnly
             sx={{
@@ -82,7 +81,7 @@ const DetailsList = ({ label, value, copy = false, passwords = false }: DetailsL
             type={value == 'true' ? 'success' : 'error'}
           />
         ) : (
-          <Text className="text-black capitalize">{value}</Text>
+          <Text className="capitalize text-black">{value}</Text>
         ))}
     </Grid>
   );

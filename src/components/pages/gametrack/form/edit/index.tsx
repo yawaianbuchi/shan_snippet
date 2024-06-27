@@ -29,8 +29,7 @@ export const EditGameTrackForm = () => {
     formState: { errors, isValid },
   } = form;
 
-  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
-  };
+  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {};
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleCreateGameTrackForm)}>
@@ -103,7 +102,7 @@ export const EditGameTrackForm = () => {
             <Link href="/game-track-panel">
               <Button
                 variant="contained"
-                className="normal-case bg-gray text-black hover:bg-gray"
+                className="bg-gray normal-case text-black hover:bg-gray"
                 disableElevation
               >
                 Cancel
@@ -113,7 +112,7 @@ export const EditGameTrackForm = () => {
             <Button
               type="submit"
               variant="contained"
-              className="bg-green disabled:bg-green/65 disabled:text-white normal-case"
+              className="bg-green normal-case disabled:bg-green/65 disabled:text-white"
               disabled={!isValid}
             >
               <Icons.check_mark className="mr-2 text-lg" /> Create

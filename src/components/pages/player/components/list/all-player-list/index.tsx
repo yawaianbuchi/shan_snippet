@@ -26,9 +26,7 @@ const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
   ssr: false,
 });
 
-
 const AllPlayerList = () => {
-
   const header = [
     'NO',
     'PLAYER',
@@ -50,8 +48,8 @@ const AllPlayerList = () => {
   const hello = () => data[0];
 
   const handleDetailPage = (id: number) => {
-    router.push(`${pathName}/${id}`)
-  }
+    router.push(`${pathName}/${id}`);
+  };
 
   const render = useMemo(() => {
     const item = value.map((item: renderType) => (
@@ -59,7 +57,7 @@ const AllPlayerList = () => {
         <Item>{item.id}.</Item>
         <Item className="min-w-[195px]">
           <div className="flex space-x-2">
-            <img src={item.img} className="w-[37px] h-[37px] rounded-full object-cover" />
+            <img src={item.img} className="h-[37px] w-[37px] rounded-full object-cover" />
             <div className="">
               <p className="font-semibold">{item.player}</p>
               <p className="text-gray-500">{item.phone}</p>
@@ -76,7 +74,10 @@ const AllPlayerList = () => {
         <Item className="w-[70px]">{item.endDate}</Item>
         <Item>
           <div className="flex items-center">
-            <PhillButton onClick={() => handleDetailPage(item.id)} className="mr-2 flex items-center space-x-1">
+            <PhillButton
+              onClick={() => handleDetailPage(item.id)}
+              className="mr-2 flex items-center space-x-1"
+            >
               <Eye className="mr-1" /> Details
             </PhillButton>
             <PhillButton className="flex items-center space-x-1" type="error">
@@ -92,19 +93,19 @@ const AllPlayerList = () => {
   return (
     <TCard>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
-      <Box className='w-[40%] mb-5'>
-        <Box className='flex gap-2'>
-        <Select
-                  label='status'
-                  className="w-full rounded-md"
-                  value={value}
-                  onChange={() => {}}
-                  options={[
-                    { label: 'One', value: 1 },
-                    { label: 'Two', value: 2 },
-                    { label: 'Three', value: 3 },
-                  ]}
-                />
+      <Box className="mb-5 w-[40%]">
+        <Box className="flex gap-2">
+          <Select
+            label="status"
+            className="w-full rounded-md"
+            value={value}
+            onChange={() => {}}
+            options={[
+              { label: 'One', value: 1 },
+              { label: 'Two', value: 2 },
+              { label: 'Three', value: 3 },
+            ]}
+          />
           <Input
             name="game_track"
             placeholder="Search by name or ph no."
@@ -115,13 +116,7 @@ const AllPlayerList = () => {
           />
         </Box>
       </Box>
-      <GenieTable
-        {...controls}
-        header={header}
-        paginate
-        data={value}
-        total={data.length}
-      >
+      <GenieTable {...controls} header={header} paginate data={value} total={data.length}>
         {render}
       </GenieTable>
     </TCard>

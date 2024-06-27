@@ -182,7 +182,7 @@ const GenieTable: React.FC<Partial<NonUndefined<GenieTableProps>>> = ({
   bodyText = 'Not Found',
   data = [],
   loading = false,
-}:any) => {
+}: any) => {
   return (
     <div
       className={cn(

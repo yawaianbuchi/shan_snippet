@@ -23,7 +23,7 @@ const HotGameTable = () => {
         size: 10,
         maxSize: 10,
         Cell: ({ row }) => (
-          <Box className="w-8 h-8 rounded-xl bg-orange center text-white font-semibold">
+          <Box className="center h-8 w-8 rounded-xl bg-orange font-semibold text-white">
             {row.index + 1}
           </Box>
         ),
@@ -91,11 +91,10 @@ const HotGameTable = () => {
         }
       },
     }),
-    ...FRAME
+    ...FRAME,
   });
 
-  return (<MRT_TableContainer table={table} className="no-scrollbar" />
-  );
+  return <MRT_TableContainer table={table} className="no-scrollbar" />;
 };
 
 export default HotGameTable;

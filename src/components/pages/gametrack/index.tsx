@@ -34,7 +34,7 @@ const GameTrackTable = () => {
     const item = value.map((item: renderType) => (
       <Row key={item.id}>
         <Item>{item.mainGame}</Item>
-        <Item className="normal-case w-2/6">{item.url}</Item>
+        <Item className="w-2/6 normal-case">{item.url}</Item>
         <Item>
           <Chip label={item.vpn ? 'yes' : 'no'} type={item.vpn ? 'success' : 'error'} />
         </Item>
@@ -42,7 +42,7 @@ const GameTrackTable = () => {
           <Stack direction="row" columnGap={1}>
             <Link href={`/game-track-panel/details/${item.id}`}>
               <Button
-                className="bg-green-50 text-lg text-green capitalize hover:bg-green-50/55"
+                className="bg-green-50 text-lg capitalize text-green hover:bg-green-50/55"
                 disableElevation
               >
                 <Icons.eyeOpen className="mr-1 text-lg" /> Details
@@ -51,10 +51,10 @@ const GameTrackTable = () => {
 
             <Link href={`/game-track-panel/details/${item.id}/edit`}>
               <Button
-                className="bg-green-50 text-lg text-green capitalize hover:bg-green-50/55"
+                className="bg-green-50 text-lg capitalize text-green hover:bg-green-50/55"
                 disableElevation
               >
-                <Icons.edit className="mr-1 w-4 h-4" /> Edit
+                <Icons.edit className="mr-1 h-4 w-4" /> Edit
               </Button>
             </Link>
           </Stack>
@@ -70,10 +70,9 @@ const GameTrackTable = () => {
         <Link href="/game-track-panel/create">
           <Button
             variant="outlined"
-            className="normal-case w-fit bg-green border-none text-white
-           text-[16px] h-12 rounded-lg gap-1 hover:border-none hover:bg-green/85 hover:text-white"
+            className="h-12 w-fit gap-1 rounded-lg border-none bg-green text-[16px] normal-case text-white hover:border-none hover:bg-green/85 hover:text-white"
           >
-            <Icons.plus_circle className="font-semibold text-lg" />
+            <Icons.plus_circle className="text-lg font-semibold" />
             Create New
           </Button>
         </Link>

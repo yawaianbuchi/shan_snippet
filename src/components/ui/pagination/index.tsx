@@ -15,8 +15,8 @@ const Pagination = ({
   paginationRange,
   pageNumbersCount,
   setRecordPerPage,
-}:PaginateProps & {
-   total : number | string
+}: PaginateProps & {
+  total: number | string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(7);
@@ -46,12 +46,12 @@ const Pagination = ({
   const list = [5, 7, 10, 20];
   return (
     <div className="">
-      <div className="flex flex-row justify-between items-center h-[42px] border-t  bg-white">
-        <div className="text-[12px] w-[50px] ">
+      <div className="flex h-[42px] flex-row items-center justify-between border-t bg-white">
+        <div className="w-[50px] text-[12px]">
           {currentPage} of {pageNumbersCount?.length}
         </div>
-        <div className="text-[12px] ml-[40px] ">
-          <div className="flex  flex-row justify-center items-center  space-x-[10px]">
+        <div className="ml-[40px] text-[12px]">
+          <div className="flex flex-row items-center justify-center space-x-[10px]">
             <div onClick={handlePrevious}>{<LeftIcon />}</div>
             {paginationRange &&
               paginationRange.length > 0 &&
@@ -66,9 +66,9 @@ const Pagination = ({
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer relative w-[20px] h-[19px] ${
+                    className={`relative h-[19px] w-[20px] cursor-pointer ${
                       currentPage === item ? '' : 'bg-gray-100 text-black'
-                    }  rounded-[5px]  grid place-items-center text-[12px]`}
+                    } grid place-items-center rounded-[5px] text-[12px]`}
                     onClick={changePage}
                   >
                     {item == currentPage && (
@@ -90,7 +90,7 @@ const Pagination = ({
                     <span
                       className={`${
                         item === currentPage ? 'text-white delay-150' : 'text-black'
-                      }  relative z-[2] transition-all duration-200 ease-in-out`}
+                      } relative z-[2] transition-all duration-200 ease-in-out`}
                     >
                       {item}
                     </span>
@@ -100,27 +100,25 @@ const Pagination = ({
             <div onClick={handleNext}>{<RightIcon />}</div>
           </div>
         </div>
-        <div className="flex items-center  gap-3">
+        <div className="flex items-center gap-3">
           <span className="text-xs">Show</span>
           <div
             ref={ref}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
-            className="text-[12px] border-2 px-2 py-1  relative  rounded-lg w-[55px] "
+            className="relative w-[55px] rounded-lg border-2 px-2 py-1 text-[12px]"
           >
             <p className="text-center">{page}</p>
 
             <div
               style={{ width: size?.width }}
-              className={`absolute transition-all duration-300 ease-in-out  top-[26px] rounded left-0 shadow-lg z-[30] bg-white
-                ${isOpen ? 'opacity-100 translate-y-0 z-10 ' : 'opacity-0 translate-y-6 z-[-10]'}
-                `}
+              className={`absolute left-0 top-[26px] z-[30] rounded bg-white shadow-lg transition-all duration-300 ease-in-out ${isOpen ? 'z-10 translate-y-0 opacity-100' : 'z-[-10] translate-y-6 opacity-0'} `}
             >
               {list.map((item) => (
                 <p
                   onClick={() => handleSelect(item)}
                   key={item}
-                  className="px-5 py-1 flex items-center transition-all duration-100 ease-linear hover:bg-[#eaeaea] "
+                  className="flex items-center px-5 py-1 transition-all duration-100 ease-linear hover:bg-[#eaeaea]"
                 >
                   {item}
                 </p>

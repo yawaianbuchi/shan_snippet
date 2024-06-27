@@ -27,8 +27,7 @@ const GameTrackDetails: NextPage<GameTrackDetailsProps> = ({
         <Link href={`/game-track-panel/details/${id}/edit`}>
           <Button
             variant="outlined"
-            className="normal-case w-fit border-none 
-       text-[16px] gap-1 bg-green-50 text-green hover:border-none"
+            className="w-fit gap-1 border-none bg-green-50 text-[16px] normal-case text-green hover:border-none"
           >
             <Icons.edit className="text-2xl" />
             Edit Details

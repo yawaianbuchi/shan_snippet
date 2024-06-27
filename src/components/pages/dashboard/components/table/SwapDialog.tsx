@@ -17,7 +17,7 @@ const SwapDialog = () => {
     <>
       <Button
         variant="text"
-        className="flex text-lg justify-center items-center gap-2 normal-case bg-green-50 text-green"
+        className="flex items-center justify-center gap-2 bg-green-50 text-lg normal-case text-green"
         onClick={toggle}
       >
         <Icons.swap />
@@ -36,7 +36,7 @@ const SwapDialog = () => {
             { label: 'HEINEKEN', value: 'SH' },
             { label: 'LEO', value: 'SH' },
           ]}
-          onChange={() => console.log('first')}
+          onChange={() => alert('first')}
         />
 
         <Text className="text-gray-secondary" mt={3} mb={1}>
@@ -53,9 +53,9 @@ const SwapDialog = () => {
         />
 
         <Stack py={2} gap={2}>
-          <RadioGroup defaultValue={1} name='game'>
+          <RadioGroup defaultValue={1} name="game">
             <FormControlLabel
-            value={1}
+              value={1}
               control={<Radio />}
               label={
                 <Stack direction="row" gap={1} alignItems="center">
@@ -65,7 +65,7 @@ const SwapDialog = () => {
               }
             />
             <FormControlLabel
-            value={2}
+              value={2}
               control={<Radio />}
               label={
                 <Stack direction="row" gap={1} alignItems="center">

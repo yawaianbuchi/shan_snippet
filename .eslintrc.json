@@ -14,7 +14,6 @@
        "no-console": "error",
        "no-unused-vars": "warn",
     // "@typescript-eslint/no-explicit-any": "off",
-    // "no-unused-vars": "warn",
     "react-hooks/rules-of-hooks": "off", // For checking rules of hooks
     "react-hooks/exhaustive-deps": "off", // For checking hook
     "@typescript-eslint/ban-types": [

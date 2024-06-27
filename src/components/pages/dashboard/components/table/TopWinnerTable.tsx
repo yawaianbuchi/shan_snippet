@@ -25,7 +25,7 @@ const TopWinnerTable = () => {
         size: 10,
         maxSize: 10,
         Cell: ({ row }) => (
-          <Box className="w-8 h-8 rounded-xl bg-orange center text-white font-semibold">
+          <Box className="center h-8 w-8 rounded-xl bg-orange font-semibold text-white">
             {row.index + 1}
           </Box>
         ),
@@ -82,7 +82,7 @@ const TopWinnerTable = () => {
         Cell: () => (
           <Button
             variant="text"
-            className="flex text-lg justify-center items-center gap-2 normal-case bg-green-50 text-green"
+            className="flex items-center justify-center gap-2 bg-green-50 text-lg normal-case text-green"
           >
             <Icons.eyeOpen className="rotate-180" />
             Details

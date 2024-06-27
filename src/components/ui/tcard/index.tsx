@@ -12,7 +12,7 @@ const TCard = ({
   return (
     <div
       style={{ boxShadow: '0 0 6px -1px rgba(0,0,0,0.12)' }}
-      className={cn(' w-full px-4 pt-5 pb-2 rounded-lg bg-white ', className)}
+      className={cn('w-full rounded-lg bg-white px-4 pb-2 pt-5', className)}
     >
       {children}
     </div>

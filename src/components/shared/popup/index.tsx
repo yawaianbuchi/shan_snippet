@@ -14,8 +14,8 @@ const PopUp = ({ children, className, status, ...rest }: PopupProps) => {
     <Stack
       rowGap={1}
       className={cn(
-        'absolute w-full py-2 rounded bg-white drop-shadow-md top-12 left-0 duration-100 ease-in',
-        status ? 'opacity-100 visible' : 'opacity-0 collapse',
+        'absolute left-0 top-12 w-full rounded bg-white py-2 drop-shadow-md duration-100 ease-in',
+        status ? 'visible opacity-100' : 'collapse opacity-0',
         className
       )}
       {...rest}

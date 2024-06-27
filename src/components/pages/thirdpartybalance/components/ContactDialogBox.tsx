@@ -16,16 +16,16 @@ const ContactDialogBox = () => {
         <Icons.messageInfo className="text-2xl" />
       </button>
       <Dialog open={show} setOpen={toggle} closeIcon>
-            <Text variant="h6" fontWeight="500">
-              Contact Information
-            </Text>
+        <Text variant="h6" fontWeight="500">
+          Contact Information
+        </Text>
 
-          <Stack mt={3} gap={2}>
-            <SocialLink type="facebook" value="www.facebook.com" />
-            <SocialLink type="telegram" value="www.telegram.com" />
-            <SocialLink type="wechat" value="www.wechat.com" />
-            <SocialLink type="phone" value="+959 345 345 345" />
-          </Stack>
+        <Stack mt={3} gap={2}>
+          <SocialLink type="facebook" value="www.facebook.com" />
+          <SocialLink type="telegram" value="www.telegram.com" />
+          <SocialLink type="wechat" value="www.wechat.com" />
+          <SocialLink type="phone" value="+959 345 345 345" />
+        </Stack>
       </Dialog>
     </>
   );
@@ -44,7 +44,7 @@ const SocialLink = ({ type, value }: SocialLinkProps) => {
         alt={type}
         width={40}
         height={40}
-        className="w-10 h-10"
+        className="h-10 w-10"
       />
       <Box flexGrow={1}>
         <Text className="text-gray-secondary text-sm capitalize leading-6">

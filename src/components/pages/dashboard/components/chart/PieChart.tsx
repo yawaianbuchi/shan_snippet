@@ -38,7 +38,6 @@ const PieChart = () => {
           fontSize: '18px',
           fontWeight: 'bold',
           formatter: function (seriesName: any, opts: any) {
-            console.log(seriesName);
             return `
             <div class="w-32 inline-block">
             ${seriesName}

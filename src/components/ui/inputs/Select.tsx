@@ -21,7 +21,7 @@ const TextFieldStyled = styled(MSelect)<{}>(({ theme }) => ({
 }));
 
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
-  {  label, value, onChange, options, ...rest   },
+  { label, value, onChange, options, ...rest },
   ref
 ) {
   return (

@@ -22,5 +22,5 @@ export const formatNumber = (val: number, decPlace?: number) => {
     .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
 
-
-export const calculateTotalValue = (val: number[]): number =>  val.reduce((cur,acc) => cur + acc ,0)
+export const calculateTotalValue = (val: number[]): number =>
+  val.reduce((cur, acc) => cur + acc, 0);

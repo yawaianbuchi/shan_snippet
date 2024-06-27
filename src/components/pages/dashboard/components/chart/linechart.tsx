@@ -119,17 +119,17 @@ const LineChart = () => {
   }
 
   return (
-      <Chart
-        type="line"
-        options={{
-          ...options,
-          xaxis: {
-            categories: ['Days', ...days],
-          },
-        }}
-        series={options.series}
-        height={420}
-      />
+    <Chart
+      type="line"
+      options={{
+        ...options,
+        xaxis: {
+          categories: ['Days', ...days],
+        },
+      }}
+      series={options.series}
+      height={420}
+    />
   );
 };
 

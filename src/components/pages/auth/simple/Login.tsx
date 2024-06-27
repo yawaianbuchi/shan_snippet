@@ -18,13 +18,12 @@ export default function LoginSimple() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-  
   };
 
   return (
     <Container component="main" maxWidth="sm" className="h-screen">
-      <Grid container className="p-4 ">
-        <Paper className="p-6 space-y-2 items-center justify-center">
+      <Grid container className="p-4">
+        <Paper className="items-center justify-center space-y-2 p-6">
           <CssBaseline />
           <Box
             sx={{

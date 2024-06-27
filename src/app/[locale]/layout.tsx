@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   title: 'Shan Gaming',
   description: 'Shan Gaming',
   icons: {
-    icon:"/favicon.ico",
-  }
+    icon: '/favicon.ico',
+  },
 };
 
 export default async function RootLayout({

@@ -10,6 +10,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { CREATEGAMETRACK_SCHEMA } from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@/components/ui/inputs/TextField';
+import Select from '@/components/ui/inputs/Select';
 
 export const CreateGameTrackForm = () => {
   const form = useForm({
@@ -20,8 +21,7 @@ export const CreateGameTrackForm = () => {
     formState: { errors, isValid },
   } = form;
 
-  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
-  };
+  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {};
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleCreateGameTrackForm)}>
@@ -61,9 +61,7 @@ export const CreateGameTrackForm = () => {
                 <Select
                   label="Main Game"
                   className="w-full"
-                  onChange={() => {
-
-                  }}
+                  onChange={() => {}}
                   options={[
                     { label: 'One', value: 1 },
                     { label: 'Two', value: 2 },
@@ -98,7 +96,7 @@ export const CreateGameTrackForm = () => {
             <Link href="/game-track-panel">
               <Button
                 variant="outlined"
-                className="normal-case text-md border-gray-300 hover:border-gray-300 h-12 bg-gray text-black hover:bg-gray"
+                className="h-12 border-gray-300 bg-gray text-md normal-case text-black hover:border-gray-300 hover:bg-gray"
                 disableElevation
               >
                 Cancel
@@ -108,7 +106,7 @@ export const CreateGameTrackForm = () => {
             <Button
               type="submit"
               variant="contained"
-              className="bg-green disabled:bg-green/65 disabled:text-white normal-case"
+              className="bg-green normal-case disabled:bg-green/65 disabled:text-white"
               disabled={!isValid}
             >
               <Icons.check_mark className="mr-2 text-lg" /> Create

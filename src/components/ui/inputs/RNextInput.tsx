@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { cn } from '@/utils/cn';
 import { useFormContext, RegisterOptions } from 'react-hook-form';
-import {Input} from "@nextui-org/input";
+import { Input } from '@nextui-org/input';
 
 interface TypeTextFieldI {
   label?: string;
@@ -40,8 +40,7 @@ const RNextInput: React.FC<TypeTextFieldI> = ({
 
   return (
     <div className={cn(className)}>
-     
-    {/* <input
+      {/* <input
           type={type}
           {...register(name, { required: required, validate: validate, ...registerOptions })}
           {...rest}
@@ -50,8 +49,7 @@ const RNextInput: React.FC<TypeTextFieldI> = ({
           maxLength={maxLength}
         /> */}
 
-                   <Input type="email" variant="bordered" label="Email" />
-
+      <Input type="email" variant="bordered" label="Email" />
 
       {/* {error && <Text className="text-xs text-red mt-2">{(error as string) || ''}</Text>} */}
     </div>

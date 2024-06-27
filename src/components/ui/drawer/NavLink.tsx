@@ -15,8 +15,8 @@ const NavLink = ({ href, isActive, label, icon }: NavLinkProps) => {
       <ListItem>
         <ListItemButton
           className={cn(
-            'gap-2 capitalize rounded-lg group-hover:bg-white hover:bg-green hover:text-white duration-75 text-sm',
-            isActive && 'text-white bg-green font-bold'
+            'gap-2 rounded-lg text-sm capitalize duration-75 hover:bg-green hover:text-white group-hover:bg-white',
+            isActive && 'bg-green font-bold text-white'
           )}
         >
           {icon ? (
@@ -24,7 +24,7 @@ const NavLink = ({ href, isActive, label, icon }: NavLinkProps) => {
           ) : (
             <div
               className={cn(
-                'w-1.5 h-1.5 list-disc rounded-full ml-4',
+                'ml-4 h-1.5 w-1.5 list-disc rounded-full',
                 isActive ? 'bg-green hover:bg-gray-400' : 'bg-gray-400'
               )}
             />

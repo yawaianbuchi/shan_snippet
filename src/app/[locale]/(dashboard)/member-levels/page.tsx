@@ -4,7 +4,11 @@ import { NextPage } from 'next';
 import React from 'react';
 
 const MemberLevelsPage: NextPage = () => {
-  return <div><MemberLevel/></div>;
+  return (
+    <div>
+      <MemberLevel />
+    </div>
+  );
 };
 
 export default MemberLevelsPage;

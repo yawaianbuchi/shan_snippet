@@ -8,7 +8,7 @@ const LineChart = dynamic(() => import('@/components/pages/dashboard/components/
 });
 const Transactions = () => {
   return (
-    <Card className="flex-1 min-h-[30vh] col-span-2 p-4 ">
+    <Card className="col-span-2 min-h-[30vh] flex-1 p-4">
       <ChartHeader label="Transactions" href="/transactions/top-up" />
       <LineChart />
     </Card>
