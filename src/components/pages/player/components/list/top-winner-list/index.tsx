@@ -1,15 +1,13 @@
 'use client';
 import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
-import React, { useCallback, useMemo } from 'react';
+import React, {  useMemo } from 'react';
 import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import { data, formatNumber } from '../../config';
 import dynamic from 'next/dynamic';
-import { useRouter , usePathname } from 'next/navigation';
-import TextField from '@/components/ui/inputs/TextField';
 import Box from '@/components/ui/box';
 import { Icons } from '@/components/ui/images/Icons';
 import Input from '@/components/ui/inputs/Input';
@@ -20,7 +18,6 @@ const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
   ssr: false,
 });
 
-
 const TopWinnerList = () => {
   const header = [
     'NO',
@@ -29,8 +26,7 @@ const TopWinnerList = () => {
     'Win Amount',
     'Date',
   ];
-  const router = useRouter();
-  const pathName = usePathname();
+
   const { value = [], controls } = useGenieTable({
     total: data.length,
     api: false,

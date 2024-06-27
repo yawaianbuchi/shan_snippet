@@ -1,7 +1,7 @@
 'use client';
 import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
@@ -14,11 +14,10 @@ import dynamic from 'next/dynamic';
 import ChipUi from '@/components/ui/custom-chip';
 import { useRouter, usePathname } from 'next/navigation';
 import Box from '@/components/ui/box';
-import TextField from '@/components/ui/inputs/TextField';
 import Input from '@/components/ui/inputs/Input';
 import { Icons } from '@/components/ui/images/Icons';
 import Select from '@/components/ui/inputs/Select';
-import { useSafeState } from '@/hooks/useSafeState';
+
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
 
@@ -124,6 +123,7 @@ const AllPlayerList = () => {
       >
         {render}
       </GenieTable>
+    
     </TCard>
   );
 };

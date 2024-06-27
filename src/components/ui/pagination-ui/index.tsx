@@ -108,34 +108,33 @@ const PaginationUi = ({
         </div>
         <div className="flex items-center  gap-3">
           <span className="text-xs">Show</span>
-           <div className='relative'>
-           <div
+          <div
             ref={ref}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
-            className=" border-2 px-2 py-1  text-[12px]   rounded-lg w-[55px] "
+            className=" border-2 px-2 py-1 relative  text-[12px]   rounded-lg w-[55px] "
           >
             <p className="text-center">{page}</p>
-
-          
-          </div>
-          <div
+            <div
               style={{ width: size?.width }}
-              className={`absolute text-[12px] transition-all duration-300 ease-in-out  top-[26px] rounded left-0 shadow-lg z-[30] bg-white
-                ${isOpen ? 'opacity-100 translate-y-0 z-10 ' : 'opacity-0 translate-y-6 z-[-10]'}
-                `}
+              className={`absolute overflow-hidden transition-all duration-500 ease-in-out rounded bg-white shadow top-[31px] left-0 ${isOpen
+                  ? "opacity-100 translate-y-0 z-10 "
+                  : "opacity-0 translate-y-6 z-[-10]"
+                }`}
             >
-              {list.map((item) => (
+               {list.map((item) => (
                 <p
                   onClick={() => handleSelect(item)}
                   key={item}
-                  className="px-5 py-1 flex items-center transition-all duration-100 ease-linear hover:bg-[#eaeaea] "
+                  className={`px-5 py-1 flex items-center transition-all duration-100  ease-linear hover:bg-[#eaeaea]`}
                 >
                   {item}
                 </p>
               ))}
+
+            
             </div>
-           </div>
+          </div>
           <span className="text-sm">{total || '245,348'}</span>
         </div>
       </div>
