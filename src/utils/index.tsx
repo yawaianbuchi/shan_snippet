@@ -30,4 +30,5 @@ const formatNumberAbbreviation = (number: number) => {
   // If number is less than 1000, return it without formatting
   return number;
 };
+
 export { formatDate, formatNumberAbbreviation };
