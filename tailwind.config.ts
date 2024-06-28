@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import color from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -26,8 +25,8 @@ const config: Config = {
           400: '#adadad',
         },
         orange: {
-          DEFAULT:"#F76D31"
-        }
+          DEFAULT: '#F76D31',
+        },
       },
       colors: {
         red: {
@@ -43,6 +42,7 @@ const config: Config = {
         },
         gray: {
           DEFAULT: '#f7f7f7',
+          seconday: '#aeaeae',
           400: '#adadad',
         },
         black: {
@@ -57,9 +57,9 @@ const config: Config = {
           DEFAULT: '#EEEEEE',
         },
       },
-      fontSize:{
-        md:"16px"
-      }
+      fontSize: {
+        md: '16px',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],

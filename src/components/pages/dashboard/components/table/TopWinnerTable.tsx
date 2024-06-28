@@ -1,9 +1,8 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import {
   useMaterialReactTable,
   type MRT_ColumnDef,
-  type MRT_Row,
   MRT_TableContainer,
 } from 'material-react-table';
 import { Box, Stack } from '@mui/material';
@@ -15,7 +14,9 @@ import Chip from '@/components/ui/chip';
 import Button from '@/components/ui/button';
 import { Icons } from '@/components/ui/images/Icons';
 import { data as initData, type HotGame } from './data';
+import { atom, useAtomValue } from 'jotai';
 
+const initAtom = atom(initData);
 const TopWinnerTable = () => {
   const columns = useMemo<MRT_ColumnDef<HotGame>[]>(
     () => [
@@ -93,7 +94,7 @@ const TopWinnerTable = () => {
     []
   );
 
-  const [data, setData] = useState(() => initData);
+  const data = useAtomValue(initAtom);
 
   const table = useMaterialReactTable({
     columns,

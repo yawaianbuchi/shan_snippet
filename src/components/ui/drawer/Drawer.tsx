@@ -38,7 +38,7 @@ export default function ResponsiveDrawer(props: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const router = useRouter();
-  const [isPending, startTransition] = React.useTransition();
+  const [isPending] = React.useTransition();
   const pathname = usePathname();
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
@@ -139,7 +139,7 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: 'transparent',
+          backgroundColor: '#F7F7F7',
           boxShadow: 'none',
         }}
       >
@@ -221,6 +221,8 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           flexGrow: 1,
           p: 3,
+          height: '100vh',
+          overflowY: 'scroll',
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >

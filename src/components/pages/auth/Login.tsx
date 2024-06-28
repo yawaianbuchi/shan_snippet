@@ -1,19 +1,12 @@
 'use client';
-
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import React, { startTransition, useState } from 'react';
 import TextField from '@/components/ui/inputs/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Button from '@/components/ui/button';
-import Link from '@mui/material/Link';
 import { Form, FormField } from '@/components/ui/form';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { LoginForm, loginSchema } from '@/types/login';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
-import { CREATEGAMETRACK_SCHEMA, CreateLoginSchema } from '../gametrack/form/create/schema';
+import { CreateLoginSchema } from '../gametrack/form/create/schema';
 import { flags } from '@/data';
 import { cn } from '@/utils/cn';
 import { useRouter } from 'next/navigation';
@@ -35,11 +28,11 @@ const Login = () => {
   });
 
   const {
-    formState: { errors, isValid },
+    formState: { isValid },
     reset,
   } = form;
 
-  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
+  const handleCreateGameTrackForm: SubmitHandler<any> = () => {
     setIsLoading(true);
 
     startTransition(async () => {

@@ -5,7 +5,7 @@ import TBody from '@/components/ui/tbody';
 import mm from '../../../../../../public/images/flag/mm.svg';
 import Image from 'next/image';
 import Box from '@/components/ui/box';
-import ChipUi from '@/components/ui/custom-chip';
+import Chip from '@/components/ui/chip';
 
 const PersonalDetails = () => {
   return (
@@ -41,7 +41,7 @@ const PersonalDetails = () => {
         <Row className="h-[52px]">
           <Item className="rounded-bl-[10px] rounded-tl-[10px] text-[#127C12]">Status</Item>
           <Item className="rounded-br-[10px] rounded-tr-[10px]">
-            <ChipUi type="success" className="py-3" />
+            <Chip label="success" type="success" />
           </Item>
         </Row>
         <Row className="h-[52px]">

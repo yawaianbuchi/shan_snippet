@@ -12,13 +12,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@/components/ui/inputs/TextField';
 import { CREATEGAMETRACK_SCHEMA } from './schema';
 
-type FiledValues = {
-  operatorname: string;
-  url: string;
-  username: string;
-  password: string;
-  merchantcode: string;
-};
+// type FiledValues = {
+//   operatorname: string;
+//   url: string;
+//   username: string;
+//   password: string;
+//   merchantcode: string;
+// };
 
 export const EditGameTrackForm = () => {
   const form = useForm({
@@ -26,10 +26,12 @@ export const EditGameTrackForm = () => {
   });
 
   const {
-    formState: { errors, isValid },
+    formState: { isValid },
   } = form;
 
-  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {};
+  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
+    alert(e);
+  };
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleCreateGameTrackForm)}>

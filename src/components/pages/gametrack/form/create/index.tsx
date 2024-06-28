@@ -18,10 +18,12 @@ export const CreateGameTrackForm = () => {
   });
 
   const {
-    formState: { errors, isValid },
+    formState: { isValid },
   } = form;
 
-  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {};
+  const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
+    alert(e);
+  };
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleCreateGameTrackForm)}>

@@ -1,5 +1,4 @@
 'use client';
-import Card from '@/components/shared/card';
 import Dialog from '@/components/ui/dialog';
 import { Icons } from '@/components/ui/images/Icons';
 import Image from '@/components/ui/images/Image';

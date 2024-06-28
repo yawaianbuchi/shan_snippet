@@ -38,7 +38,7 @@ const Chip = ({ className, ...props }: ChipProps) => {
   return (
     <ChipStyled
       {...props}
-      className={cn('h-6 w-[50px] font-medium capitalize text-white', className)}
+      className={cn('h-6 w-[50px] min-w-fit font-medium capitalize text-white', className)}
     />
   );
 };

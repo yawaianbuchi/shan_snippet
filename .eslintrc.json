@@ -11,8 +11,7 @@
   },
   "ignorePatterns": ["i18*.js", "TranslationProvider.js", "usePaginate.ts", "useGenieTable.ts"],
   "rules": {
-       "no-console": "error",
-       "no-unused-vars": "warn",
+    "no-console": "error",
     // "@typescript-eslint/no-explicit-any": "off",
     "react-hooks/rules-of-hooks": "off", // For checking rules of hooks
     "react-hooks/exhaustive-deps": "off", // For checking hook

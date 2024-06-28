@@ -1,7 +1,6 @@
 'use client';
-import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
@@ -11,14 +10,14 @@ import PhillButton from '@/components/ui/phill-button';
 import Eye from '@/iconejs/eyes';
 import Block from '@/iconejs/block';
 import dynamic from 'next/dynamic';
-import ChipUi from '@/components/ui/custom-chip';
 import { useRouter, usePathname } from 'next/navigation';
 import Box from '@/components/ui/box';
-import TextField from '@/components/ui/inputs/TextField';
 import Input from '@/components/ui/inputs/Input';
 import { Icons } from '@/components/ui/images/Icons';
 import Select from '@/components/ui/inputs/Select';
-import { useSafeState } from '@/hooks/useSafeState';
+import Image from '@/components/ui/images/Image';
+import Chip from '@/components/ui/chip';
+import Card from '@/components/shared/card';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'All Players' }];
 
@@ -57,7 +56,8 @@ const AllPlayerList = () => {
         <Item>{item.id}.</Item>
         <Item className="min-w-[195px]">
           <div className="flex space-x-2">
-            <img src={item.img} className="h-[37px] w-[37px] rounded-full object-cover" />
+            {/* <img src={item.img} className="h-[37px] w-[37px] rounded-full object-cover" /> */}
+            <Image src={item.img} alt="testing" width={37} height={37} className="rounded-full" />
             <div className="">
               <p className="font-semibold">{item.player}</p>
               <p className="text-gray-500">{item.phone}</p>
@@ -66,9 +66,7 @@ const AllPlayerList = () => {
         </Item>
         <Item>{item.level}</Item>
         <Item>
-          <ChipUi className="uppercase" type={item.status === 'active' ? 'success' : 'error'}>
-            {item.status}
-          </ChipUi>
+          <Chip label={item.status} type={item.status === 'active' ? 'success' : 'error'} />
         </Item>
         <Item className="w-[70px]">{item.startDate}</Item>
         <Item className="w-[70px]">{item.endDate}</Item>
@@ -91,7 +89,7 @@ const AllPlayerList = () => {
   }, [{ ...controls }]);
 
   return (
-    <TCard>
+    <Card>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
       <Box className="mb-5 w-[40%]">
         <Box className="flex gap-2">
@@ -119,7 +117,7 @@ const AllPlayerList = () => {
       <GenieTable {...controls} header={header} paginate data={value} total={data.length}>
         {render}
       </GenieTable>
-    </TCard>
+    </Card>
   );
 };
 

@@ -14,7 +14,9 @@ const PasswordReset = () => {
     resolver: zodResolver(passwordRestSchema),
   });
 
-  const submit = async (_data: PasswordRestForm) => {};
+  const submit = async (data: PasswordRestForm) => {
+    alert(data);
+  };
 
   return (
     <Form {...form}>

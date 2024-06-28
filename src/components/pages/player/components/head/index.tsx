@@ -1,7 +1,7 @@
+import Card from '@/components/shared/card';
 import Box from '@/components/ui/box';
-import TCard from '@/components/ui/tcard';
-import Text from '@/components/ui/text';
 import { MagicTabSelect } from 'react-magic-motion';
+import Text from '@/components/ui/typo';
 
 const Heading = ({
   list,
@@ -14,10 +14,16 @@ const Heading = ({
 }) => {
   return (
     <Box>
-      <TCard className="cursor-pointer rounded-[10px] p-1 py-1 shadow-md">
+      <Card className="cursor-pointer rounded-[10px] p-1 py-1 shadow-md">
         <Box className="flex items-center overflow-x-scroll whitespace-nowrap scrollbar-hide">
           {list?.map((item: string, index: number) => (
-            <Box key={item} className={`relative px-3 py-3`} onClick={() => handleActive(index)}>
+            <Box
+              key={item}
+              className={`relative px-3 py-3`}
+              onClick={() => {
+                handleActive(index);
+              }}
+            >
               {isActive == index && (
                 <MagicTabSelect id="pillTabs" transition={{ type: 'spring', bounce: 0.35 }}>
                   <span
@@ -42,7 +48,7 @@ const Heading = ({
             </Box>
           ))}
         </Box>
-      </TCard>
+      </Card>
     </Box>
   );
 };

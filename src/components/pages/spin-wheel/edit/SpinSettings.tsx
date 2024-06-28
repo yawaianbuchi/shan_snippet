@@ -22,7 +22,7 @@ function SpinSettings() {
         </Stack>
       </Stack>
       <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit((data: any) => {})}>
+        <form onSubmit={methods.handleSubmit(() => {})}>
           <div className="grid grid-cols-3 gap-3">
             <SpinInputBox label="Winning Chance">
               <SpinInput

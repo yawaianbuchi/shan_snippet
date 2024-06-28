@@ -17,7 +17,7 @@ const list = [
 const Content = () => {
   const [isActive, setIsActive] = useSafeState<number>(0);
   const handleActive = (index: number) => {
-    setIsActive((_prev) => (_prev = index));
+    setIsActive(index);
   };
 
   return (

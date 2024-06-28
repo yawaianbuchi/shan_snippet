@@ -1,17 +1,17 @@
 'use client';
-import CusContainer from '@/components/ui/cuscontainer';
 import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 import { Icons } from '@/components/ui/images/Icons';
 import Text from '@/components/ui/typo';
 import EditTable from './EditTable';
 import SpinSettings from './SpinSettings';
+import Card from '@/components/shared/card';
 
 function EditSpinWheel() {
   const [newreward, setNewReward] = useState(false);
   return (
     <>
-      <CusContainer className="mb-4">
+      <Card className="mb-4 py-4">
         <Button
           variant="text"
           className="-ml-5 capitalize text-gray-600 hover:bg-transparent"
@@ -29,10 +29,10 @@ function EditSpinWheel() {
           New Reward
         </Button>
         <EditTable newreward={newreward} setNewReward={setNewReward} />
-      </CusContainer>
-      <CusContainer>
+      </Card>
+      <Card className="py-4">
         <SpinSettings />
-      </CusContainer>
+      </Card>
     </>
   );
 }

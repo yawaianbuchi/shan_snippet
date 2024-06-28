@@ -132,7 +132,7 @@ const PaginationUi = ({
               ))}
             </div>
           </div>
-          <span className="text-sm">{total || '245,348'}</span>
+          <span className="text-sm">of {total || '245,348'}</span>
         </div>
       </div>
     </div>

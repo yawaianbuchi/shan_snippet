@@ -15,7 +15,7 @@ interface SelectProps extends OutlinedSelectProps {
   options: { label: string; value: string | number }[];
 }
 
-const TextFieldStyled = styled(MSelect)<{}>(({ theme }) => ({
+const TextFieldStyled = styled(MSelect)<{}>(() => ({
   background: '#fff',
   border: '1px solid #e4e4e4',
 }));

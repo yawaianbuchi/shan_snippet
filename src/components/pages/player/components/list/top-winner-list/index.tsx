@@ -1,18 +1,17 @@
 'use client';
-import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import BradeCurmb from '../../../../../ui/breadcumbs';
 import Row from '@/components/ui/row';
 import Item from '@/components/ui/item';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import { data, formatNumber } from '../../config';
 import dynamic from 'next/dynamic';
-import { useRouter, usePathname } from 'next/navigation';
-import TextField from '@/components/ui/inputs/TextField';
 import Box from '@/components/ui/box';
 import { Icons } from '@/components/ui/images/Icons';
 import Input from '@/components/ui/inputs/Input';
+import Image from '@/components/ui/images/Image';
+import Card from '@/components/shared/card';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'Top Winners' }];
 
@@ -22,8 +21,6 @@ const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
 
 const TopWinnerList = () => {
   const header = ['NO', 'PLAYER', 'Game', 'Win Amount', 'Date'];
-  const router = useRouter();
-  const pathName = usePathname();
   const { value = [], controls } = useGenieTable({
     total: data.length,
     api: false,
@@ -39,7 +36,8 @@ const TopWinnerList = () => {
         <Item>{item.id}.</Item>
         <Item className="min-w-[195px]">
           <div className="flex space-x-2">
-            <img src={item.img} className="h-[37px] w-[37px] rounded-full object-cover" />
+            {/* <img src={item.img} className="h-[37px] w-[37px] rounded-full object-cover" /> */}
+            <Image src={item.img} alt="testing" width={37} height={37} className="rounded-full" />
             <div className="">
               <p className="font-semibold">{item.player}</p>
               <p className="text-gray-500">{item.phone}</p>
@@ -56,7 +54,7 @@ const TopWinnerList = () => {
   }, [{ ...controls }]);
 
   return (
-    <TCard>
+    <Card>
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
       {/* <TextField/> */}
       <Box className="mb-5 grid grid-cols-4">
@@ -72,7 +70,7 @@ const TopWinnerList = () => {
       <GenieTable {...controls} header={header} paginate data={value} total={data.length}>
         {render}
       </GenieTable>
-    </TCard>
+    </Card>
   );
 };
 

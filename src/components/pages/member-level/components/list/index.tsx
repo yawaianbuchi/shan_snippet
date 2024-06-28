@@ -1,5 +1,4 @@
 'use client';
-import TCard from '@/components/ui/tcard';
 import RightIcon from '@/iconejs/right-icon';
 import React, { useMemo } from 'react';
 import Row from '@/components/ui/row';
@@ -7,9 +6,8 @@ import Item from '@/components/ui/item';
 import { datalevel } from '../config';
 import { useGenieTable } from '@/hooks/useGenieTable';
 import PhillButton from '@/components/ui/phill-button';
-import Eye from '@/iconejs/eyes';
 import dynamic from 'next/dynamic';
-import { useRouter, usePathname } from 'next/navigation';
+// import { useRouter, usePathname } from 'next/navigation';
 import Box from '@/components/ui/box';
 import Input from '@/components/ui/inputs/Input';
 import { Icons } from '@/components/ui/images/Icons';
@@ -17,6 +15,7 @@ import Edit from '@/iconejs/edit';
 import { Button } from '@mui/material';
 import BradeCurmb from '@/components/ui/breadcumbs';
 import Star from '@/iconejs/start';
+import Card from '@/components/shared/card';
 
 const list = [{ cump: 'Player' }, { cump: <RightIcon /> }, { cump: 'Promo Code Owners' }];
 
@@ -26,8 +25,8 @@ const GenieTable = dynamic(() => import('@/components/ui/genie-table'), {
 
 const MemberList = () => {
   const header = ['NO', 'MEMBER LEVEL', 'NAME', 'MIN TOP-UP AMOUNT', 'LAST UPADATE ON', 'ACTION'];
-  const router = useRouter();
-  const pathName = usePathname();
+  // const router = useRouter();
+  // const pathName = usePathname();
   const { value = [], controls } = useGenieTable({
     total: datalevel.length,
     api: false,
@@ -37,9 +36,9 @@ const MemberList = () => {
   type renderType = ReturnType<typeof hello>;
   const hello = () => datalevel[0];
 
-  const handleDetailPage = (id: number) => {
-    router.push(`${pathName}/${id}`);
-  };
+  // const handleDetailPage = (id: number) => {
+  //   router.push(`${pathName}/${id}`);
+  // };
 
   const render = useMemo(() => {
     const item = value.map((item: renderType) => (
@@ -62,7 +61,7 @@ const MemberList = () => {
   }, [{ ...controls }]);
 
   return (
-    <TCard>
+    <Card className="px-8 py-10">
       <BradeCurmb active={2} list={list} classNameContainer="mb-5" />
 
       <Box className="mb-5 grid grid-cols-2">
@@ -87,7 +86,7 @@ const MemberList = () => {
       <GenieTable {...controls} header={header} paginate data={value} total={datalevel.length}>
         {render}
       </GenieTable>
-    </TCard>
+    </Card>
   );
 };
 

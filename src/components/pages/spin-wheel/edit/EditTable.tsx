@@ -6,7 +6,6 @@ import Dialog from '@/components/ui/dialog';
 import React, { useEffect, useState } from 'react';
 import Text from '@/components/ui/typo';
 import { FormProvider, useForm } from 'react-hook-form';
-import { CusInput } from './SpinComponents';
 import { FormField } from '@/components/ui/form';
 import TextField from '@/components/ui/inputs/TextField';
 
@@ -209,7 +208,7 @@ function EditTable({ newreward, setNewReward }: IEditTable) {
             <Icons.times />
           </IconButton>
           <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit((val) => {})}>
+            <form onSubmit={methods.handleSubmit(() => {})}>
               {open.type === 'edit'
                 ? editForm
                 : open.type === 'del'

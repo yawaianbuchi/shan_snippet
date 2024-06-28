@@ -15,7 +15,9 @@ const SignUp = () => {
     resolver: zodResolver(signupSchema),
   });
 
-  const submit = async (_data: SignUpForm) => {};
+  const submit = async (data: SignUpForm) => {
+    alert(data);
+  };
 
   return (
     <Form {...form}>
