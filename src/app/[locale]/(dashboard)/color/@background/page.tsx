@@ -17,7 +17,7 @@ const Background = () => {
         <ComponentCopy component={<div className="h-20 w-20 bg-yellow" />} value="bg-yellow" />
         <ComponentCopy component={<div className="h-20 w-20 bg-gray" />} value="bg-gray" />
         <ComponentCopy
-          component={<div className="bg-gray-secondary h-20 w-20" />}
+          component={<div className="h-20 w-20 bg-gray-secondary" />}
           value="bg-gray-secondary"
         />
         <ComponentCopy component={<div className="h-20 w-20 bg-gray-400" />} value="bg-gray-400" />

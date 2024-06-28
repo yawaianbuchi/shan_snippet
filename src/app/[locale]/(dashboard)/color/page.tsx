@@ -2,7 +2,7 @@ import Grid from '@/components/layout/Grid';
 import ComponentCopy from '@/components/shared/ComponentCopy';
 import Card from '@/components/shared/card';
 import Text from '@/components/ui/typo';
-import { Box, Stack } from '@mui/material';
+import { Box } from '@mui/material';
 import { NextPage } from 'next';
 import React from 'react';
 

@@ -1,7 +1,5 @@
 import Grid from '@/components/layout/Grid';
 import Card from '@/components/shared/card';
-import { Icons } from '@/components/ui/images/Icons';
-import { Button } from '@mui/material';
 import { NextPage } from 'next';
 import React from 'react';
 import { BUTTON } from './data';
