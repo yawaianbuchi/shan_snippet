@@ -1,5 +1,4 @@
 import { Box, Stack } from '@mui/material';
-import { NextPage } from 'next';
 import React from 'react';
 import Text from '@/components/ui/typo';
 import Card from '@/components/shared/card';

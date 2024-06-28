@@ -26,7 +26,7 @@ const DashboardPage: NextPage<Props> = () => {
               { label: 'One', value: 1 },
               { label: 'One', value: 1 },
             ]}
-            onChange={(e) => console.log(e)}
+            onChange={(e) => alert(e)}
           />
         }
         value="<Select label='Choose Me' options={[

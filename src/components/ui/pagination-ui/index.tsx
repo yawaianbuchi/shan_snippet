@@ -15,7 +15,7 @@ const PaginationUi = ({
   total,
   setRecordPerPage,
 }: PaginateProps & {
-  total: number | string
+  total: number | string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(7);
@@ -55,9 +55,9 @@ const PaginationUi = ({
   const list = [5, 7, 10, 20];
   return (
     <div className="">
-      <div className="flex flex-row justify-between items-center h-[35px]    bg-white">
-        <div className="px-4 border h-full overflow-hidden rounded-md">
-          <div className="flex  h-full justify-center items-center  space-x-[10px]">
+      <div className="flex h-[35px] flex-row items-center justify-between bg-white">
+        <div className="h-full overflow-hidden rounded-md border px-4">
+          <div className="flex h-full items-center justify-center space-x-[10px]">
             <div className="" onClick={handlePrevious}>
               {<LeftIcon />}
             </div>
@@ -66,7 +66,7 @@ const PaginationUi = ({
               paginationRange?.map((item: any, index: React.Key) => {
                 if (item === DOTS) {
                   return (
-                    <button key={index} className={` mt-[-9px]`}>
+                    <button key={index} className={`mt-[-9px]`}>
                       &#8230;
                     </button>
                   );
@@ -74,7 +74,7 @@ const PaginationUi = ({
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer w-[20px]    text-[12px] relative  rounded-md px-4 flex items-center justify-center`}
+                    className={`relative flex w-[20px] cursor-pointer items-center justify-center rounded-md px-4 text-[12px]`}
                   >
                     {item == currentPage && (
                       <MagicTabSelect id="pillTabs" transition={{ type: 'spring', bounce: 0.35 }}>
@@ -96,7 +96,7 @@ const PaginationUi = ({
                       onClick={changePage}
                       className={`${
                         item === currentPage ? 'text-white delay-150' : 'text-black'
-                      }  inline-flex h-[40px] px-4 justify-center items-center relative z-[2] transition-all duration-200 ease-in-out`}
+                      } relative z-[2] inline-flex h-[40px] items-center justify-center px-4 transition-all duration-200 ease-in-out`}
                     >
                       {item}
                     </span>
@@ -106,33 +106,30 @@ const PaginationUi = ({
             <div onClick={handleNext}>{<RightIcon />}</div>
           </div>
         </div>
-        <div className="flex items-center  gap-3">
+        <div className="flex items-center gap-3">
           <span className="text-xs">Show</span>
           <div
             ref={ref}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
-            className=" border-2 px-2 py-1 relative  text-[12px]   rounded-lg w-[55px] "
+            className="relative w-[55px] rounded-lg border-2 px-2 py-1 text-[12px]"
           >
             <p className="text-center">{page}</p>
             <div
               style={{ width: size?.width }}
-              className={`absolute overflow-hidden transition-all duration-500 ease-in-out rounded bg-white shadow top-[31px] left-0 ${isOpen
-                  ? "opacity-100 translate-y-0 z-10 "
-                  : "opacity-0 translate-y-6 z-[-10]"
-                }`}
+              className={`absolute left-0 top-[31px] overflow-hidden rounded bg-white shadow transition-all duration-500 ease-in-out ${
+                isOpen ? 'z-10 translate-y-0 opacity-100' : 'z-[-10] translate-y-6 opacity-0'
+              }`}
             >
-               {list.map((item) => (
+              {list.map((item) => (
                 <p
                   onClick={() => handleSelect(item)}
                   key={item}
-                  className={`px-5 py-1 flex items-center transition-all duration-100  ease-linear hover:bg-[#eaeaea]`}
+                  className={`flex items-center px-5 py-1 transition-all duration-100 ease-linear hover:bg-[#eaeaea]`}
                 >
                   {item}
                 </p>
               ))}
-
-            
             </div>
           </div>
           <span className="text-sm">{total || '245,348'}</span>
