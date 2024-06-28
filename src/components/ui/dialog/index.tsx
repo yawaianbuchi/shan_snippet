@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
-import { DialogProps, Dialog as MDialog } from '@mui/material';
+import { DialogContent, DialogProps, Dialog as MDialog } from '@mui/material';
+import { Icons } from '../images/Icons';
 
 type MDialogProps = DialogProps & React.PropsWithChildren;
 interface CustomDialogProps extends MDialogProps {
@@ -21,12 +22,14 @@ const Dialog: React.FC<CustomDialogProps> = ({ open, setOpen, ...rest }) => {
         {...rest}
       >
         {rest.closeIcon && (
-          <div className={`absolute right-5 top-5 cursor-pointer`} onClick={() => setOpen(false)}>
-            {/* <Icons.close /> */}
-            close
+          <div
+            className={`absolute right-5 top-5 cursor-pointer text-2xl`}
+            onClick={() => setOpen(false)}
+          >
+            <Icons.times />
           </div>
         )}
-        {rest.children}
+        <DialogContent>{rest.children}</DialogContent>
       </MDialog>
     </React.Fragment>
   );

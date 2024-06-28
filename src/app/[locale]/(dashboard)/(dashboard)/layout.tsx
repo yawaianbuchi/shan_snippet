@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack } from '@mui/material';
+import Grid from '@/components/layout/Grid';
 
 export default function Layout({
   children,
@@ -19,18 +20,10 @@ export default function Layout({
   return (
     <Stack rowGap={2}>
       {children}
-      <Stack
-        gap={3}
-        className="w-full"
-        sx={{
-          flexDirection: {
-            sm: 'row',
-          },
-        }}
-      >
+      <Grid>
         {transactions}
         {player}
-      </Stack>
+      </Grid>
       {topwinner}
       {hotgames}
       {popular}

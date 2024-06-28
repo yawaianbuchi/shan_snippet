@@ -5,9 +5,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // login
 export async function POST(request: NextRequest) {
-  const { token, tokenExpired, ...user } = await request.json();
-  const currentTimestampInSeconds = Math.floor(Date.now() / 1000);
-  const maxAge = tokenExpired - currentTimestampInSeconds;
+  const { token, ...user } = await request.json();
+  // const currentTimestampInSeconds = Math.floor(Date.now() / 1000);
+  // const maxAge = tokenExpired - currentTimestampInSeconds;
 
   const session = await getIronSession<SessionData>(cookies(), {
     ...sessionOptions,

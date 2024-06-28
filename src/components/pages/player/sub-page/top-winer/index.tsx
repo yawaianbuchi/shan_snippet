@@ -1,12 +1,12 @@
-import React from 'react'
-import TopWinnerList from '../../components/list/top-winner-list'
+import React from 'react';
+import TopWinnerList from '../../components/list/top-winner-list';
 
 const TopWinner = () => {
   return (
     <div>
-        <TopWinnerList/>
+      <TopWinnerList />
     </div>
-  )
-}
+  );
+};
 
-export default TopWinner
+export default TopWinner;

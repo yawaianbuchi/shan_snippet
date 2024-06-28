@@ -15,15 +15,17 @@ interface SelectProps extends OutlinedSelectProps {
   options: { label: string; value: string | number }[];
 }
 
-const TextFieldStyled = styled(MSelect)<{}>(() => ({}));
-
+const TextFieldStyled = styled(MSelect)<{}>(() => ({
+  background: '#fff',
+  border: '1px solid #e4e4e4',
+}));
 
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
-  {  label, value, onChange, options, ...rest   },
+  { label, value, onChange, options, ...rest },
   ref
 ) {
   return (
-    <FormControl  ref={ref} fullWidth>
+    <FormControl ref={ref} fullWidth variant="filled">
       <InputLabel id="inputSelectLabel">{label}</InputLabel>
       <TextFieldStyled
         labelId="inputSelectLabel"
@@ -31,6 +33,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(function Select(
         value={value}
         label={label}
         onChange={onChange}
+        variant="filled"
         {...rest}
       >
         {options.map((option) => (

@@ -28,7 +28,7 @@ const LocalizationPopUp = () => {
         <Button
           key={item.value}
           onClick={() => handleSelect(item)}
-          className="w-full border-none text-black normal-case hover:border-none"
+          className="w-full border-none normal-case text-black hover:border-none"
           variant="outlined"
         >
           <Box flexGrow={1} className="flex items-center gap-2">
@@ -44,11 +44,11 @@ const LocalizationPopUp = () => {
   };
 
   return (
-    <Box className="relative w-[160px] h-12">
+    <Box className="relative h-12 w-[160px]">
       <Card>
         <button
           onClick={toggle}
-          className="w-full border-none flex items-center justify-center gap-2 text-black normal-case hover:border-none p-0"
+          className="flex w-full items-center justify-center gap-2 border-none p-0 normal-case text-black hover:border-none"
         >
           <Image
             src={checkCurrentLocale?.img ?? '/images/flag/br.svg'}

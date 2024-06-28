@@ -3,7 +3,11 @@ import { NextPage } from 'next';
 import React from 'react';
 
 const TopWinnerPage: NextPage = () => {
-  return <div><TopWinner/></div>;
+  return (
+    <div>
+      <TopWinner />
+    </div>
+  );
 };
 
 export default TopWinnerPage;

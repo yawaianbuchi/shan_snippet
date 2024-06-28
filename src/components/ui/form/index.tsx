@@ -78,7 +78,7 @@ const FormItem = forwardRef<FormItemProps, HTMLDivElement>(
         <div ref={ref as React.LegacyRef<HTMLDivElement>} className={cn('mb-8', className)}>
           {/* <div className={cn('space-y-1', className)} {...props} /> */}
           {error && (
-            <div className="text-xs text-red-600 flex items-center mt-1">
+            <div className="mt-1 flex items-center text-xs text-red-600">
               <div className="me-1">
                 <Icons.warning />
               </div>

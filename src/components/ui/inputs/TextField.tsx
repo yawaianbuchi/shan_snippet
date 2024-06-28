@@ -51,13 +51,17 @@ const TextFieldStyled = styled(MTextField)(({ theme }) => ({
     {
       borderBottom: 'none',
     },
+  '& .css-g4hivx-MuiInputBase-root-MuiFilledInput-root:hover:not(.Mui-disabled, .Mui-error):before':
+    {
+      borderBottom: 'none',
+    },
 }));
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
-  { ...rest },
+  { password = false, ...rest },
   ref
 ) {
-  const { label, value, password, variant = 'outlined' } = rest;
+  const { label, value, variant = 'filled' } = rest;
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   // const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -65,9 +69,9 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
   // };
   return password ? (
     <TextFieldStyled
-    autoComplete='off'
+      autoComplete="off"
       ref={ref}
-      className={cn('', rest.className)}
+      className={cn(rest.className)}
       label={label}
       variant={variant}
       value={value}
@@ -87,7 +91,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
   ) : (
     <TextFieldStyled
       ref={ref}
-      className={cn('bg-transparent border', rest.className)}
+      className={cn('border bg-transparent', rest.className)}
       label={label}
       variant={variant}
       value={value}

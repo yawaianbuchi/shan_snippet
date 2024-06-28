@@ -11,7 +11,7 @@ import { formatNumber } from '@/utils/numberAbbrevation';
 
 const ThirdPartyCard = () => {
   return (
-    <Card className="p-4 bg-transparent hover:bg-green-50 duration-100 group">
+    <Card className="group bg-transparent p-4 duration-100 hover:bg-green-50">
       <Stack gap={2}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
           <Stack direction="row" alignItems="center" gap={1}>
@@ -33,7 +33,7 @@ const ThirdPartyCard = () => {
 
         <Button
           variant="outlined"
-          className="normal-case w-fit bg-green-50 border-none text-green text-[16px] gap-2 hover:border-none hover:bg-green hover:text-white group-hover:bg-green group-hover:text-white"
+          className="w-fit gap-2 border-none bg-green-50 text-[16px] normal-case text-green hover:border-none hover:bg-green hover:text-white group-hover:bg-green group-hover:text-white"
         >
           <Icons.refresh />
           Refresh

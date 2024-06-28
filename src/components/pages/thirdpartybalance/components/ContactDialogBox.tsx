@@ -1,5 +1,4 @@
 'use client';
-import Card from '@/components/shared/card';
 import Dialog from '@/components/ui/dialog';
 import { Icons } from '@/components/ui/images/Icons';
 import Image from '@/components/ui/images/Image';
@@ -15,24 +14,17 @@ const ContactDialogBox = () => {
       <button onClick={toggle} className="h-fit w-fit">
         <Icons.messageInfo className="text-2xl" />
       </button>
-      <Dialog open={show} setOpen={toggle}>
-        <Card className="p-5">
-          <Stack direction="row" justifyContent="space-between" alignItems="center">
-            <Text variant="h6" fontWeight="500">
-              Contact Information
-            </Text>
-            <button onClick={toggle} className="hover:bg-green-50 w-6 h-6 rounded-full">
-              X
-            </button>
-          </Stack>
+      <Dialog open={show} setOpen={toggle} closeIcon>
+        <Text variant="h6" fontWeight="500">
+          Contact Information
+        </Text>
 
-          <Stack mt={3} gap={2}>
-            <SocialLink type="facebook" value="www.facebook.com" />
-            <SocialLink type="telegram" value="www.telegram.com" />
-            <SocialLink type="wechat" value="www.wechat.com" />
-            <SocialLink type="phone" value="+959 345 345 345" />
-          </Stack>
-        </Card>
+        <Stack mt={3} gap={2}>
+          <SocialLink type="facebook" value="www.facebook.com" />
+          <SocialLink type="telegram" value="www.telegram.com" />
+          <SocialLink type="wechat" value="www.wechat.com" />
+          <SocialLink type="phone" value="+959 345 345 345" />
+        </Stack>
       </Dialog>
     </>
   );
@@ -51,7 +43,7 @@ const SocialLink = ({ type, value }: SocialLinkProps) => {
         alt={type}
         width={40}
         height={40}
-        className="w-10 h-10"
+        className="h-10 w-10"
       />
       <Box flexGrow={1}>
         <Text className="text-gray-secondary text-sm capitalize leading-6">

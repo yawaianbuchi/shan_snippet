@@ -1,12 +1,12 @@
-import React from 'react'
-import PromoList from '../../components/list/promo-list'
+import React from 'react';
+import PromoList from '../../components/list/promo-list';
 
 const Promo = () => {
   return (
     <div>
-        <PromoList/>
+      <PromoList />
     </div>
-  )
-}
+  );
+};
 
-export default Promo
+export default Promo;

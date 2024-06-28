@@ -32,15 +32,15 @@ interface Props {
 }
 
 export default function ResponsiveDrawer(props: Props) {
-    const { trigger: logoutTrigger } = useSessionLogout();
+  const { trigger: logoutTrigger } = useSessionLogout();
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const router = useRouter();
-  const [isPending, startTransition] = React.useTransition();
+  const [isPending] = React.useTransition();
   const pathname = usePathname();
-    const { i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLocale = i18n.language;
 
   const handleDrawerClose = () => {
@@ -59,18 +59,16 @@ export default function ResponsiveDrawer(props: Props) {
   };
 
   const handleLogout = () => {
-
-          React.startTransition(() => {
-                  logoutTrigger().then(() => {
-                    router.push(`/${currentLocale}/login`);
-                    router.refresh();
-                  });
-                });
-
+    React.startTransition(() => {
+      logoutTrigger().then(() => {
+        router.push(`/${currentLocale}/login`);
+        router.refresh();
+      });
+    });
   };
 
   if (isPending) {
-    return <div className="bg-black/45 w-full h-full" />;
+    return <div className="h-full w-full bg-black/45" />;
   }
 
   const drawer = (
@@ -116,7 +114,7 @@ export default function ResponsiveDrawer(props: Props) {
         alignItems="center"
         justifyContent="space-between"
         p={2}
-        className="bg-green h-14 absolute w-full bottom-0"
+        className="absolute bottom-0 h-14 w-full bg-green"
       >
         <Stack direction="row" justifyItems="center" alignItems="center" gap={2}>
           <Avatar alt="roger" />
@@ -125,7 +123,7 @@ export default function ResponsiveDrawer(props: Props) {
           </Text>
         </Stack>
         <Button onClick={handleLogout} variant="text">
-          <Icons.logout className="text-white text-2xl" />
+          <Icons.logout className="text-2xl text-white" />
         </Button>
       </Stack>
     </Box>
@@ -134,7 +132,7 @@ export default function ResponsiveDrawer(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }} className="bg-gray h-screen ">
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -145,7 +143,7 @@ export default function ResponsiveDrawer(props: Props) {
           boxShadow: 'none',
         }}
       >
-        <Toolbar>
+        <Toolbar className="bg-gray">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -162,7 +160,7 @@ export default function ResponsiveDrawer(props: Props) {
             alignItems="center"
             className="w-full"
           >
-            <Typography variant="h6" noWrap component="div" className="text-black hidden lg:block">
+            <Typography variant="h6" noWrap component="div" className="hidden text-black lg:block">
               search bar
             </Typography>
             <Stack direction="row" columnGap={2}>
@@ -223,8 +221,8 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           flexGrow: 1,
           p: 3,
-          height:'100vh',
-          overflowY:"scroll",
+          height: '100vh',
+          overflowY: 'scroll',
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >

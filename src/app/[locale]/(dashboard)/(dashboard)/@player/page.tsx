@@ -1,13 +1,17 @@
-'use client';
 import React from 'react';
 import Card from '@/components/shared/card';
-import { useT } from '@/utils/translate';
+import ChartHeader from '@/components/pages/dashboard/components/chart/ChartHeader';
+import dynamic from 'next/dynamic';
+
+const PieChart = dynamic(() => import('@/components/pages/dashboard/components/chart/PieChart'), {
+  ssr: false,
+});
 
 const Players = () => {
   return (
-    <Card className="flex-1">
-      <p>client side translation</p>
-      <h1>{useT('game')}</h1>
+    <Card className="p-4">
+      <ChartHeader label="Players" href="/transactions/top-up" />
+      <PieChart />
     </Card>
   );
 };

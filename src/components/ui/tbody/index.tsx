@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const TBody = ({children}:{children?:React.ReactNode}) => {
-  return (
-    <tbody>
-        {children}
-    </tbody>
-  )
-}
+const TBody = ({ children }: { children?: React.ReactNode }) => {
+  return <tbody>{children}</tbody>;
+};
 
-export default TBody
+export default TBody;

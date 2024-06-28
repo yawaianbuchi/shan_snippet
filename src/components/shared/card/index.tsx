@@ -15,7 +15,7 @@ const Card = React.forwardRef<HTMLDivElement, ICardProps>(
         {...rest}
         ref={ref}
         className={cn(
-          'bg-white border border-gray rounded-lg p-2',
+          'rounded-lg border border-gray bg-white p-2',
           !elevation && 'shadow',
           className
         )}

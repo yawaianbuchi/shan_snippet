@@ -12,13 +12,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@/components/ui/inputs/TextField';
 import { CREATEGAMETRACK_SCHEMA } from './schema';
 
-type FiledValues = {
-  operatorname: string;
-  url: string;
-  username: string;
-  password: string;
-  merchantcode: string;
-};
+// type FiledValues = {
+//   operatorname: string;
+//   url: string;
+//   username: string;
+//   password: string;
+//   merchantcode: string;
+// };
 
 export const EditGameTrackForm = () => {
   const form = useForm({
@@ -26,10 +26,11 @@ export const EditGameTrackForm = () => {
   });
 
   const {
-    formState: { errors, isValid },
+    formState: { isValid },
   } = form;
 
   const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
+    alert(e);
   };
   return (
     <Form {...form}>
@@ -53,12 +54,12 @@ export const EditGameTrackForm = () => {
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => <TextField label="username" {...field} />}
+              render={({ field }) => <TextField label="Username" {...field} />}
             />
             <FormField
               name="password"
               control={form.control}
-              render={({ field }) => <TextField label="password" {...field} />}
+              render={({ field }) => <TextField label="Password" password {...field} />}
             />
           </Stack>
 
@@ -103,7 +104,7 @@ export const EditGameTrackForm = () => {
             <Link href="/game-track-panel">
               <Button
                 variant="contained"
-                className="normal-case bg-gray text-black hover:bg-gray"
+                className="bg-gray normal-case text-black hover:bg-gray"
                 disableElevation
               >
                 Cancel
@@ -113,7 +114,7 @@ export const EditGameTrackForm = () => {
             <Button
               type="submit"
               variant="contained"
-              className="bg-green disabled:bg-green/65 disabled:text-white normal-case"
+              className="bg-green normal-case disabled:bg-green/65 disabled:text-white"
               disabled={!isValid}
             >
               <Icons.check_mark className="mr-2 text-lg" /> Create

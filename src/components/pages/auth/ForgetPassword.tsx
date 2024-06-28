@@ -14,7 +14,9 @@ const ForgetPassword = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const submit = async (_data: LoginForm) => {};
+  const submit = async (data: LoginForm) => {
+    alert(data);
+  };
 
   return (
     <Form {...form}>

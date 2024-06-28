@@ -4,13 +4,13 @@ import Grid from '@/components/layout/Grid';
 import Button from '@/components/ui/button';
 import { Form, FormField } from '@/components/ui/form';
 import { Icons } from '@/components/ui/images/Icons';
-import Select from '@/components/ui/inputs/Select';
 import { Stack } from '@mui/material';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { CREATEGAMETRACK_SCHEMA } from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@/components/ui/inputs/TextField';
+import Select from '@/components/ui/inputs/Select';
 
 export const CreateGameTrackForm = () => {
   const form = useForm({
@@ -18,10 +18,11 @@ export const CreateGameTrackForm = () => {
   });
 
   const {
-    formState: { errors, isValid },
+    formState: { isValid },
   } = form;
 
   const handleCreateGameTrackForm: SubmitHandler<any> = (e) => {
+    alert(e);
   };
   return (
     <Form {...form}>
@@ -32,27 +33,25 @@ export const CreateGameTrackForm = () => {
             name="operatorname"
             defaultValue=""
             render={({ field }) => {
-              return <TextField variant="filled" label="Operator Name" {...field} />;
+              return <TextField label="Operator Name" {...field} />;
             }}
           />
           <FormField
             name="url"
             control={form.control}
-            render={({ field }) => (
-              <TextField variant="filled" label="URL" className="text-green" {...field} />
-            )}
+            render={({ field }) => <TextField label="URL" className="text-green" {...field} />}
           />
 
           <Stack direction="row" gap={2} justifyContent="space-between">
             <FormField
               name="username"
               control={form.control}
-              render={({ field }) => <TextField variant="filled" label="Username" {...field} />}
+              render={({ field }) => <TextField label="Username" {...field} />}
             />
             <FormField
               name="password"
               control={form.control}
-              render={({ field }) => <TextField variant="filled" label="Password" {...field} />}
+              render={({ field }) => <TextField label="Password" password {...field} />}
             />
           </Stack>
 
@@ -62,10 +61,9 @@ export const CreateGameTrackForm = () => {
               control={form.control}
               render={() => (
                 <Select
+                  label="Main Game"
                   className="w-full"
-                  onChange={() => {
-
-                  }}
+                  onChange={() => {}}
                   options={[
                     { label: 'One', value: 1 },
                     { label: 'Two', value: 2 },
@@ -77,15 +75,14 @@ export const CreateGameTrackForm = () => {
             <FormField
               name="merchantcode"
               control={form.control}
-              render={({ field }) => (
-                <TextField variant="filled" label="Merchant Code" {...field} />
-              )}
+              render={({ field }) => <TextField label="Merchant Code" {...field} />}
             />
             <FormField
               name="vpn"
               control={form.control}
               render={() => (
                 <Select
+                  label="VPN Required"
                   className="w-full"
                   onChange={() => {}}
                   options={[
@@ -100,8 +97,8 @@ export const CreateGameTrackForm = () => {
           <Stack direction="row" alignItems="center" justifyContent="flex-end" gap={2}>
             <Link href="/game-track-panel">
               <Button
-                variant="contained"
-                className="bg-gray normal-case text-black hover:bg-gray"
+                variant="outlined"
+                className="h-12 border-gray-300 bg-gray text-md normal-case text-black hover:border-gray-300 hover:bg-gray"
                 disableElevation
               >
                 Cancel

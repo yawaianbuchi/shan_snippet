@@ -1,14 +1,7 @@
-import React from "react"
+import React from 'react';
 
-const Wraper = ({children,value}:{
-  children : React.ReactNode[] ,
-  value: number
-}) => {
-  return (
-    <div>
-       {children[value]}
-    </div>
-  )
-}
+const Wraper = ({ children, value }: { children: React.ReactNode[]; value: number }) => {
+  return <div>{children[value]}</div>;
+};
 
-export default Wraper
+export default Wraper;

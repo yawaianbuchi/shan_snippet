@@ -21,11 +21,11 @@ const NavWithSubLink = ({ label, icon, ...props }: SUB_MENU_LISTS_PROPS) => {
       <ListItem onClick={toggle}>
         <ListItemButton
           className={cn(
-            'gap-2 capitalize rounded-lg hover:bg-green hover:text-white duration-75',
+            'gap-2 rounded-lg capitalize duration-75 hover:bg-green hover:text-white',
             pathname.includes(props.href) && 'bg-green text-white'
           )}
         >
-          <ListItemIcon className="min-w-5 h-5">{icon}</ListItemIcon>
+          <ListItemIcon className="h-5 min-w-5">{icon}</ListItemIcon>
           <ListItemText primary={label} />
           <Icons.chevron_down
             className={cn('duration-100 ease-in', showSubLink ? 'rotate-180' : 'rotate-0')}

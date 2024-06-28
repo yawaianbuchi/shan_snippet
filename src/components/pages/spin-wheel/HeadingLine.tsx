@@ -12,7 +12,7 @@ function HeadingLine() {
       <Text
         fontWeight={700}
         sx={{ marginBottom: '1rem' }}
-        className={`text-xl text-gray-400 capitalize`}
+        className={`text-xl capitalize text-gray-400`}
       >
         {firstHeader}
       </Text>

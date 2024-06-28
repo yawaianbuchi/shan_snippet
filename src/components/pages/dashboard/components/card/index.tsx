@@ -43,14 +43,14 @@ const OverviewCard = ({ title, amount, imgName, increase = true }: OverviewCardP
         <Box>
           <Stack mt={2} direction="row" rowGap={1} alignItems="center">
             <Icons.arrowUpRight
-              className={cn('font-bold text-xl ', increase ? 'text-green' : 'text-red rotate-90')}
+              className={cn('text-xl font-bold', increase ? 'text-green' : 'rotate-90 text-red')}
             />
             <Text className={cn('font-semibold', increase ? 'text-green' : 'text-red')}>
               {43.54}%
             </Text>
           </Stack>
 
-          <Text className="font-bold text-lg md:text-3xl">+{formatNumber(amount, 0)}</Text>
+          <Text className="text-lg font-bold md:text-3xl">+{formatNumber(amount, 0)}</Text>
         </Box>
       </Stack>
     </Card>

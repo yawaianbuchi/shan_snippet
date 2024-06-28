@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import React from 'react';
 
 const LoginPage: NextPage = () => {
-  return <Login/>;
+  return <Login />;
 };
 
 export default LoginPage;

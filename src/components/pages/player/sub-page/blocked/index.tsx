@@ -1,12 +1,11 @@
-import BlockList from "../../components/list/block-list"
-
+import BlockList from '../../components/list/block-list';
 
 const Blocked = () => {
   return (
     <div>
-        <BlockList/>
+      <BlockList />
     </div>
-  )
-}
+  );
+};
 
-export default Blocked
+export default Blocked;
