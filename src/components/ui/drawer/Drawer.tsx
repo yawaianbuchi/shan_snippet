@@ -76,7 +76,7 @@ export default function ResponsiveDrawer(props: Props) {
       <Toolbar>
         <Icons.logo />
         <Text color="green" fontWeight="bold" ml={1}>
-          SHAN GAMING
+          HELLO WORLD
         </Text>
       </Toolbar>
 
@@ -107,25 +107,6 @@ export default function ResponsiveDrawer(props: Props) {
           )
         )}
       </List>
-
-      <div className="h-14" />
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
-        p={2}
-        className="absolute bottom-0 h-14 w-full bg-green"
-      >
-        <Stack direction="row" justifyItems="center" alignItems="center" gap={2}>
-          <Avatar alt="roger" />
-          <Text color="white" fontWeight="bold">
-            Roger
-          </Text>
-        </Stack>
-        <Button onClick={handleLogout} variant="text">
-          <Icons.logout className="text-2xl text-white" />
-        </Button>
-      </Stack>
     </Box>
   );
 
@@ -134,55 +115,11 @@ export default function ResponsiveDrawer(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          backgroundColor: '#F7F7F7',
-          boxShadow: 'none',
-        }}
-      >
-        <Toolbar className="bg-gray">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, borderRadius: '8px', display: { sm: 'none' } }}
-            className="bg-green hover:bg-green/75"
-          >
-            <Icons.hamburger />
-          </IconButton>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            className="w-full"
-          >
-            <Typography variant="h6" noWrap component="div" className="hidden text-black lg:block">
-              search bar
-            </Typography>
-            <Stack direction="row" columnGap={2}>
-              <LocalizationPopUp />
-
-              <Link href="/inbox">
-                <Card className="flex items-center gap-2">
-                  <Icons.inboxTwo />
-                  Inbox
-                  <Chip label="+99" type="error" />
-                </Card>
-              </Link>
-            </Stack>
-          </Stack>
-        </Toolbar>
-      </AppBar>
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
@@ -226,7 +163,6 @@ export default function ResponsiveDrawer(props: Props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
-        <Toolbar />
         {props.children}
       </Box>
     </Box>

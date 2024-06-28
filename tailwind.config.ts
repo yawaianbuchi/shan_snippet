@@ -22,6 +22,7 @@ const config: Config = {
         },
         gray: {
           DEFAULT: '#f7f7f7',
+          secondary: '#aeaeae',
           400: '#adadad',
         },
         orange: {
@@ -42,7 +43,7 @@ const config: Config = {
         },
         gray: {
           DEFAULT: '#f7f7f7',
-          seconday: '#aeaeae',
+          secondary: '#aeaeae',
           400: '#adadad',
         },
         black: {

@@ -1,36 +1,43 @@
-import Card from '@/components/shared/card';
+'use client';
 import { NextPage } from 'next';
-import React from 'react';
-import Text from '@/components/ui/typo';
-import { Box, Stack } from '@mui/material';
-import Grid from '@/components/layout/Grid';
-import OverviewCard from '@/components/pages/dashboard/components/card';
-import initTranslations from '@/app/i18n';
-import { LANG_NAMESPACE } from '@/constants/namespace';
 import { Props } from '@/types/Params';
+import TextField from '@/components/ui/inputs/TextField';
+import Grid from '@/components/layout/Grid';
+import ComponentCopy from '@/components/shared/ComponentCopy';
+import Select from '@/components/ui/inputs/Select';
 
-const DashboardPage: NextPage<Props> = async ({ params: { locale } }: Props) => {
-  const { t } = await initTranslations(locale, LANG_NAMESPACE);
+const DashboardPage: NextPage<Props> = () => {
+  // const { t } = await initTranslations(locale, LANG_NAMESPACE);
   return (
-    <Card className="bg-green p-6">
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Text className="text-2xl font-semibold text-white">{t('overview_reports')}</Text>
-        <Box>
-          <h1>Hello world</h1>
-        </Box>
-      </Stack>
+    <Grid>
+      <ComponentCopy component={<TextField label="Name" />} value='<TextField label="name" />' />
 
-      <Grid className="mt-4">
-        <OverviewCard imgName="game.png" amount={123890} title={t('game')} />
-        <OverviewCard
-          imgName="newplayers.png"
-          amount={123890}
-          title={t('new_players')}
-          increase={false}
-        />
-        <OverviewCard imgName="reports.png" amount={123890} title={t('reports')} />
-      </Grid>
-    </Card>
+      <ComponentCopy
+        component={<TextField label="Password" password />}
+        value='<TextField label="name" password />'
+      />
+
+      <ComponentCopy
+        component={
+          <Select
+            label="Choose Me"
+            options={[
+              { label: 'One', value: 1 },
+              { label: 'One', value: 1 },
+              { label: 'One', value: 1 },
+            ]}
+            onChange={(e) => console.log(e)}
+          />
+        }
+        value="<Select label='Choose Me' options={[
+          { label: 'One', value: 1},
+          { label: 'One', value: 1},
+          { label: 'One', value: 1},
+        ]} 
+          onChange={e => console.log(e)}
+        />"
+      />
+    </Grid>
   );
 };
 

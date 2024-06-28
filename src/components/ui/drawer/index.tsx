@@ -1,8 +1,7 @@
 'use client';
 
 import React, { PropsWithChildren } from 'react';
-// import Drawer from './Drawer';
-import DynamicDrawer from './DynamicDrawer';
+import Drawer from './Drawer';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
@@ -27,7 +26,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, ...rest }: PageLayout
       pathname === '/pass-reset' ? (
         children
       ) : (
-        <DynamicDrawer {...rest}>{children}</DynamicDrawer>
+        <Drawer {...rest}>{children}</Drawer>
       )}
     </div>
   );
