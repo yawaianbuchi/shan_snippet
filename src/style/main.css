@@ -22,3 +22,17 @@
 .css-1lbyzdu-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root::after {
   border-bottom: none !important;
 }
+
+.react-datepicker {
+  border: none !important;
+}
+
+.react-datepicker__day-name {
+  color: transparent !important;
+}
+.react-datepicker__day-name::first-letter {
+  color: black !important;
+}
+.react-datepicker__day--selected {
+  @apply !rounded-full !bg-green;
+}

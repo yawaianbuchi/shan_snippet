@@ -33,5 +33,6 @@ export const MENU_LISTS: MENU_LISTS_PROPS[] = [
     icon: <Icons.fileCopy />,
     href: '/chip',
   },
+  { label: 'Table', icon: <Icons.fileCopy />, href: '/table' },
   { label: 'mascellaneous', icon: <Icons.fileCopy />, href: '/mas' },
 ];

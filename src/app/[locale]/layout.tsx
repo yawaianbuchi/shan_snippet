@@ -11,11 +11,8 @@ import '@/style/globals.css';
 import '@/style/main.css';
 
 export const metadata: Metadata = {
-  title: 'Shan Gaming',
-  description: 'Shan Gaming',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  title: 'Snippets',
+  description: 'Snippets',
 };
 
 export default async function RootLayout({
