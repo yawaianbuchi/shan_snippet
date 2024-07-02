@@ -35,4 +35,6 @@ export const MENU_LISTS: MENU_LISTS_PROPS[] = [
   },
   { label: 'Table', icon: <Icons.fileCopy />, href: '/table' },
   { label: 'mascellaneous', icon: <Icons.fileCopy />, href: '/mas' },
+  { label: 'Paginate-table', icon: <Icons.fileCopy />, href: '/paginate-table' },
+  
 ];
